@@ -1,34 +1,113 @@
 {
+  "settings": {
+    "regions_priority": [
+      "Puglia",
+      "Basilicata",
+      "Calabria",
+      "Campania",
+      "Molise",
+      "Abruzzo",
+      "Lazio",
+      "Sicilia"
+    ],
+    "exclude_expired": true,
+    "detail_pages_limit": 80,
+    "request_delay_seconds": 0.25
+  },
   "keywords": [
     "pulizia",
     "pulizie",
-    "sanificazione",
+    "servizio di pulizia",
     "igiene ambientale",
+    "pulizia civile",
+    "pulizia industriale",
+    "sanificazione",
     "disinfezione",
+    "disinfestazione",
+    "derattizzazione",
+    "pest control",
     "portierato",
     "portineria",
     "reception",
+    "receptionist",
     "custodia",
-    "guardiania",
+    "guardiania non armata",
+    "controllo accessi",
     "front office",
+    "accoglienza",
+    "sorveglianza non armata",
     "multiservizi",
+    "multi servizi",
     "global service",
     "facility management",
     "servizi integrati",
+    "facility services",
+    "servizi ausiliari",
+    "ausiliariato",
     "facchinaggio",
-    "ausiliariato"
+    "movimentazione",
+    "presidio",
+    "centralino",
+    "call center",
+    "gestione immobili",
+    "manutenzione integrata",
+    "servizi alberghieri",
+    "servizi di supporto",
+    "servizi generali"
+  ],
+  "negative_keywords": [
+    "fornitura detergenti",
+    "fornitura prodotti per pulizia",
+    "macchine per pulizia",
+    "spazzatrice",
+    "autospurgo",
+    "raccolta rifiuti",
+    "smaltimento rifiuti",
+    "vigilanza armata",
+    "trasporto valori",
+    "impianto antintrusione"
   ],
   "cpv": [
+    "90900000",
     "90910000",
+    "90911000",
+    "90911100",
     "90911200",
+    "90911300",
+    "90912000",
+    "90913000",
+    "90914000",
+    "90915000",
+    "90916000",
+    "90917000",
+    "90918000",
+    "90919000",
+    "90919100",
     "90919200",
+    "90919300",
     "90920000",
     "90921000",
+    "90922000",
+    "90923000",
+    "90924000",
     "98341120",
     "98341130",
+    "98341140",
     "79992000",
+    "79993000",
     "79993100",
-    "79710000"
+    "79710000",
+    "79713000",
+    "98341100",
+    "98341110",
+    "98341150",
+    "98341160",
+    "63100000",
+    "63110000",
+    "63120000",
+    "98392000",
+    "50700000",
+    "79900000"
   ],
   "sources": [
     {
@@ -36,21 +115,160 @@
       "name": "ANAC - Pubblicità legale",
       "type": "html",
       "url": "https://pubblicitalegale.anticorruzione.it/bandi",
-      "region": "Italia"
+      "region": "Italia",
+      "priority": 1
     },
     {
       "active": true,
-      "name": "Empulia",
+      "name": "ANAC - Ricerca avanzata",
       "type": "html",
-      "url": "https://eprocurement.empulia.it/portale/index.php/bandi",
-      "region": "Puglia"
+      "url": "https://pubblicitalegale.anticorruzione.it/ricerca-avanzata",
+      "region": "Italia",
+      "priority": 1
     },
     {
       "active": true,
-      "name": "Unione dei Comuni Terra di Leuca",
+      "name": "TED Europa",
+      "type": "html",
+      "url": "https://ted.europa.eu/it/search/result",
+      "region": "Europa",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "Acquisti in Rete PA",
+      "type": "html",
+      "url": "https://www.acquistinretepa.it/opencms/opencms/vetrina_bandi.html",
+      "region": "Italia",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "EmPULIA",
+      "type": "html",
+      "url": "https://www.empulia.it/tno-a/empulia/SitePages/Bandi%20di%20gara.aspx",
+      "region": "Puglia",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "CUC Terra di Leuca",
       "type": "html",
       "url": "https://www.unioneterredileuca.it/",
-      "region": "Puglia"
+      "region": "Puglia",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "START Toscana",
+      "type": "html",
+      "url": "https://start.toscana.it/initiatives/list/",
+      "region": "Toscana",
+      "priority": 2
+    },
+    {
+      "active": true,
+      "name": "SINTEL Lombardia",
+      "type": "html",
+      "url": "https://www.sintel.regione.lombardia.it/eprocdata/sintelSearch.xhtml",
+      "region": "Lombardia",
+      "priority": 2
+    },
+    {
+      "active": true,
+      "name": "SORESA SIAPS",
+      "type": "html",
+      "url": "https://siaps.soresa.it/portalegare/",
+      "region": "Campania",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "Centrale Acquisti Lazio",
+      "type": "html",
+      "url": "https://centraleacquisti.regione.lazio.it/",
+      "region": "Lazio",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "SardegnaCAT",
+      "type": "html",
+      "url": "https://www.sardegnacat.it/esop/ita-ras-host/public/web/login.jst",
+      "region": "Sardegna",
+      "priority": 2
+    },
+    {
+      "active": true,
+      "name": "eAppalti FVG",
+      "type": "html",
+      "url": "https://eappalti.regione.fvg.it/",
+      "region": "Friuli-Venezia Giulia",
+      "priority": 2
+    },
+    {
+      "active": true,
+      "name": "Intercent-ER",
+      "type": "html",
+      "url": "https://intercenter.regione.emilia-romagna.it/servizi-imprese/bandi-e-avvisi",
+      "region": "Emilia-Romagna",
+      "priority": 2
+    },
+    {
+      "active": true,
+      "name": "SUA Regione Calabria",
+      "type": "html",
+      "url": "https://sua.regione.calabria.it/",
+      "region": "Calabria",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "Centrale Unica Committenza Basilicata",
+      "type": "html",
+      "url": "https://centralecommittenza.regione.basilicata.it/",
+      "region": "Basilicata",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "Portale Appalti Sicilia",
+      "type": "html",
+      "url": "https://appalti.regione.sicilia.it/",
+      "region": "Sicilia",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "Portale Acquisti Umbria",
+      "type": "html",
+      "url": "https://app.albofornitori.it/alboeproc/albo_umbriasalute",
+      "region": "Umbria",
+      "priority": 2
+    },
+    {
+      "active": true,
+      "name": "Appalti Alto Adige",
+      "type": "html",
+      "url": "https://www.bandi-altoadige.it/",
+      "region": "Trentino-Alto Adige",
+      "priority": 2
+    },
+    {
+      "active": true,
+      "name": "Traspare - ricerca web",
+      "type": "html",
+      "url": "https://www.traspare.com/",
+      "region": "Italia",
+      "priority": 3
+    },
+    {
+      "active": true,
+      "name": "TuttoGare - portale",
+      "type": "html",
+      "url": "https://tuttogare.it/",
+      "region": "Italia",
+      "priority": 3
     }
   ]
 }

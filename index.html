@@ -16,7 +16,7 @@
       <p>Pulizie · Portierato · Sanificazione · Multiservizi</p>
     </div>
     <div class="header-actions">
-      <a class="button light" href="data/gare.json" target="_blank">Dati JSON</a>
+      <a class="button light" href="data/gare.csv" target="_blank">Esporta CSV</a><a class="button light" href="data/gare.json" target="_blank">Dati JSON</a>
       <button class="button light" id="installBtn" hidden>Installa app</button>
     </div>
   </div>
@@ -63,13 +63,16 @@
     <div class="table-wrap">
       <table>
         <thead>
-          <tr><th></th><th>Opportunità</th><th>Categoria</th><th>Pubblicazione</th><th>Scadenza</th><th>Importo</th><th>Stato</th><th></th></tr>
+          <tr><th></th><th>Opportunità</th><th>Priorità</th><th>Categoria</th><th>Pubblicazione</th><th>Scadenza</th><th>Importo</th><th>Stato</th><th></th></tr>
         </thead>
         <tbody id="tbody"></tbody>
       </table>
     </div>
   </section>
-
+  <section class="panel info">
+    <h2>Stato delle fonti</h2>
+    <div id="sourcesStatus">Caricamento…</div>
+  </section>
   <section class="panel info">
     <h2>Come aggiornare le gare</h2>
     <p>Dal repository apri <strong>Actions → Scansione bandi → Run workflow</strong>. La scansione automatica è già programmata ogni mattina.</p>

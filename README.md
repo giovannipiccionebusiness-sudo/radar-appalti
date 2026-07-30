@@ -1,65 +1,45 @@
-# Radar Appalti — versione GitHub Pages
+# Radar Appalti GitHub — versione completa 2.0
 
-Questa versione funziona senza Google Apps Script.
+## Funzioni
+- GitHub Pages, utilizzabile anche da smartphone.
+- Due scansioni automatiche nei giorni lavorativi e una ogni giorno.
+- Oltre 20 fonti nazionali, europee e regionali.
+- ANAC, TED, Acquisti in Rete PA, EmPULIA, CUC Terra di Leuca e principali centrali regionali.
+- Ampio elenco CPV e parole chiave.
+- Esclusione di forniture non pertinenti e gare scadute.
+- Lettura delle pagine di dettaglio quando la pagina elenco non basta.
+- Punteggio automatico di priorità.
+- Filtri per testo, categoria, regione e stato.
+- Preferiti e stato salvati sul dispositivo.
+- Esportazione CSV e archivio JSON.
+- Stato tecnico di ogni fonte.
+- Notifiche Telegram o email opzionali.
 
-## Cosa usa
+## Installazione
+1. Crea un repository GitHub chiamato `radar-appalti`.
+2. Estrai lo ZIP e carica tutto, inclusa `.github`.
+3. Vai in `Settings → Pages`.
+4. Scegli `Deploy from a branch`, branch `main`, cartella `/ (root)`.
+5. Vai in `Actions → Scansione bandi → Run workflow`.
+6. Apri `https://TUO-UTENTE.github.io/radar-appalti/`.
 
-- **GitHub Pages** per pubblicare la web app.
-- **GitHub Actions** per controllare automaticamente le fonti.
-- **data/gare.json** come archivio delle opportunità.
-- **localStorage** del telefono per preferiti e stato delle gare.
+## Notifiche Telegram opzionali
+Nel repository vai in `Settings → Secrets and variables → Actions` e crea:
+- `TELEGRAM_BOT_TOKEN`
+- `TELEGRAM_CHAT_ID`
 
-## Installazione da smartphone
+## Notifiche email opzionali
+Crea questi secrets:
+- `SMTP_HOST`
+- `SMTP_PORT` (normalmente 465)
+- `SMTP_USER`
+- `SMTP_PASSWORD`
+- `ALERT_EMAIL`
 
-1. Crea un nuovo repository GitHub, per esempio `radar-appalti`.
-2. Estrai questo ZIP.
-3. Carica nel repository tutti i file e le cartelle, compresa `.github`.
-4. Nel repository apri **Settings → Pages**.
-5. In **Build and deployment**, scegli:
-   - Source: `Deploy from a branch`
-   - Branch: `main`
-   - Cartella: `/ (root)`
-6. Salva.
-7. Apri **Actions**, seleziona `Scansione bandi` e premi **Run workflow**.
-8. Dopo il primo aggiornamento, GitHub Pages mostrerà i risultati.
+Per Gmail serve una password per le app, non la password ordinaria.
 
-L'indirizzo sarà simile a:
+## Modificare fonti, parole chiave e CPV
+Apri `config.json`. Ogni fonte può essere attivata o disattivata con `"active": true/false`.
 
-`https://TUO-UTENTE.github.io/radar-appalti/`
-
-## Aggiornamento automatico
-
-Il file `.github/workflows/scan.yml` avvia la scansione ogni giorno alle 05:15 UTC, cioè generalmente alle 07:15 in Italia durante l'ora legale.
-
-Puoi avviarla anche manualmente:
-
-**Actions → Scansione bandi → Run workflow**
-
-## Aggiungere una fonte
-
-Apri `config.json` e aggiungi un elemento dentro `sources`:
-
-```json
-{
-  "active": true,
-  "name": "Nome ente",
-  "type": "html",
-  "url": "https://www.esempio.it/bandi",
-  "region": "Puglia"
-}
-```
-
-Dopo il salvataggio esegui nuovamente il workflow.
-
-## Limite importante
-
-Alcuni portali caricano i dati con JavaScript, CAPTCHA oppure API non pubbliche. L'estrattore generico potrebbe non leggerli correttamente. In quel caso serve un adattatore specifico nel file `scripts/scan.py`.
-
-## File principali
-
-- `index.html`: interfaccia.
-- `assets/app.js`: filtri, preferiti e stati.
-- `scripts/scan.py`: motore di scansione.
-- `config.json`: parole chiave, CPV e fonti.
-- `.github/workflows/scan.yml`: esecuzione automatica.
-- `data/gare.json`: archivio.
+## Limite tecnico
+Le piattaforme con login, CAPTCHA, protezioni anti-bot o contenuti caricati solo via JavaScript possono risultare non leggibili. La sezione “Stato delle fonti” indica subito quali collegamenti funzionano. ANAC rimane la fonte nazionale più importante.
