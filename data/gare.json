@@ -1,6 +1,9 @@
 {
-  "updated_at": "",
+  "updated_at": "30/07/2026 08:04",
   "count": 0,
-  "errors": [],
+  "errors": [
+    "Empulia: 404 Client Error: Not Found for url: https://eprocurement.empulia.it/portale/index.php/bandi",
+    "Unione dei Comuni Terra di Leuca: HTTPSConnectionPool(host='www.unioneterredileuca.it', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='www.unioneterredileuca.it', port=443): Failed to resolve 'www.unioneterredileuca.it' ([Errno -2] Name or service not known)\"))"
+  ],
   "gare": []
 }
