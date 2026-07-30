@@ -8,7 +8,7 @@ async function load() {
     const res = await fetch(`data/gare.json?v=${Date.now()}`);
     const payload = await res.json();
     all = payload.gare || [];
-    $('lastUpdate').textContent = `Versione ${payload.version || '4.0'} · Ultimo aggiornamento: ${payload.updated_at || 'non disponibile'} · Fonti OK: ${payload.sources_ok ?? '–'} · Errori: ${payload.sources_error ?? '–'}`;
+    $('lastUpdate').textContent = `Versione ${payload.version || '4.0'} · Ultimo aggiornamento: ${payload.updated_at || 'non disponibile'} · Nuove: ${payload.new_count ?? 0} · Aggiornate: ${payload.updated_count ?? 0} · Fonti OK: ${payload.sources_ok ?? '–'} · Errori: ${payload.sources_error ?? '–'}`;
     fillRegions();
     renderSources(payload.sources_status || []);
     render();
