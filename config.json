@@ -1,8 +1,8 @@
 {
-  "version": "4.0",
+  "version": "5.0",
   "settings": {
     "max_workers": 8,
-    "source_timeout_seconds": 12,
+    "source_timeout_seconds": 15,
     "connection_timeout_seconds": 5,
     "read_timeout_seconds": 10,
     "max_links_per_source": 70,
@@ -19,7 +19,9 @@
       "Abruzzo",
       "Lazio",
       "Sicilia"
-    ]
+    ],
+    "history_retention_days": 365,
+    "detect_changes": true
   },
   "keywords": [
     "pulizia",
@@ -108,9 +110,36 @@
   "sources": [
     {
       "active": true,
-      "name": "ANAC - Pubblicità legale",
-      "adapter": "anac",
-      "url": "https://pubblicitalegale.anticorruzione.it/bandi",
+      "name": "Consip - Ricerca gare",
+      "adapter": "consip_gare",
+      "url": "https://www.consip.it/imprese/bandi",
+      "region": "Italia",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "Consip Open Data - Bandi e Gare",
+      "adapter": "consip_ckan",
+      "dataset_id": "dataset-bandi-e-gare",
+      "url": "https://dati.consip.it/api/3/action/package_show?id=dataset-bandi-e-gare",
+      "region": "Italia",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "Consip Open Data - Appalti Specifici SDAPA",
+      "adapter": "consip_ckan",
+      "dataset_id": "appalti-specifici-banditi-su-sistema-dinamico-di-acquisizione",
+      "url": "https://dati.consip.it/api/3/action/package_show?id=appalti-specifici-banditi-su-sistema-dinamico-di-acquisizione",
+      "region": "Italia",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "Consip Open Data - RDO e TD MePA",
+      "adapter": "consip_ckan",
+      "dataset_id": "richieste-di-offerta-e-trattative-dirette-bandite-sul-mepa",
+      "url": "https://dati.consip.it/api/3/action/package_show?id=richieste-di-offerta-e-trattative-dirette-bandite-sul-mepa",
       "region": "Italia",
       "priority": 1
     },
@@ -124,11 +153,9 @@
     },
     {
       "active": true,
-      "name": "Acquisti in Rete PA",
-      "adapter": "generic",
-      "urls": [
-        "https://www.acquistinretepa.it/opencms/opencms/vetrina_bandi.html"
-      ],
+      "name": "ANAC - Pubblicità legale",
+      "adapter": "anac",
+      "url": "https://pubblicitalegale.anticorruzione.it/bandi",
       "region": "Italia",
       "priority": 1
     },

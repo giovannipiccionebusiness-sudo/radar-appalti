@@ -1,57 +1,45 @@
-# Radar Appalti GitHub 4.0
+# Radar Appalti GitHub 5.0 – Consip
 
-Questa versione sostituisce la 3.0 ed è stata riscritta per evitare il blocco del workflow.
+La versione 5.0 aggiunge il monitoraggio dedicato delle opportunità Consip.
 
-## Principali correzioni
+## Fonti Consip controllate
 
-- Scansione delle fonti in parallelo.
-- Timeout brevi per connessione e lettura.
-- Una fonte lenta non blocca le altre.
-- Timeout massimo del workflow ridotto a 12 minuti.
-- Parser dedicato per la pagina ANAC Pubblicità legale.
-- Collegamento diretto alla Search API ufficiale TED.
-- Numero limitato di pagine di dettaglio per ogni fonte.
-- Conservazione delle gare precedenti quando una fonte è temporaneamente offline.
-- Tempi di risposta visibili nel riquadro “Stato delle fonti”.
-- Verifica automatica della sintassi prima della scansione.
-- File CSV e JSON aggiornati nello stesso workflow.
+1. **Consip – Ricerca gare**
+   - Procedure sopra e sotto soglia bandite direttamente da Consip.
+   - Lettura di titolo, ID Sigef, stato, pubblicazione e collegamento alla scheda.
 
-## Aggiornamento del repository
+2. **Open Data Consip – Bandi e Gare del Programma**
+   - Convenzioni.
+   - Accordi Quadro.
+   - Mercato Elettronico.
+   - Sistema Dinamico di Acquisizione.
 
-1. Estrai lo ZIP.
-2. Carica tutti i file nel repository, sostituendo quelli esistenti.
-3. Controlla che venga caricata anche la cartella `.github`.
-4. Vai in `Actions`.
-5. Apri `Scansione bandi v4`.
-6. Premi `Run workflow`.
+3. **Open Data Consip – Appalti Specifici SDAPA**
+   - Appalti specifici pubblicati nell'ambito dei bandi SDAPA.
 
-## Tempo previsto
+4. **Open Data Consip – RDO e TD MePA**
+   - Richieste di Offerta e Trattative Dirette presenti nel dataset pubblico.
+   - Le procedure riservate visibili soltanto dopo autenticazione non possono essere garantite.
 
-Normalmente la scansione dovrebbe concludersi in circa 1–4 minuti. I portali temporaneamente irraggiungibili vengono registrati come errore senza interrompere il resto.
+## Migliorie
 
-## TED
+- Scansione parallela.
+- Individuazione automatica della risorsa JSON/CSV dell'anno corrente tramite API CKAN.
+- Ricerca per parole chiave e CPV.
+- Deduplicazione tra Consip, ANAC, TED e portali regionali.
+- Evidenza delle gare nuove e delle gare aggiornate.
+- Conservazione dello storico.
+- Una fonte offline non interrompe il workflow.
 
-La versione 4 usa l’endpoint ufficiale:
+## Installazione
 
-`POST https://api.ted.europa.eu/v3/notices/search`
+1. Estrarre lo ZIP.
+2. Sostituire tutti i file del repository GitHub.
+3. Verificare che sia presente `.github/workflows/scan.yml`.
+4. Aprire `Actions`.
+5. Selezionare `Scansione bandi v5 Consip`.
+6. Premere `Run workflow`.
 
-L’API non richiede autenticazione. Qualora il formato della risposta TED venga modificato, il radar segnalerà l’errore ma continuerà a elaborare tutte le altre fonti.
+## Nota
 
-## Notifiche facoltative
-
-Per Telegram:
-
-- `TELEGRAM_BOT_TOKEN`
-- `TELEGRAM_CHAT_ID`
-
-Per email:
-
-- `SMTP_HOST`
-- `SMTP_PORT`
-- `SMTP_USER`
-- `SMTP_PASSWORD`
-- `ALERT_EMAIL`
-
-I valori si inseriscono in:
-
-`Settings → Secrets and variables → Actions`
+I dataset Consip vengono aggiornati con la frequenza prevista dal portale Open Data. Per le opportunità più recenti il radar controlla anche la pagina pubblica “Ricerca gare”.
