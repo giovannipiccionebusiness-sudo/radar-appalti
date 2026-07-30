@@ -1,191 +1,588 @@
 from __future__ import annotations
-import csv, hashlib, json, os, re, smtplib, sys, time
-from datetime import datetime
+
+import csv
+import hashlib
+import json
+import os
+import re
+import smtplib
+import sys
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime, timedelta
 from email.message import EmailMessage
 from pathlib import Path
-from urllib.parse import urljoin, urlparse
+from typing import Any
+from urllib.parse import urljoin
 
 import requests
-from requests.adapters import HTTPAdapter
-from urllib3.util.retry import Retry
 from bs4 import BeautifulSoup
 from dateutil import parser as dateparser
 
-ROOT=Path(__file__).resolve().parents[1]
-CONFIG=json.loads((ROOT/"config.json").read_text(encoding="utf-8"))
-DATA_FILE=ROOT/"data/gare.json"
-CSV_FILE=ROOT/"data/gare.csv"
-HEADERS={"User-Agent":"Mozilla/5.0 (compatible; RadarAppalti/2.0; +GitHub Actions)"}
-KEYWORDS=[x.lower() for x in CONFIG["keywords"]]
-NEGATIVE=[x.lower() for x in CONFIG.get("negative_keywords",[])]
-CPV=CONFIG["cpv"]
-SETTINGS=CONFIG.get("settings",{})
+ROOT = Path(__file__).resolve().parents[1]
+CONFIG = json.loads((ROOT / "config.json").read_text(encoding="utf-8"))
+DATA_FILE = ROOT / "data/gare.json"
+CSV_FILE = ROOT / "data/gare.csv"
+SETTINGS = CONFIG["settings"]
+KEYWORDS = [x.lower() for x in CONFIG["keywords"]]
+NEGATIVE = [x.lower() for x in CONFIG.get("negative_keywords", [])]
+CPV_CODES = CONFIG["cpv"]
 
-def norm(s): return re.sub(r"\s+"," ",s or "").strip()
-def ident(s): return hashlib.sha256(s.encode("utf-8","ignore")).hexdigest()[:24]
-def relevant(text):
-    s=text.lower()
-    positive=any(k in s for k in KEYWORDS) or any(c in s for c in CPV)
-    negative=any(k in s for k in NEGATIVE)
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (compatible; RadarAppalti/4.0; GitHub Actions)",
+    "Accept-Language": "it-IT,it;q=0.9,en;q=0.5",
+}
+REQUEST_TIMEOUT = (
+    SETTINGS.get("connection_timeout_seconds", 5),
+    SETTINGS.get("read_timeout_seconds", 10),
+)
+
+
+def clean(value: Any) -> str:
+    return re.sub(r"\s+", " ", str(value or "")).strip()
+
+
+def make_id(value: str) -> str:
+    return hashlib.sha256(value.encode("utf-8", "ignore")).hexdigest()[:24]
+
+
+def relevant(text: str) -> bool:
+    low = text.lower()
+    positive = any(word in low for word in KEYWORDS) or any(code in low for code in CPV_CODES)
+    negative = any(word in low for word in NEGATIVE)
     return positive and not negative
-def classify(s):
-    s=s.lower()
-    if any(x in s for x in ["multiservizi","multi servizi","global service","facility management","servizi integrati"]): return "Multiservizi"
-    if any(x in s for x in ["portier","reception","custodia","guardiania non armata","controllo accessi","front office","accoglienza"]): return "Portierato"
-    if any(x in s for x in ["sanific","disinfe","disinfest","derattizz","pest control"]): return "Sanificazione"
-    if any(x in s for x in ["pulizia","pulizie","igiene ambientale"]): return "Pulizie"
-    if any(x in s for x in ["facchinaggio","movimentazione"]): return "Facchinaggio"
+
+
+def classify(text: str) -> str:
+    low = text.lower()
+    if any(x in low for x in ("multiservizi", "multi servizi", "global service", "facility management", "servizi integrati")):
+        return "Multiservizi"
+    if any(x in low for x in ("portier", "reception", "custodia", "guardiania non armata", "controllo accessi", "front office", "accoglienza")):
+        return "Portierato"
+    if any(x in low for x in ("sanific", "disinfe", "disinfest", "derattizz")):
+        return "Sanificazione"
+    if any(x in low for x in ("pulizia", "pulizie", "igiene ambientale")):
+        return "Pulizie"
+    if any(x in low for x in ("facchinaggio", "movimentazione")):
+        return "Facchinaggio"
     return "Servizi"
-def cpv(text):
-    for c in CPV:
-        if c in text: return c
-    m=re.search(r"\b(\d{8})(?:-\d)?\b",text)
-    return m.group(1) if m else ""
-def date_near(text, labels):
-    for lab in labels:
-        m=re.search(lab+r"[^\d]{0,50}(\d{1,2}[\/\-.]\d{1,2}[\/\-.]\d{2,4})",text,re.I)
-        if m:
-            try:return dateparser.parse(m.group(1),dayfirst=True).strftime("%d/%m/%Y")
-            except:pass
-    return ""
-def amount(text):
-    m=re.search(r"(?:€|euro)\s*([\d\.\,]+)",text,re.I)
-    return m.group(1) if m else ""
-def cig(text):
-    m=re.search(r"\b(?:CIG\s*)?([A-Z0-9]{10})\b",text,re.I)
-    return m.group(1).upper() if m else ""
-def expired(s):
-    if not s:return False
-    try:return dateparser.parse(s,dayfirst=True).date()<datetime.now().date()
-    except:return False
-def region_score(region):
-    priorities=SETTINGS.get("regions_priority",[])
-    return max(0,100-(priorities.index(region)*5)) if region in priorities else 20
-def score(t):
-    value=region_score(t.get("regione",""))
-    if t.get("cpv"): value+=20
-    if t.get("scadenza"): value+=10
-    if t.get("importo"): value+=5
-    if t.get("categoria") in ("Pulizie","Portierato","Multiservizi","Sanificazione"): value+=15
-    return min(100,value)
 
-def detail_text(session,url):
+
+def extract_cpv(text: str) -> str:
+    for code in CPV_CODES:
+        if code in text:
+            return code
+    match = re.search(r"\b(\d{8})(?:-\d)?\b", text)
+    return match.group(1) if match else ""
+
+
+def extract_cig(text: str) -> str:
+    match = re.search(r"\bCIG[\s:.-]*([A-Z0-9]{10})\b", text, re.I)
+    return match.group(1).upper() if match else ""
+
+
+def parse_date(value: str) -> str:
+    if not value:
+        return ""
     try:
-        r=session.get(url,headers=HEADERS,timeout=25)
-        if r.status_code>=400:return ""
-        soup=BeautifulSoup(r.text,"html.parser")
-        for tag in soup(["script","style","noscript"]):tag.decompose()
-        return norm(soup.get_text(" ",strip=True))[:30000]
-    except:return ""
+        return dateparser.parse(value, dayfirst=True).strftime("%d/%m/%Y")
+    except Exception:
+        return ""
 
-def build_session():
-    session=requests.Session()
-    retry=Retry(total=int(SETTINGS.get("max_retries",3)), connect=3, read=3, status=3,
-                backoff_factor=float(SETTINGS.get("retry_backoff_seconds",3)),
-                status_forcelist=(408,429,500,502,503,504), allowed_methods=frozenset(["GET","POST"]))
-    session.mount("https://",HTTPAdapter(max_retries=retry))
-    session.mount("http://",HTTPAdapter(max_retries=retry))
-    return session
 
-def fetch_first_available(session, source):
-    urls=[source.get("url","")]+source.get("fallback_urls",[])
-    errors=[]
-    timeout=int(source.get("timeout",40))
-    for url in [u for u in urls if u]:
-        try:
-            r=session.get(url,headers=HEADERS,timeout=timeout,allow_redirects=True)
-            if r.status_code in (401,403):
-                errors.append(f"{url}: HTTP {r.status_code}")
-                continue
-            r.raise_for_status()
-            if len(r.text)<200:
-                errors.append(f"{url}: risposta vuota")
-                continue
-            return r,url,errors
-        except Exception as exc:
-            errors.append(f"{url}: {type(exc).__name__}: {exc}")
-    raise RuntimeError(" | ".join(errors))
+def date_near(text: str, labels: tuple[str, ...]) -> str:
+    for label in labels:
+        pattern = label + r"[^\d]{0,55}(\d{1,2}[\/\-.]\d{1,2}[\/\-.]\d{2,4})"
+        match = re.search(pattern, text, re.I)
+        if match:
+            parsed = parse_date(match.group(1))
+            if parsed:
+                return parsed
+    return ""
 
-def scan_source(source):
-    session=build_session()
-    r,working_url,attempt_errors=fetch_first_available(session,source)
-    soup=BeautifulSoup(r.text,"html.parser")
-    for tag in soup(["script","style","noscript"]):tag.decompose()
-    results=[]; seen=set(); limit=int(SETTINGS.get("detail_pages_limit",80))
-    candidates=[]
-    for a in soup.find_all("a",href=True):
-        title=norm(a.get_text(" ",strip=True))
-        if len(title)<12:continue
-        context=norm((a.parent or a).get_text(" ",strip=True))
-        url=urljoin(working_url,a["href"])
-        if url.startswith("javascript:") or url.startswith("mailto:"):continue
-        prelim=norm(title+" "+context)
-        if relevant(prelim) or any(w in prelim.lower() for w in ["bando","gara","procedura","avviso","affidamento"]):
-            candidates.append((title,context,url))
-    for title,context,url in candidates[:limit]:
-        if url in seen:continue
+
+def extract_amount(text: str) -> str:
+    match = re.search(r"(?:€|euro)\s*([\d\.\,]+)", text, re.I)
+    return match.group(1) if match else ""
+
+
+def is_expired(date_value: str) -> bool:
+    if not date_value:
+        return False
+    try:
+        return dateparser.parse(date_value, dayfirst=True).date() < datetime.now().date()
+    except Exception:
+        return False
+
+
+def priority_score(item: dict[str, Any]) -> int:
+    regions = SETTINGS.get("priority_regions", [])
+    region = item.get("regione", "")
+    points = 25
+    if region in regions:
+        points += max(5, 40 - regions.index(region) * 4)
+    if item.get("cpv"):
+        points += 15
+    if item.get("scadenza"):
+        points += 10
+    if item.get("importo"):
+        points += 5
+    if item.get("categoria") in {"Pulizie", "Portierato", "Multiservizi", "Sanificazione"}:
+        points += 10
+    return min(100, points)
+
+
+def tender_from_text(
+    *,
+    title: str,
+    text: str,
+    source: dict[str, Any],
+    url: str,
+    publication: str = "",
+    deadline: str = "",
+    entity: str = "",
+) -> dict[str, Any]:
+    item = {
+        "id": make_id(extract_cig(text) or url or source["name"] + title),
+        "titolo": clean(title)[:600],
+        "ente": clean(entity) or source["name"],
+        "categoria": classify(text),
+        "cpv": extract_cpv(text),
+        "cig": extract_cig(text),
+        "regione": source.get("region", ""),
+        "provincia": "",
+        "pubblicazione": publication or date_near(text, ("pubblicazione", "pubblicato", "data pubblicazione")),
+        "scadenza": deadline or date_near(text, ("scadenza", "termine", "entro", "presentazione offerte")),
+        "importo": extract_amount(text),
+        "fonte": source["name"],
+        "url": url,
+        "rilevato_il": datetime.now().strftime("%d/%m/%Y %H:%M"),
+    }
+    item["punteggio"] = priority_score(item)
+    return item
+
+
+def get_html(session: requests.Session, url: str, timeout=None) -> tuple[str, str]:
+    response = session.get(url, headers=HEADERS, timeout=timeout or REQUEST_TIMEOUT)
+    response.raise_for_status()
+    if not response.content:
+        raise RuntimeError("risposta vuota")
+    return response.text, response.url
+
+
+def page_text(html: str) -> tuple[BeautifulSoup, str]:
+    soup = BeautifulSoup(html, "html.parser")
+    for tag in soup(["script", "style", "noscript", "svg"]):
+        tag.decompose()
+    return soup, clean(soup.get_text(" ", strip=True))
+
+
+def scan_anac(source: dict[str, Any]) -> list[dict[str, Any]]:
+    session = requests.Session()
+    html, final_url = get_html(session, source["url"])
+    soup, _ = page_text(html)
+    results = []
+    seen = set()
+
+    headings = soup.find_all(["h5", "h6", "article", "li", "div"])
+    for block in headings:
+        text = clean(block.get_text(" ", strip=True))
+        if len(text) < 45 or not relevant(text):
+            continue
+        link = block.find("a", href=True)
+        if not link:
+            continue
+        url = urljoin(final_url, link["href"])
+        if "/bandi/" not in url or url in seen:
+            continue
         seen.add(url)
-        full=norm(title+" "+context)
-        if not relevant(full):
-            full=norm(full+" "+detail_text(session,url))
-            time.sleep(float(SETTINGS.get("request_delay_seconds",0)))
-        if not relevant(full):continue
-        tender={
-          "id":ident(cig(full) or url or source["name"]+title),
-          "titolo":title[:500],"ente":source["name"],"categoria":classify(full),
-          "cpv":cpv(full),"cig":cig(full),"regione":source.get("region",""),"provincia":"",
-          "pubblicazione":date_near(full,["pubblicazione","pubblicato","data pubblicazione"]),
-          "scadenza":date_near(full,["scadenza","termine","entro","presentazione offerte"]),
-          "importo":amount(full),"fonte":source["name"],"url":url,
-          "rilevato_il":datetime.now().strftime("%d/%m/%Y %H:%M")
+
+        title_node = block.find(["h5", "h6", "strong"])
+        title = clean(title_node.get_text(" ", strip=True) if title_node else link.get_text(" ", strip=True))
+        if len(title) < 12:
+            title = text[:280]
+
+        entity = ""
+        for node in block.find_all(["h5", "h6", "strong"]):
+            candidate = clean(node.get_text(" ", strip=True))
+            if candidate and candidate != title and len(candidate) < 180:
+                entity = candidate
+                break
+
+        item = tender_from_text(
+            title=title,
+            text=text,
+            source=source,
+            url=url,
+            publication=date_near(text, ("pubblicato", "pubblicazione")),
+            deadline=date_near(text, ("scadenza",)),
+            entity=entity,
+        )
+        if not SETTINGS.get("exclude_expired", True) or not is_expired(item["scadenza"]):
+            results.append(item)
+
+    return deduplicate(results)
+
+
+def ted_query() -> str:
+    cpv_query = " OR ".join(f'classification-cpv = "{code}"' for code in CPV_CODES[:25])
+    return f'country-procedure = "ITA" AND ({cpv_query})'
+
+
+def first_value(obj: Any, keys: tuple[str, ...]) -> str:
+    if isinstance(obj, dict):
+        for key in keys:
+            value = obj.get(key)
+            if isinstance(value, str) and value.strip():
+                return value
+            if isinstance(value, list) and value:
+                first = value[0]
+                if isinstance(first, str):
+                    return first
+                if isinstance(first, dict):
+                    found = first_value(first, keys)
+                    if found:
+                        return found
+        for value in obj.values():
+            found = first_value(value, keys)
+            if found:
+                return found
+    elif isinstance(obj, list):
+        for value in obj:
+            found = first_value(value, keys)
+            if found:
+                return found
+    return ""
+
+
+def scan_ted_api(source: dict[str, Any]) -> list[dict[str, Any]]:
+    payload_variants = [
+        {
+            "query": ted_query(),
+            "fields": [
+                "publication-number", "notice-title", "buyer-name",
+                "publication-date", "deadline-receipt-tender-date",
+                "classification-cpv", "place-of-performance"
+            ],
+            "page": 1,
+            "limit": 100,
+            "scope": "ALL"
+        },
+        {
+            "query": ted_query(),
+            "fields": [
+                "publication-number", "notice-title", "buyer-name",
+                "publication-date", "deadline-receipt-tender-date",
+                "classification-cpv"
+            ],
+            "page": 1,
+            "limit": 100
         }
-        tender["punteggio"]=score(tender)
-        if SETTINGS.get("exclude_expired",True) and expired(tender["scadenza"]):continue
-        results.append(tender)
-    return results, working_url, attempt_errors
+    ]
 
-def notify(new_items):
-    if not new_items:return
-    telegram_token=os.getenv("TELEGRAM_BOT_TOKEN","")
-    telegram_chat=os.getenv("TELEGRAM_CHAT_ID","")
-    text="Radar Appalti: %d nuove opportunità\n\n"%len(new_items)
-    text+="\n\n".join(f"• {x['titolo']}\n{x.get('ente','')} — {x.get('scadenza') or 'scadenza da verificare'}\n{x['url']}" for x in new_items[:15])
-    if telegram_token and telegram_chat:
-        try:requests.post(f"https://api.telegram.org/bot{telegram_token}/sendMessage",json={"chat_id":telegram_chat,"text":text[:4000],"disable_web_page_preview":True},timeout=20)
-        except Exception as e:print("Telegram:",e,file=sys.stderr)
-    host=os.getenv("SMTP_HOST",""); user=os.getenv("SMTP_USER",""); password=os.getenv("SMTP_PASSWORD",""); recipient=os.getenv("ALERT_EMAIL","")
-    if host and user and password and recipient:
+    session = requests.Session()
+    last_error = None
+    data = None
+    for payload in payload_variants:
         try:
-            msg=EmailMessage();msg["Subject"]=f"Radar Appalti: {len(new_items)} nuove gare";msg["From"]=user;msg["To"]=recipient;msg.set_content(text)
-            with smtplib.SMTP_SSL(host,int(os.getenv("SMTP_PORT","465"))) as s:s.login(user,password);s.send_message(msg)
-        except Exception as e:print("Email:",e,file=sys.stderr)
+            response = session.post(
+                source["url"],
+                json=payload,
+                headers={**HEADERS, "Content-Type": "application/json", "Accept": "application/json"},
+                timeout=REQUEST_TIMEOUT,
+            )
+            response.raise_for_status()
+            data = response.json()
+            break
+        except Exception as exc:
+            last_error = exc
 
-def write_csv(gare):
-    fields=["titolo","ente","categoria","cpv","cig","regione","pubblicazione","scadenza","importo","fonte","url","punteggio","rilevato_il"]
-    with CSV_FILE.open("w",newline="",encoding="utf-8-sig") as f:
-        w=csv.DictWriter(f,fieldnames=fields,extrasaction="ignore",delimiter=";");w.writeheader();w.writerows(gare)
+    if data is None:
+        raise RuntimeError(f"TED API non disponibile: {last_error}")
 
-def main():
-    old={"gare":[]}
-    if DATA_FILE.exists():old=json.loads(DATA_FILE.read_text(encoding="utf-8"))
-    old_ids={x["id"] for x in old.get("gare",[])}
-    merged={x["id"]:x for x in old.get("gare",[])}
-    statuses=[]; fresh=[]
-    for source in sorted(CONFIG["sources"],key=lambda x:x.get("priority",9)):
-        if not source.get("active",True):continue
+    notices = []
+    if isinstance(data, dict):
+        for key in ("notices", "results", "items", "content"):
+            if isinstance(data.get(key), list):
+                notices = data[key]
+                break
+    elif isinstance(data, list):
+        notices = data
+
+    results = []
+    for notice in notices:
+        title = first_value(notice, ("notice-title", "title", "noticeTitle"))
+        entity = first_value(notice, ("buyer-name", "buyerName", "organisation-name"))
+        publication_number = first_value(notice, ("publication-number", "publicationNumber", "notice-id"))
+        publication = parse_date(first_value(notice, ("publication-date", "publicationDate")))
+        deadline = parse_date(first_value(notice, ("deadline-receipt-tender-date", "deadline", "submission-deadline")))
+        cpv_value = first_value(notice, ("classification-cpv", "cpv", "main-cpv"))
+        text = clean(json.dumps(notice, ensure_ascii=False))
+
+        if not title or not relevant(text + " " + title + " " + cpv_value):
+            continue
+
+        url = f"https://ted.europa.eu/it/notice/-/detail/{publication_number}" if publication_number else "https://ted.europa.eu/"
+        item = tender_from_text(
+            title=title,
+            text=text + " " + cpv_value,
+            source=source,
+            url=url,
+            publication=publication,
+            deadline=deadline,
+            entity=entity,
+        )
+        if cpv_value and not item["cpv"]:
+            item["cpv"] = re.sub(r"\D", "", cpv_value)[:8]
+        item["punteggio"] = priority_score(item)
+
+        if not SETTINGS.get("exclude_expired", True) or not is_expired(item["scadenza"]):
+            results.append(item)
+
+    return deduplicate(results)
+
+
+def detail_text(session: requests.Session, url: str) -> str:
+    try:
+        html, _ = get_html(
+            session,
+            url,
+            timeout=(
+                SETTINGS.get("connection_timeout_seconds", 5),
+                SETTINGS.get("detail_timeout_seconds", 6),
+            ),
+        )
+        _, text = page_text(html)
+        return text[:25000]
+    except Exception:
+        return ""
+
+
+def scan_generic(source: dict[str, Any]) -> list[dict[str, Any]]:
+    session = requests.Session()
+    urls = source.get("urls") or [source.get("url")]
+    last_error = None
+
+    for source_url in [u for u in urls if u]:
         try:
-            items,working_url,warnings=scan_source(source)
-            for x in items:
-                if x["id"] not in merged:fresh.append(x)
-                merged[x["id"]]=x
-            statuses.append({"fonte":source["name"],"ok":True,"trovate":len(items),"errore":"; ".join(warnings)[:500],"url_usato":working_url})
-            print("OK",source["name"],len(items))
-        except Exception as e:
-            statuses.append({"fonte":source["name"],"ok":False,"trovate":0,"errore":str(e)[:500],"url_usato":""})
-            print("ERRORE",source["name"],e,file=sys.stderr)
-    gare=sorted(merged.values(),key=lambda x:(-int(x.get("punteggio",0)),x.get("scadenza") or "99/99/9999"))
-    payload={"updated_at":datetime.now().astimezone().strftime("%d/%m/%Y %H:%M"),"count":len(gare),"new_count":len(fresh),"sources_status":statuses,"gare":gare}
-    DATA_FILE.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding="utf-8")
-    write_csv(gare);notify(fresh)
+            html, final_url = get_html(session, source_url)
+            soup, _ = page_text(html)
+            candidates = []
+            seen_links = set()
 
-if __name__=="__main__":main()
+            for link in soup.find_all("a", href=True):
+                title = clean(link.get_text(" ", strip=True))
+                if len(title) < 12:
+                    continue
+                url = urljoin(final_url, link["href"])
+                if url.startswith(("javascript:", "mailto:", "tel:")) or url in seen_links:
+                    continue
+                seen_links.add(url)
+                context = clean((link.parent or link).get_text(" ", strip=True))
+                combined = clean(title + " " + context)
+
+                if relevant(combined):
+                    candidates.append((title, combined, url, True))
+                elif any(word in combined.lower() for word in ("gara", "bando", "procedura", "affidamento", "avviso")):
+                    candidates.append((title, combined, url, False))
+
+                if len(candidates) >= SETTINGS.get("max_links_per_source", 70):
+                    break
+
+            results = []
+            details_used = 0
+            for title, combined, url, already_relevant in candidates:
+                text = combined
+                if not already_relevant and details_used < SETTINGS.get("max_detail_pages_per_source", 12):
+                    details_used += 1
+                    text = clean(text + " " + detail_text(session, url))
+                if not relevant(text):
+                    continue
+
+                item = tender_from_text(title=title, text=text, source=source, url=url)
+                if not SETTINGS.get("exclude_expired", True) or not is_expired(item["scadenza"]):
+                    results.append(item)
+
+            return deduplicate(results)
+        except Exception as exc:
+            last_error = exc
+            continue
+
+    raise RuntimeError(str(last_error or "nessun URL disponibile"))
+
+
+def scan_source(source: dict[str, Any]) -> tuple[list[dict[str, Any]], str]:
+    started = time.monotonic()
+    adapter = source.get("adapter", "generic")
+
+    if adapter == "anac":
+        items = scan_anac(source)
+    elif adapter == "ted_api":
+        items = scan_ted_api(source)
+    else:
+        items = scan_generic(source)
+
+    elapsed = round(time.monotonic() - started, 2)
+    return items, f"{elapsed}s"
+
+
+def deduplicate(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    output = {}
+    for item in items:
+        key = item.get("cig") or item.get("url") or item["id"]
+        output[key] = item
+    return list(output.values())
+
+
+def keep_recent_old(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    cutoff = datetime.now() - timedelta(days=SETTINGS.get("retention_days", 180))
+    output = []
+    for item in items:
+        value = item.get("rilevato_il", "")
+        try:
+            detected = dateparser.parse(value, dayfirst=True)
+            if detected >= cutoff:
+                output.append(item)
+        except Exception:
+            output.append(item)
+    return output
+
+
+def notify(items: list[dict[str, Any]]) -> None:
+    if not items:
+        return
+
+    text = f"Radar Appalti: {len(items)} nuove opportunità\n\n"
+    text += "\n\n".join(
+        f"• {item['titolo']}\n{item.get('ente', '')} — "
+        f"{item.get('scadenza') or 'scadenza da verificare'}\n{item.get('url', '')}"
+        for item in items[:12]
+    )
+
+    token = os.getenv("TELEGRAM_BOT_TOKEN", "")
+    chat_id = os.getenv("TELEGRAM_CHAT_ID", "")
+    if token and chat_id:
+        try:
+            requests.post(
+                f"https://api.telegram.org/bot{token}/sendMessage",
+                json={
+                    "chat_id": chat_id,
+                    "text": text[:4000],
+                    "disable_web_page_preview": True,
+                },
+                timeout=10,
+            ).raise_for_status()
+        except Exception as exc:
+            print(f"Notifica Telegram non inviata: {exc}", file=sys.stderr)
+
+    smtp_host = os.getenv("SMTP_HOST", "")
+    smtp_user = os.getenv("SMTP_USER", "")
+    smtp_password = os.getenv("SMTP_PASSWORD", "")
+    recipient = os.getenv("ALERT_EMAIL", "")
+    if smtp_host and smtp_user and smtp_password and recipient:
+        try:
+            message = EmailMessage()
+            message["Subject"] = f"Radar Appalti: {len(items)} nuove gare"
+            message["From"] = smtp_user
+            message["To"] = recipient
+            message.set_content(text)
+            with smtplib.SMTP_SSL(smtp_host, int(os.getenv("SMTP_PORT", "465")), timeout=12) as server:
+                server.login(smtp_user, smtp_password)
+                server.send_message(message)
+        except Exception as exc:
+            print(f"Notifica email non inviata: {exc}", file=sys.stderr)
+
+
+def write_csv(items: list[dict[str, Any]]) -> None:
+    fields = [
+        "titolo", "ente", "categoria", "cpv", "cig", "regione",
+        "pubblicazione", "scadenza", "importo", "fonte", "url",
+        "punteggio", "rilevato_il"
+    ]
+    with CSV_FILE.open("w", newline="", encoding="utf-8-sig") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fields, extrasaction="ignore", delimiter=";")
+        writer.writeheader()
+        writer.writerows(items)
+
+
+def main() -> None:
+    old_payload = {"gare": []}
+    if DATA_FILE.exists():
+        try:
+            old_payload = json.loads(DATA_FILE.read_text(encoding="utf-8"))
+        except Exception:
+            pass
+
+    old_items = keep_recent_old(old_payload.get("gare", []))
+    old_ids = {item["id"] for item in old_items if item.get("id")}
+    merged = {item["id"]: item for item in old_items if item.get("id")}
+    statuses = []
+    new_items = []
+
+    sources = [source for source in CONFIG["sources"] if source.get("active", True)]
+    workers = min(SETTINGS.get("max_workers", 8), max(1, len(sources)))
+
+    print(f"Avvio scansione parallela di {len(sources)} fonti con {workers} worker.")
+
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        futures = {executor.submit(scan_source, source): source for source in sources}
+        for future in as_completed(futures):
+            source = futures[future]
+            try:
+                items, elapsed = future.result()
+                for item in items:
+                    if item["id"] not in old_ids:
+                        new_items.append(item)
+                    merged[item["id"]] = item
+                statuses.append({
+                    "fonte": source["name"],
+                    "ok": True,
+                    "trovate": len(items),
+                    "tempo": elapsed,
+                    "errore": "",
+                })
+                print(f"OK {source['name']}: {len(items)} risultati in {elapsed}")
+            except Exception as exc:
+                statuses.append({
+                    "fonte": source["name"],
+                    "ok": False,
+                    "trovate": 0,
+                    "tempo": "",
+                    "errore": clean(exc)[:300],
+                })
+                print(f"ERRORE {source['name']}: {exc}", file=sys.stderr)
+
+    items = sorted(
+        merged.values(),
+        key=lambda item: (
+            -int(item.get("punteggio", 0)),
+            item.get("scadenza") or "99/99/9999",
+            item.get("titolo", ""),
+        ),
+    )
+
+    payload = {
+        "version": CONFIG.get("version", "4.0"),
+        "updated_at": datetime.now().astimezone().strftime("%d/%m/%Y %H:%M"),
+        "count": len(items),
+        "new_count": len(new_items),
+        "sources_ok": sum(1 for status in statuses if status["ok"]),
+        "sources_error": sum(1 for status in statuses if not status["ok"]),
+        "sources_status": sorted(statuses, key=lambda status: status["fonte"]),
+        "gare": items,
+    }
+
+    DATA_FILE.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    write_csv(items)
+    notify(new_items)
+
+    print(
+        f"Scansione terminata: {len(items)} gare archiviate, "
+        f"{len(new_items)} nuove, "
+        f"{payload['sources_ok']} fonti OK, "
+        f"{payload['sources_error']} fonti con errore."
+    )
+
+
+if __name__ == "__main__":
+    main()
