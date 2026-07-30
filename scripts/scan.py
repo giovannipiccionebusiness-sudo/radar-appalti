@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import io
 import hashlib
 import json
 import os
@@ -225,8 +226,9 @@ def scan_anac(source: dict[str, Any]) -> list[dict[str, Any]]:
 
 
 def ted_query() -> str:
-    cpv_query = " OR ".join(f'classification-cpv = "{code}"' for code in CPV_CODES[:25])
-    return f'country-procedure = "ITA" AND ({cpv_query})'
+    # Ricerca italiana per CPV. I codici con * comprendono le sottocategorie.
+    cpv_terms = " OR ".join(f'classification-cpv = "{code}"' for code in CPV_CODES[:20])
+    return f'place-of-performance = "ITA" AND ({cpv_terms})'
 
 
 def first_value(obj: Any, keys: tuple[str, ...]) -> str:
@@ -411,6 +413,181 @@ def scan_generic(source: dict[str, Any]) -> list[dict[str, Any]]:
     raise RuntimeError(str(last_error or "nessun URL disponibile"))
 
 
+def normalized_record(record: dict[str, Any]) -> dict[str, str]:
+    return {
+        re.sub(r"[^a-z0-9]+", "_", clean(key).lower()).strip("_"): clean(value)
+        for key, value in record.items()
+    }
+
+
+def find_field(record: dict[str, str], *needles: str) -> str:
+    for needle in needles:
+        needle = needle.lower()
+        for key, value in record.items():
+            if needle in key and value:
+                return value
+    return ""
+
+
+def records_from_json(data: Any) -> list[dict[str, Any]]:
+    if isinstance(data, list):
+        return [x for x in data if isinstance(x, dict)]
+    if isinstance(data, dict):
+        for key in ("records", "result", "data", "items"):
+            value = data.get(key)
+            if isinstance(value, list):
+                return [x for x in value if isinstance(x, dict)]
+            if isinstance(value, dict):
+                nested = records_from_json(value)
+                if nested:
+                    return nested
+    return []
+
+
+def scan_consip_ckan(source: dict[str, Any]) -> list[dict[str, Any]]:
+    session = requests.Session()
+    response = session.get(source["url"], headers=HEADERS, timeout=REQUEST_TIMEOUT)
+    response.raise_for_status()
+    package = response.json()
+    if not package.get("success"):
+        raise RuntimeError("CKAN non ha restituito il dataset")
+
+    resources = package.get("result", {}).get("resources", [])
+    current_year = str(datetime.now().year)
+
+    def resource_rank(resource: dict[str, Any]) -> tuple[int, int]:
+        fmt = clean(resource.get("format")).upper()
+        name = clean(resource.get("name") or resource.get("url"))
+        format_rank = 3 if fmt == "JSON" else 2 if fmt == "CSV" else 0
+        year_rank = 2 if current_year in name else 1
+        return year_rank, format_rank
+
+    usable = [
+        r for r in resources
+        if clean(r.get("format")).upper() in {"JSON", "CSV"}
+        and r.get("url")
+    ]
+    if not usable:
+        raise RuntimeError("nessuna risorsa JSON/CSV disponibile")
+
+    usable.sort(key=resource_rank, reverse=True)
+    resource = usable[0]
+    data_response = session.get(resource["url"], headers=HEADERS, timeout=(7, 25))
+    data_response.raise_for_status()
+
+    if clean(resource.get("format")).upper() == "JSON":
+        records = records_from_json(data_response.json())
+    else:
+        text = data_response.content.decode("utf-8-sig", errors="replace")
+        sample = text[:5000]
+        try:
+            dialect = csv.Sniffer().sniff(sample, delimiters=";,|\t")
+        except Exception:
+            dialect = csv.excel
+            dialect.delimiter = ";"
+        records = list(csv.DictReader(io.StringIO(text), dialect=dialect))
+
+    results = []
+    for raw in records:
+        rec = normalized_record(raw)
+        title = find_field(
+            rec, "oggetto", "descrizione_iniziativa", "nome_iniziativa",
+            "denominazione_iniziativa", "titolo", "descrizione"
+        )
+        entity = find_field(
+            rec, "amministrazione", "stazione_appaltante", "ente",
+            "ragione_sociale", "soggetto_aggiudicatore"
+        )
+        cpv = find_field(rec, "cpv")
+        category = find_field(rec, "categoria", "merceologica")
+        combined = clean(" ".join([title, entity, cpv, category] + list(rec.values())))
+
+        if not title or not relevant(combined):
+            continue
+
+        deadline = parse_date(find_field(
+            rec, "data_scadenza", "scadenza", "termine_presentazione",
+            "data_fine_presentazione"
+        ))
+        publication = parse_date(find_field(
+            rec, "data_pubblicazione", "pubblicazione", "data_bando"
+        ))
+        cig = find_field(rec, "cig")
+        sigef = find_field(rec, "sigef", "id_iniziativa", "numero_iniziativa")
+        url = find_field(rec, "url", "link")
+        if not url:
+            url = "https://www.acquistinretepa.it/opencms/opencms/vetrina_bandi.html"
+        if sigef and not url.startswith("http"):
+            url = "https://www.consip.it/imprese/bandi"
+
+        item = tender_from_text(
+            title=title,
+            text=combined,
+            source=source,
+            url=url,
+            publication=publication,
+            deadline=deadline,
+            entity=entity or "Consip / Amministrazione pubblica",
+        )
+        if cig:
+            item["cig"] = cig
+            item["id"] = make_id(cig)
+        elif sigef:
+            item["id"] = make_id(source["name"] + sigef)
+        if cpv and not item["cpv"]:
+            item["cpv"] = re.sub(r"\D", "", cpv)[:8]
+        item["strumento"] = find_field(rec, "strumento", "tipologia_procedura", "tipo_iniziativa")
+        item["stato"] = find_field(rec, "stato", "fase")
+        item["punteggio"] = priority_score(item)
+
+        if not SETTINGS.get("exclude_expired", True) or not is_expired(item["scadenza"]):
+            results.append(item)
+
+    return deduplicate(results)
+
+
+def scan_consip_gare(source: dict[str, Any]) -> list[dict[str, Any]]:
+    session = requests.Session()
+    html, final_url = get_html(session, source["url"], timeout=(7, 18))
+    soup, page = page_text(html)
+    results = []
+    seen = set()
+
+    for link in soup.find_all("a", href=True):
+        href = urljoin(final_url, link["href"])
+        if "/bandi/" not in href or href in seen:
+            continue
+        title = clean(link.get_text(" ", strip=True))
+        if len(title) < 20:
+            continue
+        parent = link
+        for _ in range(4):
+            if parent.parent:
+                parent = parent.parent
+        context = clean(parent.get_text(" ", strip=True))
+        combined = clean(title + " " + context)
+        if not relevant(combined):
+            continue
+        seen.add(href)
+
+        sigef_match = re.search(r"\bID\s*Sigef\s*(\d+)", combined, re.I)
+        item = tender_from_text(
+            title=title,
+            text=combined,
+            source=source,
+            url=href,
+            publication=date_near(combined, ("pubblicazione", "pubblicato")),
+            deadline=date_near(combined, ("ricezione offerte", "scadenza", "termine")),
+            entity="Consip S.p.A.",
+        )
+        if sigef_match:
+            item["id_sigef"] = sigef_match.group(1)
+            item["id"] = make_id("CONSIP-SIGEF-" + sigef_match.group(1))
+        item["punteggio"] = priority_score(item) + 5
+        results.append(item)
+
+    return deduplicate(results)
+
 def scan_source(source: dict[str, Any]) -> tuple[list[dict[str, Any]], str]:
     started = time.monotonic()
     adapter = source.get("adapter", "generic")
@@ -419,6 +596,10 @@ def scan_source(source: dict[str, Any]) -> tuple[list[dict[str, Any]], str]:
         items = scan_anac(source)
     elif adapter == "ted_api":
         items = scan_ted_api(source)
+    elif adapter == "consip_ckan":
+        items = scan_consip_ckan(source)
+    elif adapter == "consip_gare":
+        items = scan_consip_gare(source)
     else:
         items = scan_generic(source)
 
@@ -515,9 +696,11 @@ def main() -> None:
 
     old_items = keep_recent_old(old_payload.get("gare", []))
     old_ids = {item["id"] for item in old_items if item.get("id")}
-    merged = {item["id"]: item for item in old_items if item.get("id")}
+    old_by_id = {item["id"]: item for item in old_items if item.get("id")}
+    merged = dict(old_by_id)
     statuses = []
     new_items = []
+    updated_items = []
 
     sources = [source for source in CONFIG["sources"] if source.get("active", True)]
     workers = min(SETTINGS.get("max_workers", 8), max(1, len(sources)))
@@ -531,8 +714,18 @@ def main() -> None:
             try:
                 items, elapsed = future.result()
                 for item in items:
-                    if item["id"] not in old_ids:
+                    previous = old_by_id.get(item["id"])
+                    if previous is None:
+                        item["novita"] = "Nuova"
                         new_items.append(item)
+                    else:
+                        comparable = ("titolo", "ente", "scadenza", "importo", "stato", "url")
+                        changed = any(clean(previous.get(k)) != clean(item.get(k)) for k in comparable)
+                        if changed:
+                            item["novita"] = "Aggiornata"
+                            updated_items.append(item)
+                        else:
+                            item["novita"] = previous.get("novita", "")
                     merged[item["id"]] = item
                 statuses.append({
                     "fonte": source["name"],
@@ -566,6 +759,7 @@ def main() -> None:
         "updated_at": datetime.now().astimezone().strftime("%d/%m/%Y %H:%M"),
         "count": len(items),
         "new_count": len(new_items),
+        "updated_count": len(updated_items),
         "sources_ok": sum(1 for status in statuses if status["ok"]),
         "sources_error": sum(1 for status in statuses if not status["ok"]),
         "sources_status": sorted(statuses, key=lambda status: status["fonte"]),
@@ -578,7 +772,7 @@ def main() -> None:
 
     print(
         f"Scansione terminata: {len(items)} gare archiviate, "
-        f"{len(new_items)} nuove, "
+        f"{len(new_items)} nuove, {len(updated_items)} aggiornate, "
         f"{payload['sources_ok']} fonti OK, "
         f"{payload['sources_error']} fonti con errore."
     )
