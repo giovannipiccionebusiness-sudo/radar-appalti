@@ -1,6 +1,16 @@
 {
+  "version": "4.0",
   "settings": {
-    "regions_priority": [
+    "max_workers": 8,
+    "source_timeout_seconds": 12,
+    "connection_timeout_seconds": 5,
+    "read_timeout_seconds": 10,
+    "max_links_per_source": 70,
+    "max_detail_pages_per_source": 12,
+    "detail_timeout_seconds": 6,
+    "exclude_expired": true,
+    "retention_days": 180,
+    "priority_regions": [
       "Puglia",
       "Basilicata",
       "Calabria",
@@ -9,37 +19,25 @@
       "Abruzzo",
       "Lazio",
       "Sicilia"
-    ],
-    "exclude_expired": true,
-    "detail_pages_limit": 80,
-    "request_delay_seconds": 0.25,
-    "max_retries": 3,
-    "retry_backoff_seconds": 3,
-    "source_failure_is_warning": true,
-    "preserve_old_results": true
+    ]
   },
   "keywords": [
     "pulizia",
     "pulizie",
     "servizio di pulizia",
     "igiene ambientale",
-    "pulizia civile",
-    "pulizia industriale",
     "sanificazione",
     "disinfezione",
     "disinfestazione",
     "derattizzazione",
-    "pest control",
     "portierato",
     "portineria",
     "reception",
-    "receptionist",
     "custodia",
     "guardiania non armata",
     "controllo accessi",
     "front office",
     "accoglienza",
-    "sorveglianza non armata",
     "multiservizi",
     "multi servizi",
     "global service",
@@ -52,15 +50,11 @@
     "movimentazione",
     "presidio",
     "centralino",
-    "call center",
-    "gestione immobili",
-    "manutenzione integrata",
-    "servizi alberghieri",
-    "servizi di supporto",
     "servizi generali"
   ],
   "negative_keywords": [
     "fornitura detergenti",
+    "fornitura di detergenti",
     "fornitura prodotti per pulizia",
     "macchine per pulizia",
     "spazzatrice",
@@ -97,27 +91,25 @@
     "98341120",
     "98341130",
     "98341140",
+    "98341100",
+    "98341110",
+    "98341150",
+    "98341160",
     "79992000",
     "79993000",
     "79993100",
     "79710000",
     "79713000",
-    "98341100",
-    "98341110",
-    "98341150",
-    "98341160",
     "63100000",
     "63110000",
     "63120000",
-    "98392000",
-    "50700000",
-    "79900000"
+    "98392000"
   ],
   "sources": [
     {
       "active": true,
       "name": "ANAC - Pubblicità legale",
-      "type": "html",
+      "adapter": "anac",
       "url": "https://pubblicitalegale.anticorruzione.it/bandi",
       "region": "Italia",
       "priority": 1
@@ -125,155 +117,140 @@
     {
       "active": true,
       "name": "TED Europa",
-      "type": "html",
-      "url": "https://ted.europa.eu/it/search/result",
+      "adapter": "ted_api",
+      "url": "https://api.ted.europa.eu/v3/notices/search",
       "region": "Europa",
       "priority": 1
     },
     {
       "active": true,
       "name": "Acquisti in Rete PA",
-      "type": "html",
-      "url": "https://www.acquistinretepa.it/opencms/opencms/vetrina_bandi.html",
+      "adapter": "generic",
+      "urls": [
+        "https://www.acquistinretepa.it/opencms/opencms/vetrina_bandi.html"
+      ],
       "region": "Italia",
       "priority": 1
     },
     {
       "active": true,
       "name": "EmPULIA",
-      "type": "html",
-      "url": "https://www.empulia.it/tno-a/empulia/empulia/sitepages/bandi%20di%20gara.aspx",
-      "region": "Puglia",
-      "priority": 1,
-      "fallback_urls": [
-        "https://www.empulia.it/tno-a/empulia/bandi",
+      "adapter": "generic",
+      "urls": [
+        "https://www.empulia.it/tno-a/empulia/empulia/sitepages/bandi%20di%20gara.aspx",
         "https://www.empulia.it/"
       ],
-      "timeout": 65
+      "region": "Puglia",
+      "priority": 1
     },
     {
       "active": true,
       "name": "CUC Terra di Leuca",
-      "type": "html",
-      "url": "https://cucterradileuca.tuttogare.it/gare/",
-      "region": "Puglia",
-      "priority": 1,
-      "fallback_urls": [
-        "https://cucterradileuca.tuttogare.it/",
-        "https://www.unioneterradileuca.it/"
+      "adapter": "tuttogare",
+      "urls": [
+        "https://cucterradileuca.tuttogare.it/gare/"
       ],
-      "timeout": 40
-    },
-    {
-      "active": true,
-      "name": "START Toscana",
-      "type": "html",
-      "url": "https://start.toscana.it/initiatives/list/",
-      "region": "Toscana",
-      "priority": 2
-    },
-    {
-      "active": true,
-      "name": "SINTEL Lombardia",
-      "type": "html",
-      "url": "https://www.sintel.regione.lombardia.it/eprocdata/sintelSearch.xhtml",
-      "region": "Lombardia",
-      "priority": 2
+      "region": "Puglia",
+      "priority": 1
     },
     {
       "active": true,
       "name": "SORESA SIAPS",
-      "type": "html",
-      "url": "https://siaps.soresa.it/portalegare/",
+      "adapter": "generic",
+      "urls": [
+        "https://siaps.soresa.it/portalegare/"
+      ],
       "region": "Campania",
       "priority": 1
     },
     {
       "active": true,
       "name": "Centrale Acquisti Lazio",
-      "type": "html",
-      "url": "https://centraleacquisti.regione.lazio.it/",
+      "adapter": "generic",
+      "urls": [
+        "https://centraleacquisti.regione.lazio.it/"
+      ],
       "region": "Lazio",
       "priority": 1
     },
     {
       "active": true,
+      "name": "Regione Calabria - Bandi",
+      "adapter": "generic",
+      "urls": [
+        "https://www.regione.calabria.it/bandi-e-avvisi-di-gara/"
+      ],
+      "region": "Calabria",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "SIAB Basilicata",
+      "adapter": "portale_appalti",
+      "urls": [
+        "https://siab.regione.basilicata.it/PortaleAppalti/"
+      ],
+      "region": "Basilicata",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "Portale Appalti Sicilia",
+      "adapter": "portale_appalti",
+      "urls": [
+        "https://appalti.regione.sicilia.it/PortaleAppalti/"
+      ],
+      "region": "Sicilia",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "Intercent-ER",
+      "adapter": "generic",
+      "urls": [
+        "https://intercenter.regione.emilia-romagna.it/bandi-e-strumenti-di-acquisto/bandi-intercenter/bandi-e-procedure-di-gara/bandi-aperti"
+      ],
+      "region": "Emilia-Romagna",
+      "priority": 2
+    },
+    {
+      "active": true,
+      "name": "START Toscana",
+      "adapter": "generic",
+      "urls": [
+        "https://start.toscana.it/initiatives/list/"
+      ],
+      "region": "Toscana",
+      "priority": 2
+    },
+    {
+      "active": true,
+      "name": "SINTEL Lombardia",
+      "adapter": "generic",
+      "urls": [
+        "https://www.sintel.regione.lombardia.it/eprocdata/sintelSearch.xhtml"
+      ],
+      "region": "Lombardia",
+      "priority": 2
+    },
+    {
+      "active": true,
       "name": "SardegnaCAT",
-      "type": "html",
-      "url": "https://www.sardegnacat.it/esop/ita-ras-host/public/web/login.jst",
+      "adapter": "generic",
+      "urls": [
+        "https://www.sardegnacat.it/esop/ita-ras-host/public/web/login.jst"
+      ],
       "region": "Sardegna",
       "priority": 2
     },
     {
       "active": true,
       "name": "eAppalti FVG",
-      "type": "html",
-      "url": "https://eappalti.regione.fvg.it/",
+      "adapter": "generic",
+      "urls": [
+        "https://eappalti.regione.fvg.it/"
+      ],
       "region": "Friuli-Venezia Giulia",
-      "priority": 2
-    },
-    {
-      "active": true,
-      "name": "Intercent-ER",
-      "type": "html",
-      "url": "https://intercenter.regione.emilia-romagna.it/bandi-e-strumenti-di-acquisto/bandi-intercenter/bandi-e-procedure-di-gara/bandi-aperti",
-      "region": "Emilia-Romagna",
-      "priority": 2,
-      "fallback_urls": [
-        "https://intercenter.regione.emilia-romagna.it/bandi-e-strumenti-di-acquisto/bandi-altri-enti/altri-enti-bandi-e-procedure-di-gara/bandi-altri-enti-aperti"
-      ],
-      "timeout": 45
-    },
-    {
-      "active": true,
-      "name": "SUA Regione Calabria",
-      "type": "html",
-      "url": "https://www.regione.calabria.it/bandi-e-avvisi-di-gara/",
-      "region": "Calabria",
-      "priority": 1,
-      "fallback_urls": [
-        "https://www.regione.calabria.it/stazione-unica-appaltante/"
-      ],
-      "timeout": 45
-    },
-    {
-      "active": true,
-      "name": "Centrale Unica Committenza Basilicata",
-      "type": "html",
-      "url": "https://siab.regione.basilicata.it/PortaleAppalti/it/homepage.wp?actio=",
-      "region": "Basilicata",
-      "priority": 1,
-      "fallback_urls": [
-        "https://portalebandi.regione.basilicata.it/avvisi-e-bandi/"
-      ],
-      "timeout": 45
-    },
-    {
-      "active": true,
-      "name": "Portale Appalti Sicilia",
-      "type": "html",
-      "url": "https://appalti.regione.sicilia.it/PortaleAppalti/it/homepage.wp?actionPath=%2FExtStr2%2Fdo%2FFrontEnd%2FAvvisi%2FlistAllBandi.action&currentFrame=8",
-      "region": "Sicilia",
-      "priority": 1,
-      "fallback_urls": [
-        "https://appalti.regione.sicilia.it/"
-      ],
-      "timeout": 65
-    },
-    {
-      "active": true,
-      "name": "Portale Acquisti Umbria",
-      "type": "html",
-      "url": "https://app.albofornitori.it/alboeproc/albo_umbriasalute",
-      "region": "Umbria",
-      "priority": 2
-    },
-    {
-      "active": true,
-      "name": "Appalti Alto Adige",
-      "type": "html",
-      "url": "https://www.bandi-altoadige.it/",
-      "region": "Trentino-Alto Adige",
       "priority": 2
     }
   ]
