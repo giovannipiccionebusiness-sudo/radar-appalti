@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#102a43">
+  <title>Radar Appalti</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header>
+  <div class="wrap brand">
+    <div>
+      <h1>Radar Appalti</h1>
+      <p>Pulizie · Portierato · Sanificazione · Multiservizi</p>
+    </div>
+    <div class="header-actions">
+      <a class="button light" href="data/gare.json" target="_blank">Dati JSON</a>
+      <button class="button light" id="installBtn" hidden>Installa app</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="stats">
+    <article><strong id="total">–</strong><span>Gare attive</span></article>
+    <article><strong id="newCount">–</strong><span>Nuove</span></article>
+    <article><strong id="urgent">–</strong><span>Entro 7 giorni</span></article>
+    <article><strong id="favorites">–</strong><span>Preferite</span></article>
+  </section>
+
+  <section class="panel">
+    <div class="toolbar">
+      <input id="search" placeholder="Cerca titolo, ente, CPV...">
+      <select id="category">
+        <option value="">Tutte le categorie</option>
+        <option>Pulizie</option>
+        <option>Portierato</option>
+        <option>Sanificazione</option>
+        <option>Multiservizi</option>
+        <option>Facchinaggio</option>
+        <option>Servizi</option>
+      </select>
+      <select id="region">
+        <option value="">Tutte le regioni</option>
+      </select>
+      <select id="status">
+        <option value="">Tutti gli stati</option>
+        <option>Nuova</option>
+        <option>In valutazione</option>
+        <option>Da segnalare</option>
+        <option>Scartata</option>
+      </select>
+      <span id="count"></span>
+    </div>
+
+    <div class="meta">
+      <span id="lastUpdate">Ultimo aggiornamento: –</span>
+      <span>Le preferenze e gli stati sono salvati sul dispositivo.</span>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th></th><th>Opportunità</th><th>Categoria</th><th>Pubblicazione</th><th>Scadenza</th><th>Importo</th><th>Stato</th><th></th></tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel info">
+    <h2>Come aggiornare le gare</h2>
+    <p>Dal repository apri <strong>Actions → Scansione bandi → Run workflow</strong>. La scansione automatica è già programmata ogni mattina.</p>
+  </section>
+</main>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+{
+  "keywords": [
+    "pulizia",
+    "pulizie",
+    "sanificazione",
+    "igiene ambientale",
+    "disinfezione",
+    "portierato",
+    "portineria",
+    "reception",
+    "custodia",
+    "guardiania",
+    "front office",
+    "multiservizi",
+    "global service",
+    "facility management",
+    "servizi integrati",
+    "facchinaggio",
+    "ausiliariato"
+  ],
+  "cpv": [
+    "90910000",
+    "90911200",
+    "90919200",
+    "90920000",
+    "90921000",
+    "98341120",
+    "98341130",
+    "79992000",
+    "79993100",
+    "79710000"
+  ],
+  "sources": [
+    {
+      "active": true,
+      "name": "ANAC - Pubblicità legale",
+      "type": "html",
+      "url": "https://pubblicitalegale.anticorruzione.it/bandi",
+      "region": "Italia"
+    },
+    {
+      "active": true,
+      "name": "Empulia",
+      "type": "html",
+      "url": "https://eprocurement.empulia.it/portale/index.php/bandi",
+      "region": "Puglia"
+    },
+    {
+      "active": true,
+      "name": "Unione dei Comuni Terra di Leuca",
+      "type": "html",
+      "url": "https://www.unioneterredileuca.it/",
+      "region": "Puglia"
+    }
+  ]
+}
