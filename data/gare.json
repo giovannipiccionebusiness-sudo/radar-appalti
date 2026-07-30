@@ -1,6 +1,163 @@
 {
-  "updated_at": "",
-  "count": 0,
-  "errors": [],
-  "gare": []
+  "updated_at": "30/07/2026 08:38",
+  "count": 2,
+  "new_count": 2,
+  "sources_status": [
+    {
+      "fonte": "ANAC - Pubblicità legale",
+      "ok": true,
+      "trovate": 0,
+      "errore": ""
+    },
+    {
+      "fonte": "ANAC - Ricerca avanzata",
+      "ok": true,
+      "trovate": 0,
+      "errore": ""
+    },
+    {
+      "fonte": "TED Europa",
+      "ok": true,
+      "trovate": 0,
+      "errore": ""
+    },
+    {
+      "fonte": "Acquisti in Rete PA",
+      "ok": true,
+      "trovate": 0,
+      "errore": ""
+    },
+    {
+      "fonte": "EmPULIA",
+      "ok": false,
+      "trovate": 0,
+      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: /tno-a/empulia/SitePages/Bandi%20di%20gara.aspx (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7f7d283c7560>, 'Connection to w"
+    },
+    {
+      "fonte": "CUC Terra di Leuca",
+      "ok": false,
+      "trovate": 0,
+      "errore": "HTTPSConnectionPool(host='www.unioneterredileuca.it', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='www.unioneterredileuca.it', port=443): Failed to resolve 'www.unioneterredileuca.it' ([Errno -2] N"
+    },
+    {
+      "fonte": "SORESA SIAPS",
+      "ok": true,
+      "trovate": 0,
+      "errore": ""
+    },
+    {
+      "fonte": "Centrale Acquisti Lazio",
+      "ok": true,
+      "trovate": 3,
+      "errore": ""
+    },
+    {
+      "fonte": "SUA Regione Calabria",
+      "ok": false,
+      "trovate": 0,
+      "errore": "HTTPSConnectionPool(host='sua.regione.calabria.it', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='sua.regione.calabria.it', port=443): Failed to resolve 'sua.regione.calabria.it' ([Errno -5] No addr"
+    },
+    {
+      "fonte": "Centrale Unica Committenza Basilicata",
+      "ok": false,
+      "trovate": 0,
+      "errore": "HTTPSConnectionPool(host='centralecommittenza.regione.basilicata.it', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='centralecommittenza.regione.basilicata.it', port=443): Failed to resolve 'centrale"
+    },
+    {
+      "fonte": "Portale Appalti Sicilia",
+      "ok": false,
+      "trovate": 0,
+      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7f7d28004b30>, 'Connection to appalti.regione.sicilia"
+    },
+    {
+      "fonte": "START Toscana",
+      "ok": true,
+      "trovate": 0,
+      "errore": ""
+    },
+    {
+      "fonte": "SINTEL Lombardia",
+      "ok": true,
+      "trovate": 1,
+      "errore": ""
+    },
+    {
+      "fonte": "SardegnaCAT",
+      "ok": true,
+      "trovate": 0,
+      "errore": ""
+    },
+    {
+      "fonte": "eAppalti FVG",
+      "ok": true,
+      "trovate": 0,
+      "errore": ""
+    },
+    {
+      "fonte": "Intercent-ER",
+      "ok": false,
+      "trovate": 0,
+      "errore": "404 Client Error: Not Found for url: https://intercenter.regione.emilia-romagna.it/bandi-e-strumenti-di-acquisto/bandi-e-avvisi"
+    },
+    {
+      "fonte": "Portale Acquisti Umbria",
+      "ok": true,
+      "trovate": 0,
+      "errore": ""
+    },
+    {
+      "fonte": "Appalti Alto Adige",
+      "ok": true,
+      "trovate": 0,
+      "errore": ""
+    },
+    {
+      "fonte": "Traspare - ricerca web",
+      "ok": false,
+      "trovate": 0,
+      "errore": "403 Client Error: Forbidden for url: https://www.traspare.com/"
+    },
+    {
+      "fonte": "TuttoGare - portale",
+      "ok": false,
+      "trovate": 0,
+      "errore": "HTTPSConnectionPool(host='tuttogare.it', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'tuttoga"
+    }
+  ],
+  "gare": [
+    {
+      "id": "740b8aee7bbeed1c55dd57ab",
+      "titolo": "Bandi di gara scaduti ed Esiti",
+      "ente": "Centrale Acquisti Lazio",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "REGISTRATI",
+      "regione": "Lazio",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Centrale Acquisti Lazio",
+      "url": "https://centraleacquisti.regione.lazio.it/bandi-e-strumenti-di-acquisto/bandi-di-gara-scaduti-ed-esiti",
+      "rilevato_il": "30/07/2026 08:37",
+      "punteggio": 70
+    },
+    {
+      "id": "68c1d1bd6b118ab3442e4760",
+      "titolo": "I nostri Bandi di gara",
+      "ente": "SINTEL Lombardia",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "PRINCIPALE",
+      "regione": "Lombardia",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "SINTEL Lombardia",
+      "url": "https://www.ariaspa.it/wps/portal/Aria/Home/bandi-convenzioni/bandi-di-gara/i-nostri-bandi-di-gara",
+      "rilevato_il": "30/07/2026 08:38",
+      "punteggio": 20
+    }
+  ]
 }
