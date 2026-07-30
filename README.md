@@ -1,4 +1,4 @@
-# Radar Appalti GitHub — versione completa 2.0
+# Radar Appalti GitHub — versione corretta 3.0
 
 ## Funzioni
 - GitHub Pages, utilizzabile anche da smartphone.
@@ -43,3 +43,16 @@ Apri `config.json`. Ogni fonte può essere attivata o disattivata con `"active":
 
 ## Limite tecnico
 Le piattaforme con login, CAPTCHA, protezioni anti-bot o contenuti caricati solo via JavaScript possono risultare non leggibili. La sezione “Stato delle fonti” indica subito quali collegamenti funzionano. ANAC rimane la fonte nazionale più importante.
+
+
+## Correzioni 3.0
+- corretto il dominio dell’Unione Terra di Leuca;
+- collegamento diretto alle gare della CUC TuttoGare;
+- aggiornati Calabria, Basilicata, Sicilia e Intercent-ER;
+- eliminate le fonti generiche Traspare/TuttoGare che causavano 403 o errori SSL;
+- URL alternativi automatici;
+- tre tentativi con attesa progressiva;
+- timeout personalizzato per i portali lenti;
+- un errore di una fonte non interrompe mai la scansione;
+- i risultati precedenti vengono conservati;
+- la web app mostra separatamente fonti riuscite, riuscite con avvertimenti e non disponibili.

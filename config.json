@@ -12,7 +12,11 @@
     ],
     "exclude_expired": true,
     "detail_pages_limit": 80,
-    "request_delay_seconds": 0.25
+    "request_delay_seconds": 0.25,
+    "max_retries": 3,
+    "retry_backoff_seconds": 3,
+    "source_failure_is_warning": true,
+    "preserve_old_results": true
   },
   "keywords": [
     "pulizia",
@@ -120,14 +124,6 @@
     },
     {
       "active": true,
-      "name": "ANAC - Ricerca avanzata",
-      "type": "html",
-      "url": "https://pubblicitalegale.anticorruzione.it/ricerca-avanzata",
-      "region": "Italia",
-      "priority": 1
-    },
-    {
-      "active": true,
       "name": "TED Europa",
       "type": "html",
       "url": "https://ted.europa.eu/it/search/result",
@@ -146,17 +142,27 @@
       "active": true,
       "name": "EmPULIA",
       "type": "html",
-      "url": "https://www.empulia.it/tno-a/empulia/SitePages/Bandi%20di%20gara.aspx",
+      "url": "https://www.empulia.it/tno-a/empulia/empulia/sitepages/bandi%20di%20gara.aspx",
       "region": "Puglia",
-      "priority": 1
+      "priority": 1,
+      "fallback_urls": [
+        "https://www.empulia.it/tno-a/empulia/bandi",
+        "https://www.empulia.it/"
+      ],
+      "timeout": 65
     },
     {
       "active": true,
       "name": "CUC Terra di Leuca",
       "type": "html",
-      "url": "https://www.unioneterredileuca.it/",
+      "url": "https://cucterradileuca.tuttogare.it/gare/",
       "region": "Puglia",
-      "priority": 1
+      "priority": 1,
+      "fallback_urls": [
+        "https://cucterradileuca.tuttogare.it/",
+        "https://www.unioneterradileuca.it/"
+      ],
+      "timeout": 40
     },
     {
       "active": true,
@@ -210,33 +216,49 @@
       "active": true,
       "name": "Intercent-ER",
       "type": "html",
-      "url": "https://intercenter.regione.emilia-romagna.it/servizi-imprese/bandi-e-avvisi",
+      "url": "https://intercenter.regione.emilia-romagna.it/bandi-e-strumenti-di-acquisto/bandi-intercenter/bandi-e-procedure-di-gara/bandi-aperti",
       "region": "Emilia-Romagna",
-      "priority": 2
+      "priority": 2,
+      "fallback_urls": [
+        "https://intercenter.regione.emilia-romagna.it/bandi-e-strumenti-di-acquisto/bandi-altri-enti/altri-enti-bandi-e-procedure-di-gara/bandi-altri-enti-aperti"
+      ],
+      "timeout": 45
     },
     {
       "active": true,
       "name": "SUA Regione Calabria",
       "type": "html",
-      "url": "https://sua.regione.calabria.it/",
+      "url": "https://www.regione.calabria.it/bandi-e-avvisi-di-gara/",
       "region": "Calabria",
-      "priority": 1
+      "priority": 1,
+      "fallback_urls": [
+        "https://www.regione.calabria.it/stazione-unica-appaltante/"
+      ],
+      "timeout": 45
     },
     {
       "active": true,
       "name": "Centrale Unica Committenza Basilicata",
       "type": "html",
-      "url": "https://centralecommittenza.regione.basilicata.it/",
+      "url": "https://siab.regione.basilicata.it/PortaleAppalti/it/homepage.wp?actio=",
       "region": "Basilicata",
-      "priority": 1
+      "priority": 1,
+      "fallback_urls": [
+        "https://portalebandi.regione.basilicata.it/avvisi-e-bandi/"
+      ],
+      "timeout": 45
     },
     {
       "active": true,
       "name": "Portale Appalti Sicilia",
       "type": "html",
-      "url": "https://appalti.regione.sicilia.it/",
+      "url": "https://appalti.regione.sicilia.it/PortaleAppalti/it/homepage.wp?actionPath=%2FExtStr2%2Fdo%2FFrontEnd%2FAvvisi%2FlistAllBandi.action&currentFrame=8",
       "region": "Sicilia",
-      "priority": 1
+      "priority": 1,
+      "fallback_urls": [
+        "https://appalti.regione.sicilia.it/"
+      ],
+      "timeout": 65
     },
     {
       "active": true,
@@ -253,22 +275,6 @@
       "url": "https://www.bandi-altoadige.it/",
       "region": "Trentino-Alto Adige",
       "priority": 2
-    },
-    {
-      "active": true,
-      "name": "Traspare - ricerca web",
-      "type": "html",
-      "url": "https://www.traspare.com/",
-      "region": "Italia",
-      "priority": 3
-    },
-    {
-      "active": true,
-      "name": "TuttoGare - portale",
-      "type": "html",
-      "url": "https://tuttogare.it/",
-      "region": "Italia",
-      "priority": 3
     }
   ]
 }
