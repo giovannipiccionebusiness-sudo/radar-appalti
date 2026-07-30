@@ -20,7 +20,7 @@ async function load() {
 function renderSources(items){
   const el=$('sourcesStatus');
   if(!items.length){el.textContent='Nessun controllo ancora eseguito.';return}
-  el.innerHTML=items.map(x=>`<span class="source-pill ${x.ok?'source-ok':'source-ko'}" title="${esc(x.errore||'')}">${x.ok?'✓':'⚠'} ${esc(x.fonte)} (${x.trovate||0})</span>`).join(' ');
+  el.innerHTML=items.map(x=>`<span class="source-pill ${x.ok?(x.errore?'source-warn':'source-ok'):'source-ko'}" title="${esc(x.errore||'')}">${x.ok?(x.errore?'◷':'✓'):'⚠'} ${esc(x.fonte)} (${x.trovate||0})</span>`).join(' ');
 }
 function fillRegions() {
   const values = [...new Set(all.map(x => x.regione).filter(Boolean))].sort();
