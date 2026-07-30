@@ -6,6 +6,8 @@ from pathlib import Path
 from urllib.parse import urljoin, urlparse
 
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 from bs4 import BeautifulSoup
 from dateutil import parser as dateparser
 
@@ -76,10 +78,37 @@ def detail_text(session,url):
         return norm(soup.get_text(" ",strip=True))[:30000]
     except:return ""
 
-def scan_source(source):
+def build_session():
     session=requests.Session()
-    r=session.get(source["url"],headers=HEADERS,timeout=30)
-    r.raise_for_status()
+    retry=Retry(total=int(SETTINGS.get("max_retries",3)), connect=3, read=3, status=3,
+                backoff_factor=float(SETTINGS.get("retry_backoff_seconds",3)),
+                status_forcelist=(408,429,500,502,503,504), allowed_methods=frozenset(["GET","POST"]))
+    session.mount("https://",HTTPAdapter(max_retries=retry))
+    session.mount("http://",HTTPAdapter(max_retries=retry))
+    return session
+
+def fetch_first_available(session, source):
+    urls=[source.get("url","")]+source.get("fallback_urls",[])
+    errors=[]
+    timeout=int(source.get("timeout",40))
+    for url in [u for u in urls if u]:
+        try:
+            r=session.get(url,headers=HEADERS,timeout=timeout,allow_redirects=True)
+            if r.status_code in (401,403):
+                errors.append(f"{url}: HTTP {r.status_code}")
+                continue
+            r.raise_for_status()
+            if len(r.text)<200:
+                errors.append(f"{url}: risposta vuota")
+                continue
+            return r,url,errors
+        except Exception as exc:
+            errors.append(f"{url}: {type(exc).__name__}: {exc}")
+    raise RuntimeError(" | ".join(errors))
+
+def scan_source(source):
+    session=build_session()
+    r,working_url,attempt_errors=fetch_first_available(session,source)
     soup=BeautifulSoup(r.text,"html.parser")
     for tag in soup(["script","style","noscript"]):tag.decompose()
     results=[]; seen=set(); limit=int(SETTINGS.get("detail_pages_limit",80))
@@ -88,7 +117,7 @@ def scan_source(source):
         title=norm(a.get_text(" ",strip=True))
         if len(title)<12:continue
         context=norm((a.parent or a).get_text(" ",strip=True))
-        url=urljoin(source["url"],a["href"])
+        url=urljoin(working_url,a["href"])
         if url.startswith("javascript:") or url.startswith("mailto:"):continue
         prelim=norm(title+" "+context)
         if relevant(prelim) or any(w in prelim.lower() for w in ["bando","gara","procedura","avviso","affidamento"]):
@@ -113,7 +142,7 @@ def scan_source(source):
         tender["punteggio"]=score(tender)
         if SETTINGS.get("exclude_expired",True) and expired(tender["scadenza"]):continue
         results.append(tender)
-    return results
+    return results, working_url, attempt_errors
 
 def notify(new_items):
     if not new_items:return
@@ -145,14 +174,14 @@ def main():
     for source in sorted(CONFIG["sources"],key=lambda x:x.get("priority",9)):
         if not source.get("active",True):continue
         try:
-            items=scan_source(source)
+            items,working_url,warnings=scan_source(source)
             for x in items:
                 if x["id"] not in merged:fresh.append(x)
                 merged[x["id"]]=x
-            statuses.append({"fonte":source["name"],"ok":True,"trovate":len(items),"errore":""})
+            statuses.append({"fonte":source["name"],"ok":True,"trovate":len(items),"errore":"; ".join(warnings)[:500],"url_usato":working_url})
             print("OK",source["name"],len(items))
         except Exception as e:
-            statuses.append({"fonte":source["name"],"ok":False,"trovate":0,"errore":str(e)[:250]})
+            statuses.append({"fonte":source["name"],"ok":False,"trovate":0,"errore":str(e)[:500],"url_usato":""})
             print("ERRORE",source["name"],e,file=sys.stderr)
     gare=sorted(merged.values(),key=lambda x:(-int(x.get("punteggio",0)),x.get("scadenza") or "99/99/9999"))
     payload={"updated_at":datetime.now().astimezone().strftime("%d/%m/%Y %H:%M"),"count":len(gare),"new_count":len(fresh),"sources_status":statuses,"gare":gare}
