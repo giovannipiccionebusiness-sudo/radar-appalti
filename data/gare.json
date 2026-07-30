@@ -1,8 +1,176 @@
 {
-  "updated_at": "",
-  "count": 0,
-  "errors": [],
-  "gare": [],
   "version": "5.0",
-  "updated_count": 0
+  "updated_at": "30/07/2026 14:56",
+  "count": 2,
+  "new_count": 9,
+  "updated_count": 0,
+  "sources_ok": 12,
+  "sources_error": 6,
+  "sources_status": [
+    {
+      "fonte": "ANAC - Pubblicità legale",
+      "ok": true,
+      "trovate": 0,
+      "tempo": "0.79s",
+      "errore": ""
+    },
+    {
+      "fonte": "CUC Terra di Leuca",
+      "ok": true,
+      "trovate": 0,
+      "tempo": "1.45s",
+      "errore": ""
+    },
+    {
+      "fonte": "Centrale Acquisti Lazio",
+      "ok": true,
+      "trovate": 0,
+      "tempo": "1.48s",
+      "errore": ""
+    },
+    {
+      "fonte": "Consip - Ricerca gare",
+      "ok": true,
+      "trovate": 8,
+      "tempo": "1.35s",
+      "errore": ""
+    },
+    {
+      "fonte": "Consip Open Data - Appalti Specifici SDAPA",
+      "ok": false,
+      "trovate": 0,
+      "tempo": "",
+      "errore": "404 Client Error: NOT FOUND for url: https://dati.consip.it/api/3/action/package_show?id=appalti-specifici-banditi-su-sistema-dinamico-di-acquisizione"
+    },
+    {
+      "fonte": "Consip Open Data - Bandi e Gare",
+      "ok": true,
+      "trovate": 0,
+      "tempo": "6.34s",
+      "errore": ""
+    },
+    {
+      "fonte": "Consip Open Data - RDO e TD MePA",
+      "ok": false,
+      "trovate": 0,
+      "tempo": "",
+      "errore": "404 Client Error: NOT FOUND for url: https://dati.consip.it/api/3/action/package_show?id=richieste-di-offerta-e-trattative-dirette-bandite-sul-mepa"
+    },
+    {
+      "fonte": "EmPULIA",
+      "ok": false,
+      "trovate": 0,
+      "tempo": "",
+      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7f95d49aaf60>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
+    },
+    {
+      "fonte": "Intercent-ER",
+      "ok": true,
+      "trovate": 0,
+      "tempo": "2.96s",
+      "errore": ""
+    },
+    {
+      "fonte": "Portale Appalti Sicilia",
+      "ok": false,
+      "trovate": 0,
+      "tempo": "",
+      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7f95e79efda0>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
+    },
+    {
+      "fonte": "Regione Calabria - Bandi",
+      "ok": true,
+      "trovate": 0,
+      "tempo": "5.54s",
+      "errore": ""
+    },
+    {
+      "fonte": "SIAB Basilicata",
+      "ok": false,
+      "trovate": 0,
+      "tempo": "",
+      "errore": "503 Server Error: Service Temporarily Unavailable for url: https://siab.regione.basilicata.it/PortaleAppalti/"
+    },
+    {
+      "fonte": "SINTEL Lombardia",
+      "ok": true,
+      "trovate": 0,
+      "tempo": "3.35s",
+      "errore": ""
+    },
+    {
+      "fonte": "SORESA SIAPS",
+      "ok": true,
+      "trovate": 1,
+      "tempo": "2.72s",
+      "errore": ""
+    },
+    {
+      "fonte": "START Toscana",
+      "ok": true,
+      "trovate": 0,
+      "tempo": "35.76s",
+      "errore": ""
+    },
+    {
+      "fonte": "SardegnaCAT",
+      "ok": true,
+      "trovate": 0,
+      "tempo": "2.1s",
+      "errore": ""
+    },
+    {
+      "fonte": "TED Europa",
+      "ok": false,
+      "trovate": 0,
+      "tempo": "",
+      "errore": "TED API non disponibile: 400 Client Error: Bad Request for url: https://api.ted.europa.eu/v3/notices/search"
+    },
+    {
+      "fonte": "eAppalti FVG",
+      "ok": true,
+      "trovate": 0,
+      "tempo": "0.88s",
+      "errore": ""
+    }
+  ],
+  "gare": [
+    {
+      "id": "cfec79298bf2e2f0cf61b540",
+      "titolo": "Bandi Di Gara",
+      "ente": "SORESA SIAPS",
+      "categoria": "Pulizie",
+      "cpv": "",
+      "cig": "",
+      "regione": "Campania",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "31",
+      "fonte": "SORESA SIAPS",
+      "url": "https://siaps.soresa.it/portalegare/index.php/bandi",
+      "rilevato_il": "30/07/2026 14:55",
+      "punteggio": 68,
+      "novita": "Nuova"
+    },
+    {
+      "id": "4a2d6d728d7e858272d2e31d",
+      "titolo": "Fornitura di divise invernali e estive per l’ufficio sicurezza di Sogei - RdA 52961",
+      "ente": "Consip S.p.A.",
+      "categoria": "Portierato",
+      "cpv": "",
+      "cig": "",
+      "regione": "Italia",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Consip - Ricerca gare",
+      "url": "https://www.consip.it/bandi/rda-52961",
+      "rilevato_il": "30/07/2026 14:55",
+      "punteggio": 40,
+      "id_sigef": "3049",
+      "novita": "Nuova"
+    }
+  ]
 }
