@@ -16,3 +16,5 @@ td{padding:12px 8px;border-bottom:1px solid #edf1f5;font-size:13px;vertical-alig
 .star{background:none;border:0;font-size:20px;color:#aab7c4;cursor:pointer}.star.on{color:#e4a000}.deadline.urgent{color:var(--red);font-weight:800}.deadline.soon{color:var(--orange);font-weight:750}.deadline.ok{color:var(--green)}
 .open{display:inline-block;background:#eef3f7;color:var(--navy);padding:8px 10px;border-radius:8px;text-decoration:none;font-weight:750}.empty{text-align:center;color:var(--muted);padding:42px}.info h2{font-size:17px;margin:0 0 5px}.info p{margin:0;color:var(--muted);font-size:13px}
 @media(max-width:700px){.stats{grid-template-columns:1fr 1fr}.brand{align-items:flex-start}.header-actions{flex-direction:column}.stats strong{font-size:23px}}
+
+.score{display:inline-block;min-width:36px;text-align:center;border-radius:8px;padding:5px;background:#eef7ed;font-weight:800}.source-pill{display:inline-block;margin:4px;padding:6px 8px;border-radius:999px;font-size:11px}.source-ok{background:#e8f5ee;color:#16794a}.source-ko{background:#fff0ee;color:#b42318}

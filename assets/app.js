@@ -10,12 +10,18 @@ async function load() {
     all = payload.gare || [];
     $('lastUpdate').textContent = `Ultimo aggiornamento: ${payload.updated_at || 'non disponibile'}`;
     fillRegions();
+    renderSources(payload.sources_status || []);
     render();
   } catch (e) {
-    $('tbody').innerHTML = `<tr><td colspan="8" class="empty">Impossibile caricare data/gare.json</td></tr>`;
+    $('tbody').innerHTML = `<tr><td colspan="9" class="empty">Impossibile caricare data/gare.json</td></tr>`;
   }
 }
 
+function renderSources(items){
+  const el=$('sourcesStatus');
+  if(!items.length){el.textContent='Nessun controllo ancora eseguito.';return}
+  el.innerHTML=items.map(x=>`<span class="source-pill ${x.ok?'source-ok':'source-ko'}" title="${esc(x.errore||'')}">${x.ok?'✓':'⚠'} ${esc(x.fonte)} (${x.trovate||0})</span>`).join(' ');
+}
 function fillRegions() {
   const values = [...new Set(all.map(x => x.regione).filter(Boolean))].sort();
   $('region').innerHTML = '<option value="">Tutte le regioni</option>' + values.map(x => `<option>${esc(x)}</option>`).join('');
@@ -53,7 +59,7 @@ function render() {
   $('count').textContent = `${filtered.length} risultati`;
 
   $('tbody').innerHTML = filtered.length ? filtered.map(rowHtml).join('') :
-    '<tr><td colspan="8" class="empty">Nessun risultato con i filtri selezionati.</td></tr>';
+    '<tr><td colspan="9" class="empty">Nessun risultato con i filtri selezionati.</td></tr>';
 }
 
 function rowHtml(x) {
@@ -63,6 +69,7 @@ function rowHtml(x) {
   return `<tr>
     <td><button class="star ${state.preferito?'on':''}" onclick="saveState('${attr(x.id)}',{preferito:${!state.preferito}})">★</button></td>
     <td><div class="title">${esc(x.titolo)}</div><div class="entity">${esc(x.ente||'')}${x.regione?' · '+esc(x.regione):''}${x.cpv?' · CPV '+esc(x.cpv):''}</div></td>
+    <td><span class="score">${esc(x.punteggio||0)}</span></td>
     <td><span class="tag">${esc(x.categoria||'Servizi')}</span></td>
     <td>${esc(x.pubblicazione||'–')}</td>
     <td class="deadline ${cls}">${esc(x.scadenza||'Da verificare')}${days!==null?`<div>${days} giorni</div>`:''}</td>
