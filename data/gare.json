@@ -1,9 +1,9 @@
 {
   "version": "5.0",
-  "updated_at": "03/08/2026 15:15",
+  "updated_at": "04/08/2026 07:48",
   "count": 3,
   "new_count": 0,
-  "updated_count": 0,
+  "updated_count": 1,
   "sources_ok": 12,
   "sources_error": 6,
   "sources_status": [
@@ -11,28 +11,28 @@
       "fonte": "ANAC - Pubblicità legale",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.81s",
+      "tempo": "0.9s",
       "errore": ""
     },
     {
       "fonte": "CUC Terra di Leuca",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.7s",
+      "tempo": "1.87s",
       "errore": ""
     },
     {
       "fonte": "Centrale Acquisti Lazio",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.62s",
+      "tempo": "1.68s",
       "errore": ""
     },
     {
       "fonte": "Consip - Ricerca gare",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.61s",
+      "tempo": "1.47s",
       "errore": ""
     },
     {
@@ -46,7 +46,7 @@
       "fonte": "Consip Open Data - Bandi e Gare",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.76s",
+      "tempo": "1.85s",
       "errore": ""
     },
     {
@@ -61,13 +61,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7ffbc475f0b0>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7f4e5829a300>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "Intercent-ER",
       "ok": true,
       "trovate": 0,
-      "tempo": "4.28s",
+      "tempo": "3.13s",
       "errore": ""
     },
     {
@@ -75,13 +75,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7ffbc4ec0440>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
+      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7f4e58edf2c0>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
     },
     {
       "fonte": "Regione Calabria - Bandi",
       "ok": true,
       "trovate": 0,
-      "tempo": "4.69s",
+      "tempo": "7.28s",
       "errore": ""
     },
     {
@@ -95,28 +95,28 @@
       "fonte": "SINTEL Lombardia",
       "ok": true,
       "trovate": 1,
-      "tempo": "3.4s",
+      "tempo": "2.88s",
       "errore": ""
     },
     {
       "fonte": "SORESA SIAPS",
       "ok": true,
       "trovate": 1,
-      "tempo": "2.54s",
+      "tempo": "4.33s",
       "errore": ""
     },
     {
       "fonte": "START Toscana",
       "ok": true,
       "trovate": 0,
-      "tempo": "35.89s",
+      "tempo": "46.78s",
       "errore": ""
     },
     {
       "fonte": "SardegnaCAT",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.04s",
+      "tempo": "2.21s",
       "errore": ""
     },
     {
@@ -130,7 +130,7 @@
       "fonte": "eAppalti FVG",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.01s",
+      "tempo": "1.02s",
       "errore": ""
     }
   ],
@@ -146,10 +146,10 @@
       "provincia": "",
       "pubblicazione": "",
       "scadenza": "",
-      "importo": "03",
+      "importo": "04",
       "fonte": "SORESA SIAPS",
       "url": "https://siaps.soresa.it/portalegare/index.php/bandi",
-      "rilevato_il": "03/08/2026 15:15",
+      "rilevato_il": "04/08/2026 07:47",
       "punteggio": 83,
       "novita": "Aggiornata"
     },
@@ -186,7 +186,7 @@
       "importo": "",
       "fonte": "SINTEL Lombardia",
       "url": "https://www.ariaspa.it/wps/portal/Aria/Home/bandi-convenzioni/bandi-di-gara/i-nostri-bandi-di-gara",
-      "rilevato_il": "03/08/2026 15:15",
+      "rilevato_il": "04/08/2026 07:47",
       "punteggio": 35,
       "novita": "Nuova"
     }
