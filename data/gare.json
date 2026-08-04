@@ -1,9 +1,9 @@
 {
   "version": "5.0",
-  "updated_at": "04/08/2026 07:48",
-  "count": 3,
-  "new_count": 0,
-  "updated_count": 1,
+  "updated_at": "04/08/2026 14:39",
+  "count": 4,
+  "new_count": 8,
+  "updated_count": 0,
   "sources_ok": 12,
   "sources_error": 6,
   "sources_status": [
@@ -11,28 +11,28 @@
       "fonte": "ANAC - Pubblicità legale",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.9s",
+      "tempo": "0.85s",
       "errore": ""
     },
     {
       "fonte": "CUC Terra di Leuca",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.87s",
+      "tempo": "1.91s",
       "errore": ""
     },
     {
       "fonte": "Centrale Acquisti Lazio",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.68s",
+      "tempo": "1.54s",
       "errore": ""
     },
     {
       "fonte": "Consip - Ricerca gare",
       "ok": true,
-      "trovate": 0,
-      "tempo": "1.47s",
+      "trovate": 8,
+      "tempo": "2.48s",
       "errore": ""
     },
     {
@@ -46,7 +46,7 @@
       "fonte": "Consip Open Data - Bandi e Gare",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.85s",
+      "tempo": "1.86s",
       "errore": ""
     },
     {
@@ -61,13 +61,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7f4e5829a300>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7fe476ef46e0>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "Intercent-ER",
       "ok": true,
       "trovate": 0,
-      "tempo": "3.13s",
+      "tempo": "2.88s",
       "errore": ""
     },
     {
@@ -75,13 +75,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7f4e58edf2c0>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
+      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7fe488f77650>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
     },
     {
       "fonte": "Regione Calabria - Bandi",
       "ok": true,
       "trovate": 0,
-      "tempo": "7.28s",
+      "tempo": "8.25s",
       "errore": ""
     },
     {
@@ -95,28 +95,28 @@
       "fonte": "SINTEL Lombardia",
       "ok": true,
       "trovate": 1,
-      "tempo": "2.88s",
+      "tempo": "3.67s",
       "errore": ""
     },
     {
       "fonte": "SORESA SIAPS",
       "ok": true,
-      "trovate": 1,
-      "tempo": "4.33s",
+      "trovate": 0,
+      "tempo": "11.5s",
       "errore": ""
     },
     {
       "fonte": "START Toscana",
       "ok": true,
       "trovate": 0,
-      "tempo": "46.78s",
+      "tempo": "40.45s",
       "errore": ""
     },
     {
       "fonte": "SardegnaCAT",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.21s",
+      "tempo": "2.17s",
       "errore": ""
     },
     {
@@ -130,7 +130,7 @@
       "fonte": "eAppalti FVG",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.02s",
+      "tempo": "0.94s",
       "errore": ""
     }
   ],
@@ -152,6 +152,25 @@
       "rilevato_il": "04/08/2026 07:47",
       "punteggio": 83,
       "novita": "Aggiornata"
+    },
+    {
+      "id": "15d46facf786cc34e9def231",
+      "titolo": "Gara a procedura aperta per la Fornitura Multibrand di prodotti software, manutenzione software e servizi connessi per le Pubbliche Amministrazioni (ed.7)",
+      "ente": "Consip S.p.A.",
+      "categoria": "Multiservizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Italia",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Consip - Ricerca gare",
+      "url": "https://www.consip.it/bandi/gara-licenze-software-multibrand-ed7",
+      "rilevato_il": "04/08/2026 14:38",
+      "punteggio": 40,
+      "id_sigef": "2987",
+      "novita": "Nuova"
     },
     {
       "id": "4a2d6d728d7e858272d2e31d",
@@ -186,7 +205,7 @@
       "importo": "",
       "fonte": "SINTEL Lombardia",
       "url": "https://www.ariaspa.it/wps/portal/Aria/Home/bandi-convenzioni/bandi-di-gara/i-nostri-bandi-di-gara",
-      "rilevato_il": "04/08/2026 07:47",
+      "rilevato_il": "04/08/2026 14:38",
       "punteggio": 35,
       "novita": "Nuova"
     }
