@@ -1,8 +1,8 @@
 {
   "version": "5.0",
-  "updated_at": "04/08/2026 14:39",
-  "count": 4,
-  "new_count": 8,
+  "updated_at": "05/08/2026 07:49",
+  "count": 6,
+  "new_count": 9,
   "updated_count": 0,
   "sources_ok": 12,
   "sources_error": 6,
@@ -11,28 +11,28 @@
       "fonte": "ANAC - Pubblicità legale",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.85s",
+      "tempo": "0.96s",
       "errore": ""
     },
     {
       "fonte": "CUC Terra di Leuca",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.91s",
+      "tempo": "1.63s",
       "errore": ""
     },
     {
       "fonte": "Centrale Acquisti Lazio",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.54s",
+      "tempo": "1.71s",
       "errore": ""
     },
     {
       "fonte": "Consip - Ricerca gare",
       "ok": true,
       "trovate": 8,
-      "tempo": "2.48s",
+      "tempo": "1.51s",
       "errore": ""
     },
     {
@@ -46,7 +46,7 @@
       "fonte": "Consip Open Data - Bandi e Gare",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.86s",
+      "tempo": "2.11s",
       "errore": ""
     },
     {
@@ -61,13 +61,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7fe476ef46e0>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7f328c752900>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "Intercent-ER",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.88s",
+      "tempo": "2.86s",
       "errore": ""
     },
     {
@@ -75,13 +75,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7fe488f77650>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
+      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7f32943a83e0>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
     },
     {
       "fonte": "Regione Calabria - Bandi",
       "ok": true,
       "trovate": 0,
-      "tempo": "8.25s",
+      "tempo": "7.42s",
       "errore": ""
     },
     {
@@ -95,28 +95,28 @@
       "fonte": "SINTEL Lombardia",
       "ok": true,
       "trovate": 1,
-      "tempo": "3.67s",
+      "tempo": "4.01s",
       "errore": ""
     },
     {
       "fonte": "SORESA SIAPS",
       "ok": true,
       "trovate": 0,
-      "tempo": "11.5s",
+      "tempo": "2.91s",
       "errore": ""
     },
     {
       "fonte": "START Toscana",
       "ok": true,
       "trovate": 0,
-      "tempo": "40.45s",
+      "tempo": "36.06s",
       "errore": ""
     },
     {
       "fonte": "SardegnaCAT",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.17s",
+      "tempo": "2.32s",
       "errore": ""
     },
     {
@@ -130,7 +130,7 @@
       "fonte": "eAppalti FVG",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.94s",
+      "tempo": "0.85s",
       "errore": ""
     }
   ],
@@ -173,6 +173,25 @@
       "novita": "Nuova"
     },
     {
+      "id": "2fb3e73e43979a96e3f07ae6",
+      "titolo": "Gara a procedura aperta per l’affidamento di un appalto avente ad oggetto i servizi di gestione innovativa delle apparecchiature sanitarie per Asl Salerno - ID 2947.",
+      "ente": "Consip S.p.A.",
+      "categoria": "Multiservizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Italia",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Consip - Ricerca gare",
+      "url": "https://www.consip.it/bandi/servizi-di-gestione-innovativa-delle-apparecchiature-sanitarie-id-2947",
+      "rilevato_il": "05/08/2026 07:48",
+      "punteggio": 40,
+      "id_sigef": "2963",
+      "novita": "Nuova"
+    },
+    {
       "id": "4a2d6d728d7e858272d2e31d",
       "titolo": "Procedura negoziata per l’acquisizione dei servizi di manutenzione e supporto per il controllo accessi alle sedi e ai parcheggi di Sogei e di ADM - ID 2985.",
       "ente": "Consip S.p.A.",
@@ -206,6 +225,24 @@
       "fonte": "SINTEL Lombardia",
       "url": "https://www.ariaspa.it/wps/portal/Aria/Home/bandi-convenzioni/bandi-di-gara/i-nostri-bandi-di-gara",
       "rilevato_il": "04/08/2026 14:38",
+      "punteggio": 35,
+      "novita": "Nuova"
+    },
+    {
+      "id": "c3e5295744ebed396a6c5de2",
+      "titolo": "I nostri Bandi di gara",
+      "ente": "SINTEL Lombardia",
+      "categoria": "Multiservizi",
+      "cpv": "",
+      "cig": "9853648F8D",
+      "regione": "Lombardia",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "SINTEL Lombardia",
+      "url": "https://www.ariaspa.it/wps/portal/Aria/Home/bandi-convenzioni/bandi-di-gara/i-nostri-bandi-di-gara",
+      "rilevato_il": "05/08/2026 07:48",
       "punteggio": 35,
       "novita": "Nuova"
     }
