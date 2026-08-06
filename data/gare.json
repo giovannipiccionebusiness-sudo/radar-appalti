@@ -1,38 +1,38 @@
 {
   "version": "5.0",
-  "updated_at": "06/08/2026 07:48",
-  "count": 7,
-  "new_count": 0,
-  "updated_count": 8,
-  "sources_ok": 12,
-  "sources_error": 6,
+  "updated_at": "06/08/2026 14:35",
+  "count": 9,
+  "new_count": 9,
+  "updated_count": 0,
+  "sources_ok": 10,
+  "sources_error": 8,
   "sources_status": [
     {
       "fonte": "ANAC - Pubblicità legale",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.81s",
+      "tempo": "0.59s",
       "errore": ""
     },
     {
       "fonte": "CUC Terra di Leuca",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.56s",
+      "tempo": "1.41s",
       "errore": ""
     },
     {
       "fonte": "Centrale Acquisti Lazio",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.47s",
+      "tempo": "1.21s",
       "errore": ""
     },
     {
       "fonte": "Consip - Ricerca gare",
       "ok": true,
       "trovate": 8,
-      "tempo": "1.34s",
+      "tempo": "0.96s",
       "errore": ""
     },
     {
@@ -46,7 +46,7 @@
       "fonte": "Consip Open Data - Bandi e Gare",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.96s",
+      "tempo": "1.58s",
       "errore": ""
     },
     {
@@ -61,13 +61,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7fe55cd9b560>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7f10ce970680>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "Intercent-ER",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.49s",
+      "tempo": "1.93s",
       "errore": ""
     },
     {
@@ -75,13 +75,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7fe570dfb230>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
+      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7f10ce9298e0>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
     },
     {
       "fonte": "Regione Calabria - Bandi",
       "ok": true,
       "trovate": 0,
-      "tempo": "5.45s",
+      "tempo": "6.0s",
       "errore": ""
     },
     {
@@ -95,43 +95,43 @@
       "fonte": "SINTEL Lombardia",
       "ok": true,
       "trovate": 0,
-      "tempo": "3.13s",
+      "tempo": "3.55s",
       "errore": ""
     },
     {
       "fonte": "SORESA SIAPS",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.64s",
+      "tempo": "2.6s",
       "errore": ""
     },
     {
       "fonte": "START Toscana",
       "ok": true,
-      "trovate": 0,
-      "tempo": "38.12s",
+      "trovate": 1,
+      "tempo": "33.59s",
       "errore": ""
     },
     {
       "fonte": "SardegnaCAT",
-      "ok": true,
+      "ok": false,
       "trovate": 0,
-      "tempo": "1.81s",
-      "errore": ""
+      "tempo": "",
+      "errore": "403 Client Error: Forbidden for url: https://www.sardegnacat.it/esop/ita-ras-host/public/web/login.jst"
     },
     {
       "fonte": "TED Europa",
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "TED API non disponibile: 400 Client Error: Bad Request for url: https://api.ted.europa.eu/v3/notices/search"
+      "errore": "TED API non disponibile: 403 Client Error: Forbidden for url: https://api.ted.europa.eu/v3/notices/search"
     },
     {
       "fonte": "eAppalti FVG",
-      "ok": true,
+      "ok": false,
       "trovate": 0,
-      "tempo": "0.66s",
-      "errore": ""
+      "tempo": "",
+      "errore": "403 Client Error: Forbidden for url: https://eappalti.regione.fvg.it/"
     }
   ],
   "gare": [
@@ -192,6 +192,25 @@
       "novita": "Nuova"
     },
     {
+      "id": "ab7e242554701b4421c60551",
+      "titolo": "Procedura aperta per l’affidamento di un Accordo Quadro avente ad oggetto la fornitura di carburante da autotrazione mediante Fuel Card per le Pubbliche Amministrazioni – ID 2963",
+      "ente": "Consip S.p.A.",
+      "categoria": "Multiservizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Italia",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Consip - Ricerca gare",
+      "url": "https://www.consip.it/bandi/aq-carburanti-rete-fuel-card-id-2963",
+      "rilevato_il": "06/08/2026 14:34",
+      "punteggio": 40,
+      "id_sigef": "2737",
+      "novita": "Nuova"
+    },
+    {
       "id": "918e2c9c70a36fe9cfc52b9e",
       "titolo": "Procedura negoziata ex art. 76 del d.lgs. 36/2023 per l’acquisizione della piattaforma MESA e servizi per SOGEI – ID 2987",
       "ente": "Consip S.p.A.",
@@ -228,6 +247,24 @@
       "punteggio": 40,
       "id_sigef": "3049",
       "novita": "Aggiornata"
+    },
+    {
+      "id": "6a0f607875d325b5bf607f94",
+      "titolo": "GARA EUROPEA GESTIONE DEI SERVIZI DI ACCOGLIENZA, BIGLIETTERIA E SORVEGLIANZA PRESSO IL MUSEO CIVICO D’ARTE ANTICA, IL MUSEO DELLO SPEDALE DEL CEPPO E IL MUSEO DEL NOVECENTO E DEL CONTEMPORANEO DI PALAZZO FABRONI NEL PERIODO 01.10.2026 – 30.09.2029",
+      "ente": "START Toscana",
+      "categoria": "Portierato",
+      "cpv": "",
+      "cig": "",
+      "regione": "Toscana",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "START Toscana",
+      "url": "https://start.toscana.it/sourcing/tenders/resume/id/902595",
+      "rilevato_il": "06/08/2026 14:34",
+      "punteggio": 35,
+      "novita": "Nuova"
     },
     {
       "id": "0302572a38e856a176b22f93",
