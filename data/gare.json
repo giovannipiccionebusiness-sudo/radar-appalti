@@ -1,38 +1,38 @@
 {
   "version": "5.0",
-  "updated_at": "05/08/2026 14:32",
+  "updated_at": "06/08/2026 07:48",
   "count": 7,
-  "new_count": 8,
-  "updated_count": 0,
-  "sources_ok": 11,
-  "sources_error": 7,
+  "new_count": 0,
+  "updated_count": 8,
+  "sources_ok": 12,
+  "sources_error": 6,
   "sources_status": [
     {
       "fonte": "ANAC - Pubblicità legale",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.84s",
+      "tempo": "0.81s",
       "errore": ""
     },
     {
       "fonte": "CUC Terra di Leuca",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.38s",
+      "tempo": "1.56s",
       "errore": ""
     },
     {
       "fonte": "Centrale Acquisti Lazio",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.44s",
+      "tempo": "1.47s",
       "errore": ""
     },
     {
       "fonte": "Consip - Ricerca gare",
       "ok": true,
       "trovate": 8,
-      "tempo": "1.44s",
+      "tempo": "1.34s",
       "errore": ""
     },
     {
@@ -40,34 +40,34 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+      "errore": "404 Client Error: NOT FOUND for url: https://dati.consip.it/api/3/action/package_show?id=appalti-specifici-banditi-su-sistema-dinamico-di-acquisizione"
     },
     {
       "fonte": "Consip Open Data - Bandi e Gare",
-      "ok": false,
+      "ok": true,
       "trovate": 0,
-      "tempo": "",
-      "errore": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+      "tempo": "1.96s",
+      "errore": ""
     },
     {
       "fonte": "Consip Open Data - RDO e TD MePA",
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+      "errore": "404 Client Error: NOT FOUND for url: https://dati.consip.it/api/3/action/package_show?id=richieste-di-offerta-e-trattative-dirette-bandite-sul-mepa"
     },
     {
       "fonte": "EmPULIA",
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7f2beccd2210>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7fe55cd9b560>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "Intercent-ER",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.75s",
+      "tempo": "2.49s",
       "errore": ""
     },
     {
@@ -75,13 +75,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7f2bfc7f6ab0>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
+      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7fe570dfb230>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
     },
     {
       "fonte": "Regione Calabria - Bandi",
       "ok": true,
       "trovate": 0,
-      "tempo": "8.83s",
+      "tempo": "5.45s",
       "errore": ""
     },
     {
@@ -94,29 +94,29 @@
     {
       "fonte": "SINTEL Lombardia",
       "ok": true,
-      "trovate": 1,
-      "tempo": "4.58s",
+      "trovate": 0,
+      "tempo": "3.13s",
       "errore": ""
     },
     {
       "fonte": "SORESA SIAPS",
       "ok": true,
       "trovate": 0,
-      "tempo": "3.54s",
+      "tempo": "2.64s",
       "errore": ""
     },
     {
       "fonte": "START Toscana",
       "ok": true,
       "trovate": 0,
-      "tempo": "33.62s",
+      "tempo": "38.12s",
       "errore": ""
     },
     {
       "fonte": "SardegnaCAT",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.42s",
+      "tempo": "1.81s",
       "errore": ""
     },
     {
@@ -130,7 +130,7 @@
       "fonte": "eAppalti FVG",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.86s",
+      "tempo": "0.66s",
       "errore": ""
     }
   ],
@@ -152,25 +152,6 @@
       "rilevato_il": "04/08/2026 07:47",
       "punteggio": 83,
       "novita": "Aggiornata"
-    },
-    {
-      "id": "918e2c9c70a36fe9cfc52b9e",
-      "titolo": "Acquisto di un corso formativo sulla macro-logistica sanitaria - RdA 52816",
-      "ente": "Consip S.p.A.",
-      "categoria": "Multiservizi",
-      "cpv": "",
-      "cig": "",
-      "regione": "Italia",
-      "provincia": "",
-      "pubblicazione": "",
-      "scadenza": "",
-      "importo": "",
-      "fonte": "Consip - Ricerca gare",
-      "url": "https://www.consip.it/bandi/rda-52816",
-      "rilevato_il": "05/08/2026 14:32",
-      "punteggio": 40,
-      "id_sigef": "2881",
-      "novita": "Nuova"
     },
     {
       "id": "15d46facf786cc34e9def231",
@@ -209,6 +190,25 @@
       "punteggio": 40,
       "id_sigef": "2963",
       "novita": "Nuova"
+    },
+    {
+      "id": "918e2c9c70a36fe9cfc52b9e",
+      "titolo": "Procedura negoziata ex art. 76 del d.lgs. 36/2023 per l’acquisizione della piattaforma MESA e servizi per SOGEI – ID 2987",
+      "ente": "Consip S.p.A.",
+      "categoria": "Multiservizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Italia",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Consip - Ricerca gare",
+      "url": "https://www.consip.it/bandi/procedura-negoziata-per-lacquisizione-della-piattaforma-mesa-e-servizi-per-sogei",
+      "rilevato_il": "06/08/2026 07:48",
+      "punteggio": 40,
+      "id_sigef": "2881",
+      "novita": "Aggiornata"
     },
     {
       "id": "4a2d6d728d7e858272d2e31d",
