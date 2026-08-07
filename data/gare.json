@@ -1,38 +1,38 @@
 {
   "version": "5.0",
-  "updated_at": "06/08/2026 14:35",
-  "count": 9,
-  "new_count": 9,
-  "updated_count": 0,
-  "sources_ok": 10,
-  "sources_error": 8,
+  "updated_at": "07/08/2026 06:16",
+  "count": 10,
+  "new_count": 1,
+  "updated_count": 7,
+  "sources_ok": 12,
+  "sources_error": 6,
   "sources_status": [
     {
       "fonte": "ANAC - Pubblicità legale",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.59s",
+      "tempo": "0.53s",
       "errore": ""
     },
     {
       "fonte": "CUC Terra di Leuca",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.41s",
+      "tempo": "1.24s",
       "errore": ""
     },
     {
       "fonte": "Centrale Acquisti Lazio",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.21s",
+      "tempo": "1.33s",
       "errore": ""
     },
     {
       "fonte": "Consip - Ricerca gare",
       "ok": true,
       "trovate": 8,
-      "tempo": "0.96s",
+      "tempo": "1.04s",
       "errore": ""
     },
     {
@@ -46,7 +46,7 @@
       "fonte": "Consip Open Data - Bandi e Gare",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.58s",
+      "tempo": "1.53s",
       "errore": ""
     },
     {
@@ -61,13 +61,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7f10ce970680>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7f4fec331d90>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "Intercent-ER",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.93s",
+      "tempo": "2.32s",
       "errore": ""
     },
     {
@@ -75,13 +75,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7f10ce9298e0>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
+      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7f4fecbe7500>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
     },
     {
       "fonte": "Regione Calabria - Bandi",
       "ok": true,
       "trovate": 0,
-      "tempo": "6.0s",
+      "tempo": "3.45s",
       "errore": ""
     },
     {
@@ -95,43 +95,43 @@
       "fonte": "SINTEL Lombardia",
       "ok": true,
       "trovate": 0,
-      "tempo": "3.55s",
+      "tempo": "2.45s",
       "errore": ""
     },
     {
       "fonte": "SORESA SIAPS",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.6s",
+      "tempo": "2.18s",
       "errore": ""
     },
     {
       "fonte": "START Toscana",
       "ok": true,
-      "trovate": 1,
-      "tempo": "33.59s",
+      "trovate": 2,
+      "tempo": "34.39s",
       "errore": ""
     },
     {
       "fonte": "SardegnaCAT",
-      "ok": false,
+      "ok": true,
       "trovate": 0,
-      "tempo": "",
-      "errore": "403 Client Error: Forbidden for url: https://www.sardegnacat.it/esop/ita-ras-host/public/web/login.jst"
+      "tempo": "1.66s",
+      "errore": ""
     },
     {
       "fonte": "TED Europa",
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "TED API non disponibile: 403 Client Error: Forbidden for url: https://api.ted.europa.eu/v3/notices/search"
+      "errore": "TED API non disponibile: 400 Client Error: Bad Request for url: https://api.ted.europa.eu/v3/notices/search"
     },
     {
       "fonte": "eAppalti FVG",
-      "ok": false,
+      "ok": true,
       "trovate": 0,
-      "tempo": "",
-      "errore": "403 Client Error: Forbidden for url: https://eappalti.regione.fvg.it/"
+      "tempo": "0.51s",
+      "errore": ""
     }
   ],
   "gare": [
@@ -205,7 +205,7 @@
       "importo": "",
       "fonte": "Consip - Ricerca gare",
       "url": "https://www.consip.it/bandi/aq-carburanti-rete-fuel-card-id-2963",
-      "rilevato_il": "06/08/2026 14:34",
+      "rilevato_il": "07/08/2026 06:16",
       "punteggio": 40,
       "id_sigef": "2737",
       "novita": "Nuova"
@@ -262,7 +262,7 @@
       "importo": "",
       "fonte": "START Toscana",
       "url": "https://start.toscana.it/sourcing/tenders/resume/id/902595",
-      "rilevato_il": "06/08/2026 14:34",
+      "rilevato_il": "07/08/2026 06:16",
       "punteggio": 35,
       "novita": "Nuova"
     },
@@ -281,6 +281,24 @@
       "fonte": "SINTEL Lombardia",
       "url": "https://www.ariaspa.it/wps/portal/Aria/Home/bandi-convenzioni/bandi-di-gara/i-nostri-bandi-di-gara",
       "rilevato_il": "04/08/2026 14:38",
+      "punteggio": 35,
+      "novita": "Nuova"
+    },
+    {
+      "id": "0f06ffe7481d14942a5541bf",
+      "titolo": "“Accoglienza Ufficio Istituzionale ed orientamento delle funzioni turistico culturali e di valorizzazione territoriale”, codice opera 240461",
+      "ente": "START Toscana",
+      "categoria": "Portierato",
+      "cpv": "",
+      "cig": "",
+      "regione": "Toscana",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "START Toscana",
+      "url": "https://start.toscana.it/sourcing/expressions-of-interest/903032/resume/",
+      "rilevato_il": "07/08/2026 06:16",
       "punteggio": 35,
       "novita": "Nuova"
     },
