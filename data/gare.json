@@ -1,8 +1,8 @@
 {
   "version": "5.0",
-  "updated_at": "07/08/2026 13:38",
-  "count": 10,
-  "new_count": 0,
+  "updated_at": "08/08/2026 05:54",
+  "count": 11,
+  "new_count": 8,
   "updated_count": 0,
   "sources_ok": 12,
   "sources_error": 6,
@@ -11,28 +11,28 @@
       "fonte": "ANAC - Pubblicità legale",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.51s",
+      "tempo": "0.86s",
       "errore": ""
     },
     {
       "fonte": "CUC Terra di Leuca",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.21s",
+      "tempo": "1.65s",
       "errore": ""
     },
     {
       "fonte": "Centrale Acquisti Lazio",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.29s",
+      "tempo": "1.49s",
       "errore": ""
     },
     {
       "fonte": "Consip - Ricerca gare",
       "ok": true,
-      "trovate": 0,
-      "tempo": "1.11s",
+      "trovate": 8,
+      "tempo": "1.41s",
       "errore": ""
     },
     {
@@ -46,7 +46,7 @@
       "fonte": "Consip Open Data - Bandi e Gare",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.81s",
+      "tempo": "2.04s",
       "errore": ""
     },
     {
@@ -61,13 +61,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7f5e80576900>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7fa24441da90>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "Intercent-ER",
       "ok": true,
       "trovate": 0,
-      "tempo": "4.09s",
+      "tempo": "3.3s",
       "errore": ""
     },
     {
@@ -75,13 +75,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7f5e83a65fa0>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
+      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7fa24e92e9f0>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
     },
     {
       "fonte": "Regione Calabria - Bandi",
       "ok": true,
       "trovate": 0,
-      "tempo": "6.48s",
+      "tempo": "7.14s",
       "errore": ""
     },
     {
@@ -95,28 +95,28 @@
       "fonte": "SINTEL Lombardia",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.57s",
+      "tempo": "3.15s",
       "errore": ""
     },
     {
       "fonte": "SORESA SIAPS",
       "ok": true,
       "trovate": 0,
-      "tempo": "3.08s",
+      "tempo": "2.88s",
       "errore": ""
     },
     {
       "fonte": "START Toscana",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.96s",
+      "tempo": "8.78s",
       "errore": ""
     },
     {
       "fonte": "SardegnaCAT",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.74s",
+      "tempo": "2.1s",
       "errore": ""
     },
     {
@@ -130,7 +130,7 @@
       "fonte": "eAppalti FVG",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.67s",
+      "tempo": "0.86s",
       "errore": ""
     }
   ],
@@ -247,6 +247,25 @@
       "punteggio": 40,
       "id_sigef": "3049",
       "novita": "Aggiornata"
+    },
+    {
+      "id": "48d0d83d07ff9a72b337ec76",
+      "titolo": "Servizio professionale di Tax Risk Management per Sogei - RdA 52993",
+      "ente": "Consip S.p.A.",
+      "categoria": "Multiservizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Italia",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Consip - Ricerca gare",
+      "url": "https://www.consip.it/bandi/rda-52993",
+      "rilevato_il": "08/08/2026 05:54",
+      "punteggio": 40,
+      "id_sigef": "2077",
+      "novita": "Nuova"
     },
     {
       "id": "6a0f607875d325b5bf607f94",
