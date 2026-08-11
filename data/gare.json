@@ -1,6 +1,6 @@
 {
   "version": "5.0",
-  "updated_at": "10/08/2026 13:44",
+  "updated_at": "11/08/2026 06:02",
   "count": 11,
   "new_count": 0,
   "updated_count": 7,
@@ -11,28 +11,28 @@
       "fonte": "ANAC - Pubblicità legale",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.77s",
+      "tempo": "0.95s",
       "errore": ""
     },
     {
       "fonte": "CUC Terra di Leuca",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.56s",
+      "tempo": "1.41s",
       "errore": ""
     },
     {
       "fonte": "Centrale Acquisti Lazio",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.48s",
+      "tempo": "1.73s",
       "errore": ""
     },
     {
       "fonte": "Consip - Ricerca gare",
       "ok": true,
       "trovate": 8,
-      "tempo": "1.57s",
+      "tempo": "1.7s",
       "errore": ""
     },
     {
@@ -46,7 +46,7 @@
       "fonte": "Consip Open Data - Bandi e Gare",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.86s",
+      "tempo": "1.98s",
       "errore": ""
     },
     {
@@ -61,13 +61,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7ff4b463d0a0>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7efe00b0d7c0>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "Intercent-ER",
       "ok": true,
       "trovate": 0,
-      "tempo": "4.29s",
+      "tempo": "3.02s",
       "errore": ""
     },
     {
@@ -75,13 +75,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7ff4b4ff8890>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
+      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7efe09f10470>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
     },
     {
       "fonte": "Regione Calabria - Bandi",
       "ok": true,
       "trovate": 0,
-      "tempo": "5.88s",
+      "tempo": "5.43s",
       "errore": ""
     },
     {
@@ -95,28 +95,28 @@
       "fonte": "SINTEL Lombardia",
       "ok": true,
       "trovate": 0,
-      "tempo": "3.21s",
+      "tempo": "3.12s",
       "errore": ""
     },
     {
       "fonte": "SORESA SIAPS",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.7s",
+      "tempo": "2.82s",
       "errore": ""
     },
     {
       "fonte": "START Toscana",
       "ok": true,
       "trovate": 0,
-      "tempo": "50.79s",
+      "tempo": "49.91s",
       "errore": ""
     },
     {
       "fonte": "SardegnaCAT",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.19s",
+      "tempo": "1.87s",
       "errore": ""
     },
     {
@@ -130,7 +130,7 @@
       "fonte": "eAppalti FVG",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.82s",
+      "tempo": "0.66s",
       "errore": ""
     }
   ],
@@ -262,7 +262,7 @@
       "importo": "",
       "fonte": "Consip - Ricerca gare",
       "url": "https://www.consip.it/bandi/rda-52993",
-      "rilevato_il": "10/08/2026 13:43",
+      "rilevato_il": "11/08/2026 06:01",
       "punteggio": 40,
       "id_sigef": "2077",
       "novita": "Nuova"
