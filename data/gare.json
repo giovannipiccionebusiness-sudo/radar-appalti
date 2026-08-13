@@ -1,38 +1,38 @@
 {
   "version": "5.0",
-  "updated_at": "12/08/2026 13:45",
+  "updated_at": "13/08/2026 06:42",
   "count": 12,
   "new_count": 0,
   "updated_count": 7,
-  "sources_ok": 12,
-  "sources_error": 6,
+  "sources_ok": 11,
+  "sources_error": 7,
   "sources_status": [
     {
       "fonte": "ANAC - Pubblicità legale",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.95s",
+      "tempo": "0.51s",
       "errore": ""
     },
     {
       "fonte": "CUC Terra di Leuca",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.53s",
+      "tempo": "1.13s",
       "errore": ""
     },
     {
       "fonte": "Centrale Acquisti Lazio",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.66s",
+      "tempo": "1.15s",
       "errore": ""
     },
     {
       "fonte": "Consip - Ricerca gare",
       "ok": true,
       "trovate": 8,
-      "tempo": "1.49s",
+      "tempo": "1.01s",
       "errore": ""
     },
     {
@@ -40,34 +40,34 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "404 Client Error: NOT FOUND for url: https://dati.consip.it/api/3/action/package_show?id=appalti-specifici-banditi-su-sistema-dinamico-di-acquisizione"
+      "errore": "500 Server Error: Internal Server Error for url: https://dati.consip.it/api/3/action/package_show?id=appalti-specifici-banditi-su-sistema-dinamico-di-acquisizione"
     },
     {
       "fonte": "Consip Open Data - Bandi e Gare",
-      "ok": true,
+      "ok": false,
       "trovate": 0,
-      "tempo": "3.78s",
-      "errore": ""
+      "tempo": "",
+      "errore": "500 Server Error: Internal Server Error for url: https://dati.consip.it/api/3/action/package_show?id=dataset-bandi-e-gare"
     },
     {
       "fonte": "Consip Open Data - RDO e TD MePA",
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "404 Client Error: NOT FOUND for url: https://dati.consip.it/api/3/action/package_show?id=richieste-di-offerta-e-trattative-dirette-bandite-sul-mepa"
+      "errore": "500 Server Error: Internal Server Error for url: https://dati.consip.it/api/3/action/package_show?id=richieste-di-offerta-e-trattative-dirette-bandite-sul-mepa"
     },
     {
       "fonte": "EmPULIA",
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7fc180248e60>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7f49583bc1a0>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "Intercent-ER",
       "ok": true,
       "trovate": 0,
-      "tempo": "3.91s",
+      "tempo": "2.53s",
       "errore": ""
     },
     {
@@ -75,13 +75,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7fc180a9cd10>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
+      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7f4961901340>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
     },
     {
       "fonte": "Regione Calabria - Bandi",
       "ok": true,
       "trovate": 0,
-      "tempo": "8.66s",
+      "tempo": "3.42s",
       "errore": ""
     },
     {
@@ -89,34 +89,34 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "503 Server Error: Service Temporarily Unavailable for url: https://siab.regione.basilicata.it/PortaleAppalti/"
+      "errore": "HTTPSConnectionPool(host='siab.regione.basilicata.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='siab.regione.basilicata.it', port=443) at 0x7f4961902b10>, 'Connection to siab.regione.basilicata.it timed out. (connect timeout=5)'"
     },
     {
       "fonte": "SINTEL Lombardia",
       "ok": true,
       "trovate": 0,
-      "tempo": "7.2s",
+      "tempo": "2.4s",
       "errore": ""
     },
     {
       "fonte": "SORESA SIAPS",
       "ok": true,
       "trovate": 0,
-      "tempo": "3.68s",
+      "tempo": "3.17s",
       "errore": ""
     },
     {
       "fonte": "START Toscana",
       "ok": true,
       "trovate": 0,
-      "tempo": "25.16s",
+      "tempo": "24.57s",
       "errore": ""
     },
     {
       "fonte": "SardegnaCAT",
       "ok": true,
       "trovate": 0,
-      "tempo": "6.48s",
+      "tempo": "1.64s",
       "errore": ""
     },
     {
@@ -130,7 +130,7 @@
       "fonte": "eAppalti FVG",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.04s",
+      "tempo": "0.56s",
       "errore": ""
     }
   ],
@@ -262,7 +262,7 @@
       "importo": "",
       "fonte": "Consip - Ricerca gare",
       "url": "https://www.consip.it/bandi/rda-52993",
-      "rilevato_il": "12/08/2026 13:45",
+      "rilevato_il": "13/08/2026 06:42",
       "punteggio": 40,
       "id_sigef": "2077",
       "novita": "Nuova"
