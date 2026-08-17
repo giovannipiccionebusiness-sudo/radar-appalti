@@ -1,8 +1,8 @@
 {
   "version": "5.0",
-  "updated_at": "17/08/2026 05:48",
-  "count": 12,
-  "new_count": 0,
+  "updated_at": "17/08/2026 13:05",
+  "count": 13,
+  "new_count": 1,
   "updated_count": 7,
   "sources_ok": 12,
   "sources_error": 6,
@@ -11,28 +11,28 @@
       "fonte": "ANAC - Pubblicità legale",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.85s",
+      "tempo": "0.89s",
       "errore": ""
     },
     {
       "fonte": "CUC Terra di Leuca",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.5s",
+      "tempo": "1.68s",
       "errore": ""
     },
     {
       "fonte": "Centrale Acquisti Lazio",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.56s",
+      "tempo": "1.51s",
       "errore": ""
     },
     {
       "fonte": "Consip - Ricerca gare",
       "ok": true,
       "trovate": 8,
-      "tempo": "1.35s",
+      "tempo": "1.43s",
       "errore": ""
     },
     {
@@ -46,7 +46,7 @@
       "fonte": "Consip Open Data - Bandi e Gare",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.87s",
+      "tempo": "1.71s",
       "errore": ""
     },
     {
@@ -61,13 +61,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7f388c5a06e0>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7f668c9774a0>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "Intercent-ER",
       "ok": true,
       "trovate": 0,
-      "tempo": "3.24s",
+      "tempo": "2.91s",
       "errore": ""
     },
     {
@@ -75,13 +75,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7f388ce28f20>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
+      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7f6694144830>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
     },
     {
       "fonte": "Regione Calabria - Bandi",
       "ok": true,
       "trovate": 0,
-      "tempo": "5.3s",
+      "tempo": "4.49s",
       "errore": ""
     },
     {
@@ -95,28 +95,28 @@
       "fonte": "SINTEL Lombardia",
       "ok": true,
       "trovate": 0,
-      "tempo": "3.35s",
+      "tempo": "3.71s",
       "errore": ""
     },
     {
       "fonte": "SORESA SIAPS",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.98s",
+      "tempo": "2.88s",
       "errore": ""
     },
     {
       "fonte": "START Toscana",
       "ok": true,
-      "trovate": 0,
-      "tempo": "35.89s",
+      "trovate": 1,
+      "tempo": "33.27s",
       "errore": ""
     },
     {
       "fonte": "SardegnaCAT",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.18s",
+      "tempo": "2.11s",
       "errore": ""
     },
     {
@@ -130,7 +130,7 @@
       "fonte": "eAppalti FVG",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.79s",
+      "tempo": "0.8s",
       "errore": ""
     }
   ],
@@ -262,9 +262,27 @@
       "importo": "",
       "fonte": "Consip - Ricerca gare",
       "url": "https://www.consip.it/bandi/rda-52993",
-      "rilevato_il": "17/08/2026 05:47",
+      "rilevato_il": "17/08/2026 13:04",
       "punteggio": 40,
       "id_sigef": "2077",
+      "novita": "Nuova"
+    },
+    {
+      "id": "52c8dd6295138a763b3e1bab",
+      "titolo": "Avvio di indagine esplorativa mediante manifestazione di interesse propedeutica all’affidamento diretto ai sensi dell’art. 50, comma 1, lett. b), del D.Lgs. n. 36 2023 servizio di custodia, conduzione e manutenzione dello Stadio dei Fioridi",
+      "ente": "START Toscana",
+      "categoria": "Portierato",
+      "cpv": "",
+      "cig": "",
+      "regione": "Toscana",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "START Toscana",
+      "url": "https://start.toscana.it/sourcing/expressions-of-interest/903762/resume/",
+      "rilevato_il": "17/08/2026 13:04",
+      "punteggio": 35,
       "novita": "Nuova"
     },
     {
