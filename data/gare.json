@@ -1,9 +1,9 @@
 {
   "version": "5.0",
-  "updated_at": "18/08/2026 05:42",
-  "count": 13,
-  "new_count": 0,
-  "updated_count": 7,
+  "updated_at": "18/08/2026 13:07",
+  "count": 14,
+  "new_count": 1,
+  "updated_count": 8,
   "sources_ok": 12,
   "sources_error": 6,
   "sources_status": [
@@ -11,28 +11,28 @@
       "fonte": "ANAC - Pubblicità legale",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.78s",
+      "tempo": "0.91s",
       "errore": ""
     },
     {
       "fonte": "CUC Terra di Leuca",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.55s",
+      "tempo": "1.8s",
       "errore": ""
     },
     {
       "fonte": "Centrale Acquisti Lazio",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.65s",
+      "tempo": "1.55s",
       "errore": ""
     },
     {
       "fonte": "Consip - Ricerca gare",
       "ok": true,
       "trovate": 8,
-      "tempo": "1.46s",
+      "tempo": "1.38s",
       "errore": ""
     },
     {
@@ -46,7 +46,7 @@
       "fonte": "Consip Open Data - Bandi e Gare",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.55s",
+      "tempo": "1.96s",
       "errore": ""
     },
     {
@@ -61,13 +61,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7f23cc0a0350>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7fd97476edb0>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "Intercent-ER",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.94s",
+      "tempo": "3.15s",
       "errore": ""
     },
     {
@@ -75,13 +75,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7f23b8cf1610>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
+      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7fd974a9b4d0>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
     },
     {
       "fonte": "Regione Calabria - Bandi",
       "ok": true,
       "trovate": 0,
-      "tempo": "4.91s",
+      "tempo": "11.12s",
       "errore": ""
     },
     {
@@ -95,28 +95,28 @@
       "fonte": "SINTEL Lombardia",
       "ok": true,
       "trovate": 0,
-      "tempo": "3.41s",
+      "tempo": "3.3s",
       "errore": ""
     },
     {
       "fonte": "SORESA SIAPS",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.79s",
+      "tempo": "2.71s",
       "errore": ""
     },
     {
       "fonte": "START Toscana",
       "ok": true,
-      "trovate": 1,
-      "tempo": "34.49s",
+      "trovate": 2,
+      "tempo": "11.41s",
       "errore": ""
     },
     {
       "fonte": "SardegnaCAT",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.98s",
+      "tempo": "2.25s",
       "errore": ""
     },
     {
@@ -130,7 +130,7 @@
       "fonte": "eAppalti FVG",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.85s",
+      "tempo": "0.88s",
       "errore": ""
     }
   ],
@@ -211,6 +211,25 @@
       "novita": "Nuova"
     },
     {
+      "id": "48d0d83d07ff9a72b337ec76",
+      "titolo": "Procedura aperta per l’affidamento di un Accordo Quadro avente ad oggetto la fornitura di servizi professionali per la gestione e conduzione di infrastrutture di cybersecurity delle PA",
+      "ente": "Consip S.p.A.",
+      "categoria": "Multiservizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Italia",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Consip - Ricerca gare",
+      "url": "https://www.consip.it/bandi/sicurezza-on-premises-servizi-per-la-gestione-e-conduzione-operativa-di-infrastrutture-di-cybersecurity-delle-pa",
+      "rilevato_il": "18/08/2026 13:06",
+      "punteggio": 40,
+      "id_sigef": "2077",
+      "novita": "Aggiornata"
+    },
+    {
       "id": "918e2c9c70a36fe9cfc52b9e",
       "titolo": "Procedura negoziata ex art. 76 del d.lgs. 36/2023 per l’acquisizione della piattaforma MESA e servizi per SOGEI – ID 2987",
       "ente": "Consip S.p.A.",
@@ -249,22 +268,21 @@
       "novita": "Aggiornata"
     },
     {
-      "id": "48d0d83d07ff9a72b337ec76",
-      "titolo": "Servizio professionale di Tax Risk Management per Sogei - RdA 52993",
-      "ente": "Consip S.p.A.",
-      "categoria": "Multiservizi",
+      "id": "4ca8167f36b7c59198688bfb",
+      "titolo": "AFFIDAMENTO IN CONCESSIONE DEL SERVIZIO DI GESTIONE, CUSTODIA E CONDUZIONE DELL'IPPODROMO DEI PINI",
+      "ente": "START Toscana",
+      "categoria": "Portierato",
       "cpv": "",
       "cig": "",
-      "regione": "Italia",
+      "regione": "Toscana",
       "provincia": "",
       "pubblicazione": "",
       "scadenza": "",
       "importo": "",
-      "fonte": "Consip - Ricerca gare",
-      "url": "https://www.consip.it/bandi/rda-52993",
-      "rilevato_il": "18/08/2026 05:42",
-      "punteggio": 40,
-      "id_sigef": "2077",
+      "fonte": "START Toscana",
+      "url": "https://start.toscana.it/sourcing/tenders/resume/id/903714",
+      "rilevato_il": "18/08/2026 13:07",
+      "punteggio": 35,
       "novita": "Nuova"
     },
     {
@@ -281,7 +299,7 @@
       "importo": "",
       "fonte": "START Toscana",
       "url": "https://start.toscana.it/sourcing/expressions-of-interest/903762/resume/",
-      "rilevato_il": "18/08/2026 05:42",
+      "rilevato_il": "18/08/2026 13:07",
       "punteggio": 35,
       "novita": "Nuova"
     },
