@@ -1,38 +1,38 @@
 {
   "version": "5.0",
-  "updated_at": "18/08/2026 13:07",
+  "updated_at": "19/08/2026 05:44",
   "count": 14,
-  "new_count": 1,
-  "updated_count": 8,
-  "sources_ok": 12,
-  "sources_error": 6,
+  "new_count": 0,
+  "updated_count": 7,
+  "sources_ok": 11,
+  "sources_error": 7,
   "sources_status": [
     {
       "fonte": "ANAC - Pubblicità legale",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.91s",
+      "tempo": "1.13s",
       "errore": ""
     },
     {
       "fonte": "CUC Terra di Leuca",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.8s",
+      "tempo": "1.78s",
       "errore": ""
     },
     {
       "fonte": "Centrale Acquisti Lazio",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.55s",
+      "tempo": "1.68s",
       "errore": ""
     },
     {
       "fonte": "Consip - Ricerca gare",
       "ok": true,
       "trovate": 8,
-      "tempo": "1.38s",
+      "tempo": "1.36s",
       "errore": ""
     },
     {
@@ -46,7 +46,7 @@
       "fonte": "Consip Open Data - Bandi e Gare",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.96s",
+      "tempo": "1.95s",
       "errore": ""
     },
     {
@@ -61,13 +61,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7fd97476edb0>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7f3e50d1f8c0>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "Intercent-ER",
       "ok": true,
       "trovate": 0,
-      "tempo": "3.15s",
+      "tempo": "5.25s",
       "errore": ""
     },
     {
@@ -75,13 +75,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7fd974a9b4d0>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
+      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7f3e64210d70>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
     },
     {
       "fonte": "Regione Calabria - Bandi",
       "ok": true,
       "trovate": 0,
-      "tempo": "11.12s",
+      "tempo": "4.81s",
       "errore": ""
     },
     {
@@ -93,30 +93,30 @@
     },
     {
       "fonte": "SINTEL Lombardia",
-      "ok": true,
+      "ok": false,
       "trovate": 0,
-      "tempo": "3.3s",
-      "errore": ""
+      "tempo": "",
+      "errore": "HTTPSConnectionPool(host='www.sintel.regione.lombardia.it', port=443): Read timed out. (read timeout=10)"
     },
     {
       "fonte": "SORESA SIAPS",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.71s",
+      "tempo": "2.98s",
       "errore": ""
     },
     {
       "fonte": "START Toscana",
       "ok": true,
       "trovate": 2,
-      "tempo": "11.41s",
+      "tempo": "11.39s",
       "errore": ""
     },
     {
       "fonte": "SardegnaCAT",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.25s",
+      "tempo": "2.62s",
       "errore": ""
     },
     {
@@ -130,7 +130,7 @@
       "fonte": "eAppalti FVG",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.88s",
+      "tempo": "0.98s",
       "errore": ""
     }
   ],
@@ -224,7 +224,7 @@
       "importo": "",
       "fonte": "Consip - Ricerca gare",
       "url": "https://www.consip.it/bandi/sicurezza-on-premises-servizi-per-la-gestione-e-conduzione-operativa-di-infrastrutture-di-cybersecurity-delle-pa",
-      "rilevato_il": "18/08/2026 13:06",
+      "rilevato_il": "19/08/2026 05:44",
       "punteggio": 40,
       "id_sigef": "2077",
       "novita": "Aggiornata"
@@ -281,7 +281,7 @@
       "importo": "",
       "fonte": "START Toscana",
       "url": "https://start.toscana.it/sourcing/tenders/resume/id/903714",
-      "rilevato_il": "18/08/2026 13:07",
+      "rilevato_il": "19/08/2026 05:44",
       "punteggio": 35,
       "novita": "Nuova"
     },
@@ -299,7 +299,7 @@
       "importo": "",
       "fonte": "START Toscana",
       "url": "https://start.toscana.it/sourcing/expressions-of-interest/903762/resume/",
-      "rilevato_il": "18/08/2026 13:07",
+      "rilevato_il": "19/08/2026 05:44",
       "punteggio": 35,
       "novita": "Nuova"
     },
