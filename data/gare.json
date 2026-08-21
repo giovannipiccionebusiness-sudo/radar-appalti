@@ -1,38 +1,38 @@
 {
   "version": "5.0",
-  "updated_at": "21/08/2026 05:46",
+  "updated_at": "21/08/2026 13:10",
   "count": 15,
   "new_count": 0,
   "updated_count": 7,
-  "sources_ok": 12,
-  "sources_error": 6,
+  "sources_ok": 11,
+  "sources_error": 7,
   "sources_status": [
     {
       "fonte": "ANAC - Pubblicità legale",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.48s",
+      "tempo": "0.88s",
       "errore": ""
     },
     {
       "fonte": "CUC Terra di Leuca",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.04s",
+      "tempo": "1.08s",
       "errore": ""
     },
     {
       "fonte": "Centrale Acquisti Lazio",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.15s",
+      "tempo": "1.56s",
       "errore": ""
     },
     {
       "fonte": "Consip - Ricerca gare",
       "ok": true,
       "trovate": 8,
-      "tempo": "2.12s",
+      "tempo": "1.45s",
       "errore": ""
     },
     {
@@ -46,7 +46,7 @@
       "fonte": "Consip Open Data - Bandi e Gare",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.42s",
+      "tempo": "1.88s",
       "errore": ""
     },
     {
@@ -61,13 +61,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7f592cb71460>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7effec4f88f0>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "Intercent-ER",
       "ok": true,
       "trovate": 0,
-      "tempo": "3.91s",
+      "tempo": "7.77s",
       "errore": ""
     },
     {
@@ -75,13 +75,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7f5930e58050>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
+      "errore": "HTTPSConnectionPool(host='appalti.regione.sicilia.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='appalti.regione.sicilia.it', port=443) at 0x7effece202f0>, 'Connection to appalti.regione.sicilia.it timed out. (connect timeout=5)'"
     },
     {
       "fonte": "Regione Calabria - Bandi",
       "ok": true,
       "trovate": 0,
-      "tempo": "9.61s",
+      "tempo": "10.29s",
       "errore": ""
     },
     {
@@ -89,34 +89,34 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='siab.regione.basilicata.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by NameResolutionError(\"HTTPSConnection(host='siab.regione.basilicata.it', port=443): Failed to resolve 'siab.regione.basilicata.it' ([Errno -3] Temporary failure in name resolut"
+      "errore": "503 Server Error: Service Temporarily Unavailable for url: https://siab.regione.basilicata.it/PortaleAppalti/"
     },
     {
       "fonte": "SINTEL Lombardia",
-      "ok": true,
+      "ok": false,
       "trovate": 0,
-      "tempo": "4.98s",
-      "errore": ""
+      "tempo": "",
+      "errore": "HTTPSConnectionPool(host='www.sintel.regione.lombardia.it', port=443): Max retries exceeded with url: /eprocdata/sintelSearch.xhtml (Caused by NameResolutionError(\"HTTPSConnection(host='www.sintel.regione.lombardia.it', port=443): Failed to resolve 'www.sintel.regione.lombardia.it' ([Errno -3] Tempo"
     },
     {
       "fonte": "SORESA SIAPS",
       "ok": true,
       "trovate": 0,
-      "tempo": "5.99s",
+      "tempo": "2.78s",
       "errore": ""
     },
     {
       "fonte": "START Toscana",
       "ok": true,
       "trovate": 0,
-      "tempo": "39.21s",
+      "tempo": "31.1s",
       "errore": ""
     },
     {
       "fonte": "SardegnaCAT",
       "ok": true,
       "trovate": 0,
-      "tempo": "3.27s",
+      "tempo": "1.78s",
       "errore": ""
     },
     {
@@ -130,7 +130,7 @@
       "fonte": "eAppalti FVG",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.46s",
+      "tempo": "1.5s",
       "errore": ""
     }
   ],
@@ -167,7 +167,7 @@
       "importo": "",
       "fonte": "Consip - Ricerca gare",
       "url": "https://www.consip.it/bandi/energia-elettrica",
-      "rilevato_il": "21/08/2026 05:46",
+      "rilevato_il": "21/08/2026 13:10",
       "punteggio": 40,
       "id_sigef": "2965",
       "novita": "Nuova"
