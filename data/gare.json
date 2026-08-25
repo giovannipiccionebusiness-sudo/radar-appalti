@@ -1,6 +1,6 @@
 {
   "version": "5.0",
-  "updated_at": "24/08/2026 13:12",
+  "updated_at": "25/08/2026 05:45",
   "count": 15,
   "new_count": 0,
   "updated_count": 0,
@@ -18,14 +18,14 @@
       "fonte": "CUC Terra di Leuca",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.17s",
+      "tempo": "1.22s",
       "errore": ""
     },
     {
       "fonte": "Centrale Acquisti Lazio",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.05s",
+      "tempo": "1.25s",
       "errore": ""
     },
     {
@@ -61,13 +61,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7fd2fca60200>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7f54fc269100>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "Intercent-ER",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.16s",
+      "tempo": "2.18s",
       "errore": ""
     },
     {
@@ -81,7 +81,7 @@
       "fonte": "Regione Calabria - Bandi",
       "ok": true,
       "trovate": 0,
-      "tempo": "6.98s",
+      "tempo": "3.37s",
       "errore": ""
     },
     {
@@ -95,7 +95,7 @@
       "fonte": "SINTEL Lombardia",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.33s",
+      "tempo": "2.43s",
       "errore": ""
     },
     {
@@ -109,14 +109,14 @@
       "fonte": "START Toscana",
       "ok": true,
       "trovate": 0,
-      "tempo": "41.27s",
+      "tempo": "19.42s",
       "errore": ""
     },
     {
       "fonte": "SardegnaCAT",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.34s",
+      "tempo": "1.78s",
       "errore": ""
     },
     {
@@ -130,7 +130,7 @@
       "fonte": "eAppalti FVG",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.53s",
+      "tempo": "0.57s",
       "errore": ""
     }
   ],
