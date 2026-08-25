@@ -1,12 +1,12 @@
 {
-  "version": "5.1",
+  "version": "5.2",
   "settings": {
-    "max_workers": 8,
+    "max_workers": 10,
     "source_timeout_seconds": 15,
     "connection_timeout_seconds": 5,
     "read_timeout_seconds": 10,
     "max_links_per_source": 70,
-    "max_detail_pages_per_source": 12,
+    "max_detail_pages_per_source": 8,
     "detail_timeout_seconds": 6,
     "exclude_expired": true,
     "retention_days": 180,
@@ -164,22 +164,24 @@
       "priority": 1
     },
     {
-      "active": true,
+      "active": false,
       "name": "Consip Open Data - Appalti Specifici SDAPA",
       "adapter": "consip_ckan",
       "dataset_id": "appalti-specifici-banditi-su-sistema-dinamico-di-acquisizione",
       "url": "https://dati.consip.it/api/3/action/package_show?id=appalti-specifici-banditi-su-sistema-dinamico-di-acquisizione",
       "region": "Italia",
-      "priority": 1
+      "priority": 1,
+      "note": "Disattivata finché non viene individuato un endpoint pubblico stabile."
     },
     {
-      "active": true,
+      "active": false,
       "name": "Consip Open Data - RDO e TD MePA",
       "adapter": "consip_ckan",
       "dataset_id": "richieste-di-offerta-e-trattative-dirette-bandite-sul-mepa",
       "url": "https://dati.consip.it/api/3/action/package_show?id=richieste-di-offerta-e-trattative-dirette-bandite-sul-mepa",
       "region": "Italia",
-      "priority": 1
+      "priority": 1,
+      "note": "Disattivata finché non viene individuato un endpoint pubblico stabile."
     },
     {
       "active": true,
@@ -244,6 +246,216 @@
       "adapter": "generic",
       "urls": [
         "https://www.regione.abruzzo.it/"
+      ],
+      "region": "Abruzzo",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "Regione Puglia - Bandi",
+      "adapter": "generic",
+      "urls": [
+        "https://www.regione.puglia.it/bandi-e-avvisi"
+      ],
+      "region": "Puglia",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "Comune di Bari - Bandi",
+      "adapter": "generic",
+      "urls": [
+        "https://www.comune.bari.it/bandi-di-gara-e-contratti"
+      ],
+      "region": "Puglia",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "Comune di Lecce - Gare",
+      "adapter": "generic",
+      "urls": [
+        "https://www.comune.lecce.it/amministrazione/attivita/bandi-di-gara-e-contratti"
+      ],
+      "region": "Puglia",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "Comune di Taranto - Gare",
+      "adapter": "generic",
+      "urls": [
+        "https://www.comune.taranto.it/"
+      ],
+      "region": "Puglia",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "ASL Bari",
+      "adapter": "generic",
+      "urls": [
+        "https://www.sanita.puglia.it/web/asl-bari"
+      ],
+      "region": "Puglia",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "ASL Lecce",
+      "adapter": "generic",
+      "urls": [
+        "https://www.sanita.puglia.it/web/asl-lecce"
+      ],
+      "region": "Puglia",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "ASL Taranto",
+      "adapter": "generic",
+      "urls": [
+        "https://www.sanita.puglia.it/web/asl-taranto"
+      ],
+      "region": "Puglia",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "Università del Salento",
+      "adapter": "generic",
+      "urls": [
+        "https://www.unisalento.it/"
+      ],
+      "region": "Puglia",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "Università di Bari",
+      "adapter": "generic",
+      "urls": [
+        "https://www.uniba.it/"
+      ],
+      "region": "Puglia",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "Regione Molise",
+      "adapter": "generic",
+      "urls": [
+        "https://www.regione.molise.it/"
+      ],
+      "region": "Molise",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "ASReM Molise",
+      "adapter": "generic",
+      "urls": [
+        "https://www.asrem.molise.it/"
+      ],
+      "region": "Molise",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "Università del Molise",
+      "adapter": "generic",
+      "urls": [
+        "https://www.unimol.it/"
+      ],
+      "region": "Molise",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "Regione Basilicata - Bandi",
+      "adapter": "generic",
+      "urls": [
+        "https://www.regione.basilicata.it/"
+      ],
+      "region": "Basilicata",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "ASM Matera",
+      "adapter": "generic",
+      "urls": [
+        "https://www.asmbasilicata.it/"
+      ],
+      "region": "Basilicata",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "ASP Potenza",
+      "adapter": "generic",
+      "urls": [
+        "https://www.aspbasilicata.it/"
+      ],
+      "region": "Basilicata",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "Università della Basilicata",
+      "adapter": "generic",
+      "urls": [
+        "https://portale.unibas.it/"
+      ],
+      "region": "Basilicata",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "Regione Abruzzo",
+      "adapter": "generic",
+      "urls": [
+        "https://www.regione.abruzzo.it/"
+      ],
+      "region": "Abruzzo",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "ASL Pescara",
+      "adapter": "generic",
+      "urls": [
+        "https://www.asl.pe.it/"
+      ],
+      "region": "Abruzzo",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "ASL Teramo",
+      "adapter": "generic",
+      "urls": [
+        "https://www.aslteramo.it/"
+      ],
+      "region": "Abruzzo",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "Università G. d'Annunzio",
+      "adapter": "generic",
+      "urls": [
+        "https://www.unich.it/"
+      ],
+      "region": "Abruzzo",
+      "priority": 1
+    },
+    {
+      "active": true,
+      "name": "Università dell'Aquila",
+      "adapter": "generic",
+      "urls": [
+        "https://www.univaq.it/"
       ],
       "region": "Abruzzo",
       "priority": 1

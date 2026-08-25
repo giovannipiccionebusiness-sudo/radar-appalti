@@ -1,5 +1,13 @@
-# Radar Appalti 5.1 — Puglia, Molise, Basilicata, Abruzzo
+# Radar Appalti 5.2 — 4 Regioni Estesa
 
-Filtro territoriale obbligatorio sulle quattro regioni. ANAC, Consip e TED restano attivi, ma i loro risultati vengono salvati solo se i dati leggibili citano almeno una delle quattro regioni o relative province. Settori invariati: pulizie, portierato, sanificazione, multiservizi, facility management, reception, custodia e facchinaggio.
+Ambito obbligatorio: Puglia, Molise, Basilicata, Abruzzo.
 
-Carica tutto su GitHub, compresa `.github`, poi esegui **Actions → Scansione bandi v5.1 - 4 Regioni → Run workflow**.
+Fonti nazionali: ANAC, Consip, TED. I risultati vengono conservati solo se riferibili alle quattro regioni.
+Fonti territoriali: portali regionali più una rete iniziale di Comuni, aziende sanitarie e Università.
+
+Sono monitorati: pulizie, sanificazione, portierato, reception, custodia, controllo accessi, multiservizi, facility management, servizi integrati e facchinaggio.
+
+Le due fonti Consip Open Data che restituivano 404 sono state temporaneamente disattivate; il dataset Consip principale e la ricerca gare restano attivi. TED usa un fallback HTML se l'API rifiuta la richiesta.
+
+Installazione: sostituire tutti i file del repository, compresa `.github`, poi eseguire:
+Actions → Scansione bandi v5.2 - 4 Regioni Estesa → Run workflow.
