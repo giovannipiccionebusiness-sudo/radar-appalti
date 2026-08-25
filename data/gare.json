@@ -1,8 +1,874 @@
 {
-  "updated_at": "",
-  "count": 0,
-  "errors": [],
-  "gare": [],
   "version": "5.2",
-  "updated_count": 0
+  "updated_at": "25/08/2026 20:40",
+  "count": 31,
+  "new_count": 36,
+  "updated_count": 0,
+  "sources_ok": 18,
+  "sources_error": 12,
+  "sources_status": [
+    {
+      "fonte": "ANAC - Pubblicità legale",
+      "ok": true,
+      "trovate": 0,
+      "tempo": "0.61s",
+      "errore": ""
+    },
+    {
+      "fonte": "ASL Bari",
+      "ok": false,
+      "trovate": 0,
+      "tempo": "",
+      "errore": "HTTPSConnectionPool(host='www.sanita.puglia.it', port=443): Max retries exceeded with url: /web/asl-bari (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.sanita.puglia.it', port=443) at 0x7f7c0c7f8590>, 'Connection to www.sanita.puglia.it timed out. (connect timeout=5)'))"
+    },
+    {
+      "fonte": "ASL Lecce",
+      "ok": false,
+      "trovate": 0,
+      "tempo": "",
+      "errore": "HTTPSConnectionPool(host='www.sanita.puglia.it', port=443): Max retries exceeded with url: /web/asl-lecce (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.sanita.puglia.it', port=443) at 0x7f7c0c958890>, 'Connection to www.sanita.puglia.it timed out. (connect timeout=5)'))"
+    },
+    {
+      "fonte": "ASL Pescara",
+      "ok": true,
+      "trovate": 0,
+      "tempo": "2.17s",
+      "errore": ""
+    },
+    {
+      "fonte": "ASL Taranto",
+      "ok": false,
+      "trovate": 0,
+      "tempo": "",
+      "errore": "HTTPSConnectionPool(host='www.sanita.puglia.it', port=443): Max retries exceeded with url: /web/asl-taranto (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.sanita.puglia.it', port=443) at 0x7f7c10d88770>, 'Connection to www.sanita.puglia.it timed out. (connect timeout=5)'))"
+    },
+    {
+      "fonte": "ASL Teramo",
+      "ok": true,
+      "trovate": 0,
+      "tempo": "0.74s",
+      "errore": ""
+    },
+    {
+      "fonte": "ASM Matera",
+      "ok": false,
+      "trovate": 0,
+      "tempo": "",
+      "errore": "HTTPSConnectionPool(host='www.asmbasilicata.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.asmbasilicata.it', port=443) at 0x7f7c10d8ae70>, 'Connection to www.asmbasilicata.it timed out. (connect timeout=5)'))"
+    },
+    {
+      "fonte": "ASP Potenza",
+      "ok": false,
+      "trovate": 0,
+      "tempo": "",
+      "errore": "HTTPSConnectionPool(host='www.aspbasilicata.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.aspbasilicata.it', port=443) at 0x7f7c0cadeff0>, 'Connection to www.aspbasilicata.it timed out. (connect timeout=5)'))"
+    },
+    {
+      "fonte": "ASReM Molise",
+      "ok": false,
+      "trovate": 0,
+      "tempo": "",
+      "errore": "500 Server Error: Internal Server Error for url: https://www.asrem.molise.it/"
+    },
+    {
+      "fonte": "CUC Terra di Leuca",
+      "ok": true,
+      "trovate": 0,
+      "tempo": "1.29s",
+      "errore": ""
+    },
+    {
+      "fonte": "Comune di Bari - Bandi",
+      "ok": false,
+      "trovate": 0,
+      "tempo": "",
+      "errore": "HTTPSConnectionPool(host='www.comune.bari.it', port=443): Max retries exceeded with url: /bandi-di-gara-e-contratti (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.comune.bari.it', port=443) at 0x7f7c10c06060>, 'Connection to www.comune.bari.it timed out. (connect timeout=5)'))"
+    },
+    {
+      "fonte": "Comune di Lecce - Gare",
+      "ok": true,
+      "trovate": 0,
+      "tempo": "1.73s",
+      "errore": ""
+    },
+    {
+      "fonte": "Comune di Taranto - Gare",
+      "ok": true,
+      "trovate": 5,
+      "tempo": "4.83s",
+      "errore": ""
+    },
+    {
+      "fonte": "Consip - Ricerca gare",
+      "ok": true,
+      "trovate": 0,
+      "tempo": "1.09s",
+      "errore": ""
+    },
+    {
+      "fonte": "Consip Open Data - Bandi e Gare",
+      "ok": true,
+      "trovate": 0,
+      "tempo": "1.06s",
+      "errore": ""
+    },
+    {
+      "fonte": "EmPULIA",
+      "ok": false,
+      "trovate": 0,
+      "tempo": "",
+      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7f7c0c503320>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
+    },
+    {
+      "fonte": "Regione Abruzzo",
+      "ok": false,
+      "trovate": 0,
+      "tempo": "",
+      "errore": "HTTPSConnectionPool(host='www.regione.abruzzo.it', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))"
+    },
+    {
+      "fonte": "Regione Abruzzo - Bandi di gara",
+      "ok": false,
+      "trovate": 0,
+      "tempo": "",
+      "errore": "HTTPSConnectionPool(host='www.regione.abruzzo.it', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))"
+    },
+    {
+      "fonte": "Regione Basilicata - Bandi",
+      "ok": true,
+      "trovate": 2,
+      "tempo": "10.91s",
+      "errore": ""
+    },
+    {
+      "fonte": "Regione Molise",
+      "ok": true,
+      "trovate": 5,
+      "tempo": "2.12s",
+      "errore": ""
+    },
+    {
+      "fonte": "Regione Molise - Bandi e Gare",
+      "ok": true,
+      "trovate": 5,
+      "tempo": "2.52s",
+      "errore": ""
+    },
+    {
+      "fonte": "Regione Puglia - Bandi",
+      "ok": true,
+      "trovate": 0,
+      "tempo": "1.14s",
+      "errore": ""
+    },
+    {
+      "fonte": "SIAB Basilicata",
+      "ok": false,
+      "trovate": 0,
+      "tempo": "",
+      "errore": "503 Server Error: Service Temporarily Unavailable for url: https://siab.regione.basilicata.it/PortaleAppalti/"
+    },
+    {
+      "fonte": "TED Europa",
+      "ok": false,
+      "trovate": 0,
+      "tempo": "",
+      "errore": "risposta vuota"
+    },
+    {
+      "fonte": "Università G. d'Annunzio",
+      "ok": true,
+      "trovate": 4,
+      "tempo": "2.31s",
+      "errore": ""
+    },
+    {
+      "fonte": "Università del Molise",
+      "ok": true,
+      "trovate": 0,
+      "tempo": "3.08s",
+      "errore": ""
+    },
+    {
+      "fonte": "Università del Salento",
+      "ok": true,
+      "trovate": 9,
+      "tempo": "7.84s",
+      "errore": ""
+    },
+    {
+      "fonte": "Università dell'Aquila",
+      "ok": true,
+      "trovate": 0,
+      "tempo": "4.57s",
+      "errore": ""
+    },
+    {
+      "fonte": "Università della Basilicata",
+      "ok": true,
+      "trovate": 6,
+      "tempo": "13.85s",
+      "errore": ""
+    },
+    {
+      "fonte": "Università di Bari",
+      "ok": true,
+      "trovate": 0,
+      "tempo": "0.85s",
+      "errore": ""
+    }
+  ],
+  "gare": [
+    {
+      "id": "9da9a5fdf09f6d8aa38178e1",
+      "titolo": "Indagine esplorativa di mercato finalizzata all’individuazione di n. 5 operatori economici da invitare alla successiva procedura negoziata senza bando, da espletarsi mediante il Portale Appalti della Regione Basilicata SUA-RB, ai sensi dell’art. 50, comma 1, lett. e), del D.Lgs. n. 36/2023, per l’affidamento dei servizi integrati di comunicazione, disseminazione, organizzazione di eventi, capacity building, sensibilizzazione, coinvolgimento del volontariato, networking e stakeholder engagement, supporto organizzativo e logistico alla realizzazione di esercitazioni di protezione civile, ideazio",
+      "ente": "Regione Basilicata - Bandi",
+      "categoria": "Multiservizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Basilicata",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Regione Basilicata - Bandi",
+      "url": "https://www.regione.basilicata.it/?avvisi-sua=indagine-esplorativa-di-mercato-finalizzata-allindividuazione-di-n-5-operatori-economici-da-invitare-alla-successiva-procedura-negoziata-senza-bando-da-espletarsi-mediante-il-portale-appalti-della",
+      "rilevato_il": "25/08/2026 20:40",
+      "punteggio": 71,
+      "regioni_interessate": [
+        "Basilicata"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "783c633c80721f97af6ceacc",
+      "titolo": "Vai al contenuto",
+      "ente": "Regione Basilicata - Bandi",
+      "categoria": "Multiservizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Basilicata",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Regione Basilicata - Bandi",
+      "url": "https://www.regione.basilicata.it/#content",
+      "rilevato_il": "25/08/2026 20:40",
+      "punteggio": 71,
+      "regioni_interessate": [
+        "Basilicata"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "689fd0fcecb48ba40236d0ff",
+      "titolo": "Notizie del Presidente 06 Agosto 2026 Avviso IMPATTO, nuovo strumento di finanza agevolata per micro, piccole e medie imprese La Regione Molise rafforza il proprio impegno a sostegno del tessuto imprenditoriale con l'Avviso \"IMPATTO\", il nuovo strumento di finanza agevolata destinato alle micro, piccole e medie imprese del territorio. L'iniziativa è stata presentata nel corso di una conferenza stampa dal Presidente della Regione Molise, Francesco Roberti, dall'Assessore Gianluca Cefaratti, e dall'Amministratore Delegato di FINMolise, Sandra Palombo.",
+      "ente": "Regione Molise",
+      "categoria": "Servizi",
+      "cpv": "44254441",
+      "cig": "",
+      "regione": "Molise",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": ",",
+      "fonte": "Regione Molise",
+      "url": "https://www.regione.molise.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/22385",
+      "rilevato_il": "25/08/2026 20:39",
+      "punteggio": 69,
+      "regioni_interessate": [
+        "Molise"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "fd2eb5a556041062a6923feb",
+      "titolo": "Accesso all'informazione",
+      "ente": "Comune di Taranto - Gare",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Puglia",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Comune di Taranto - Gare",
+      "url": "https://www.comune.taranto.it/it/topics/1",
+      "rilevato_il": "25/08/2026 20:40",
+      "punteggio": 65,
+      "regioni_interessate": [
+        "Puglia"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "c99c9e9957251e5b4b32d13d",
+      "titolo": "Avviso pubblico per la sollecitazione di proposte di Partenariato Pubblico-Privato (PPP) - “Programma attuativo di SOCIAL HOUSING nell’ambito della Città Vecchia di Taranto”",
+      "ente": "Comune di Taranto - Gare",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Puglia",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Comune di Taranto - Gare",
+      "url": "https://www.comune.taranto.it/it/news/avviso-pubblico-per-la-sollecitazione-di-proposte-di-partenariato-pubblico-privato-ppp-programma-attuativo-di-social-housing-nellambito-della-citta-vecchia-di-taranto",
+      "rilevato_il": "25/08/2026 20:40",
+      "punteggio": 65,
+      "regioni_interessate": [
+        "Puglia"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "c1c856f83da768359758ecc5",
+      "titolo": "Comitato Unico di Garanzia",
+      "ente": "Università del Salento",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Puglia",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Università del Salento",
+      "url": "https://www.unisalento.it/cug",
+      "rilevato_il": "25/08/2026 20:39",
+      "punteggio": 65,
+      "regioni_interessate": [
+        "Puglia"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "c92d96087058f7bb8b828c94",
+      "titolo": "Comitato Unico di Garanzia (CUG) Il Comitato Unico di Garanzia (CUG) è un comitato paritetico costituito all’interno del Comune di Taranto",
+      "ente": "Comune di Taranto - Gare",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Puglia",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Comune di Taranto - Gare",
+      "url": "https://www.comune.taranto.it/it/page/cug?force_preview=true",
+      "rilevato_il": "25/08/2026 20:40",
+      "punteggio": 65,
+      "regioni_interessate": [
+        "Puglia"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "06d89f400f188732c5ac068d",
+      "titolo": "Documentale Comitato Unico Garanzia",
+      "ente": "Università del Salento",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Puglia",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Università del Salento",
+      "url": "https://www.unisalento.it/documentale-comitato-unico-garanzia",
+      "rilevato_il": "25/08/2026 20:40",
+      "punteggio": 65,
+      "regioni_interessate": [
+        "Puglia"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "243a8d70e87828e7e87d85ef",
+      "titolo": "Garante d'Ateneo",
+      "ente": "Università del Salento",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Puglia",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Università del Salento",
+      "url": "https://www.unisalento.it/garante-ateneo",
+      "rilevato_il": "25/08/2026 20:39",
+      "punteggio": 65,
+      "regioni_interessate": [
+        "Puglia"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "fb23444b14a765ebb81cedb2",
+      "titolo": "Presidio della Qualità di Ateneo",
+      "ente": "Università del Salento",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Puglia",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Università del Salento",
+      "url": "https://www.unisalento.it/presidio-della-qualita-di-ateneo",
+      "rilevato_il": "25/08/2026 20:39",
+      "punteggio": 65,
+      "regioni_interessate": [
+        "Puglia"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "b0a122d958ed720a6a6d7784",
+      "titolo": "Presidio della Qualità di Ateneo: candidature Area CUN01",
+      "ente": "Università del Salento",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Puglia",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Università del Salento",
+      "url": "https://www.unisalento.it/-/presidio-della-qualita-di-ateneo-candidature-area-cun01?redirect=%2F",
+      "rilevato_il": "25/08/2026 20:40",
+      "punteggio": 65,
+      "regioni_interessate": [
+        "Puglia"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "1897567df73cef505b38546b",
+      "titolo": "Presidio medico",
+      "ente": "Università del Salento",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Puglia",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Università del Salento",
+      "url": "https://www.unisalento.it/strutture/presidio-medico",
+      "rilevato_il": "25/08/2026 20:39",
+      "punteggio": 65,
+      "regioni_interessate": [
+        "Puglia"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "bddb6b91570abf928f468251",
+      "titolo": "Procedura di brevettazione",
+      "ente": "Università del Salento",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Puglia",
+      "provincia": "",
+      "pubblicazione": "18/03/2026",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Università del Salento",
+      "url": "https://www.unisalento.it/ricerca/procedura-di-brevettazione",
+      "rilevato_il": "25/08/2026 20:40",
+      "punteggio": 65,
+      "regioni_interessate": [
+        "Puglia"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "ce0f9a40520bf4910ad2a2ba",
+      "titolo": "Ricerca immobili in locazione per depositi archivistici: avviso di indagine di mercato.",
+      "ente": "Comune di Taranto - Gare",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Puglia",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Comune di Taranto - Gare",
+      "url": "https://www.comune.taranto.it/it/news/ricerca-immobili-in-locazione-per-depositi-archivistici-avviso-di-indagine-di-mercato?type=3",
+      "rilevato_il": "25/08/2026 20:39",
+      "punteggio": 65,
+      "regioni_interessate": [
+        "Puglia"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "afac00c180f073dd5170123f",
+      "titolo": "Salta al contenuto principale",
+      "ente": "Comune di Taranto - Gare",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Puglia",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Comune di Taranto - Gare",
+      "url": "https://www.comune.taranto.it/it#main-content",
+      "rilevato_il": "25/08/2026 20:39",
+      "punteggio": 65,
+      "regioni_interessate": [
+        "Puglia"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "8232d46a6965251a2d7620a4",
+      "titolo": "Sorteggio segretario bando ammissione ISUFI: verbale",
+      "ente": "Università del Salento",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Puglia",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Università del Salento",
+      "url": "https://www.unisalento.it/-/sorteggio-segretario-bando-ammissione-isufi-verbale?redirect=%2F",
+      "rilevato_il": "25/08/2026 20:40",
+      "punteggio": 65,
+      "regioni_interessate": [
+        "Puglia"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "9f71b0b7b3bc0c8da9c4297b",
+      "titolo": "Ufficio Servizi Generali e Patrimonio",
+      "ente": "Università del Salento",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Puglia",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Università del Salento",
+      "url": "https://www.unisalento.it/ufficio-servizi-generali-e-patrimonio",
+      "rilevato_il": "25/08/2026 20:40",
+      "punteggio": 65,
+      "regioni_interessate": [
+        "Puglia"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "abfdc5068d9a2e33b0fbb18a",
+      "titolo": "Amministrazione",
+      "ente": "Regione Molise",
+      "categoria": "Servizi",
+      "cpv": "44254441",
+      "cig": "",
+      "regione": "Molise",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Regione Molise",
+      "url": "https://www.regione.molise.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/2",
+      "rilevato_il": "25/08/2026 20:39",
+      "punteggio": 64,
+      "regioni_interessate": [
+        "Molise"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "cb1b24d7eb44fd5ccc03b7e9",
+      "titolo": "Organi di tutela e garanzia",
+      "ente": "Regione Molise",
+      "categoria": "Servizi",
+      "cpv": "44254441",
+      "cig": "",
+      "regione": "Molise",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Regione Molise",
+      "url": "https://www.regione.molise.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/1316",
+      "rilevato_il": "25/08/2026 20:39",
+      "punteggio": 64,
+      "regioni_interessate": [
+        "Molise"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "880b1dbd889b48adf84348a9",
+      "titolo": "Organismi di tutela e Osservatori",
+      "ente": "Regione Molise",
+      "categoria": "Servizi",
+      "cpv": "44254441",
+      "cig": "",
+      "regione": "Molise",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Regione Molise",
+      "url": "https://www.regione.molise.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/1318",
+      "rilevato_il": "25/08/2026 20:39",
+      "punteggio": 64,
+      "regioni_interessate": [
+        "Molise"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "90fa2508b76c70e5dede7633",
+      "titolo": "Avviso indizione procedura per l’attribuzione della classe stipendiale.",
+      "ente": "Università della Basilicata",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Basilicata",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Università della Basilicata",
+      "url": "https://portale.unibas.it/site/home/in-primo-piano/articolo14765.html",
+      "rilevato_il": "25/08/2026 20:40",
+      "punteggio": 61,
+      "regioni_interessate": [
+        "Basilicata"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "3a21d122582d8daa5b115c70",
+      "titolo": "Bando Borse di studio Associazione \"Giovanni Lorenzin\" Onlus",
+      "ente": "Università della Basilicata",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Basilicata",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Università della Basilicata",
+      "url": "https://portale.unibas.it/site/home/in-primo-piano/articolo14469.html",
+      "rilevato_il": "25/08/2026 20:40",
+      "punteggio": 61,
+      "regioni_interessate": [
+        "Basilicata"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "12f000cbadd1fd3bbd8d0ddc",
+      "titolo": "Bando “CHIMICA E FISICA AL FEMMINILE 2026”",
+      "ente": "Università della Basilicata",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Basilicata",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Università della Basilicata",
+      "url": "https://portale.unibas.it/site/home/in-primo-piano/articolo14804.html",
+      "rilevato_il": "25/08/2026 20:40",
+      "punteggio": 61,
+      "regioni_interessate": [
+        "Basilicata"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "3961a62d43ed173910fad1ca",
+      "titolo": "Garante degli Studenti",
+      "ente": "Università della Basilicata",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Basilicata",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Università della Basilicata",
+      "url": "https://portale.unibas.it/site/home/studenti/garante-degli-studenti.html",
+      "rilevato_il": "25/08/2026 20:40",
+      "punteggio": 61,
+      "regioni_interessate": [
+        "Basilicata"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "6110353a14f5722d826653f2",
+      "titolo": "Presidio della Qualità",
+      "ente": "Università della Basilicata",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Basilicata",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Università della Basilicata",
+      "url": "http://pqa.unibas.it",
+      "rilevato_il": "25/08/2026 20:40",
+      "punteggio": 61,
+      "regioni_interessate": [
+        "Basilicata"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "dd72e9fa243836ecc7f8d1c7",
+      "titolo": "Ufficio Servizi Generali e Diritto allo Studio",
+      "ente": "Università della Basilicata",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Basilicata",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Università della Basilicata",
+      "url": "https://portale.unibas.it/site/home/studenti/ufficio-servizi-generali-e-diritto-allo-studio.html",
+      "rilevato_il": "25/08/2026 20:40",
+      "punteggio": 61,
+      "regioni_interessate": [
+        "Basilicata"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "e17e790b93a400103ef9d3eb",
+      "titolo": "Notizie del Presidente 11 Agosto 2026 A Termoli presentato il presidio acquatico dei Vigili del Fuoco sulla costa molisana Rafforzare la sicurezza in mare durante il periodo di maggiore affluenza sulla costa molisana attraverso una presenza specializzata in grado di assicurare monitoraggio, pattugliamento e soccorso. È l'obiettivo del nuovo Presidio acquatico dei Vigili del Fuoco.",
+      "ente": "Regione Molise",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Molise",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Regione Molise",
+      "url": "https://www.regione.molise.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/22388",
+      "rilevato_il": "25/08/2026 20:39",
+      "punteggio": 49,
+      "regioni_interessate": [
+        "Molise"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "c68bf1df3583894cc9911e46",
+      "titolo": "Avviso 2° selezione per l'ammissione al CdLM a Ciclo Unico in Architettura",
+      "ente": "Università G. d'Annunzio",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Abruzzo",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Università G. d'Annunzio",
+      "url": "https://www.unich.it/avvisi/avviso-2deg-selezione-lammissione-al-cdlm-ciclo-unico-architettura-0",
+      "rilevato_il": "25/08/2026 20:40",
+      "punteggio": 45,
+      "regioni_interessate": [
+        "Abruzzo"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "df558631a0f9b26232ba280a",
+      "titolo": "Avviso di selezione per l’ammissione CdLM in Health Professions of Rehabilitation Sciences",
+      "ente": "Università G. d'Annunzio",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Abruzzo",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Università G. d'Annunzio",
+      "url": "https://www.unich.it/avvisi/avviso-di-selezione-lammissione-cdlm-health-professions-rehabilitation-sciences",
+      "rilevato_il": "25/08/2026 20:40",
+      "punteggio": 45,
+      "regioni_interessate": [
+        "Abruzzo"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "45573e0e7a2c9301a7702c00",
+      "titolo": "Presidio della Qualità di Ateneo",
+      "ente": "Università G. d'Annunzio",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Abruzzo",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Università G. d'Annunzio",
+      "url": "https://www.unich.it/ateneo/organizzazione/organi-di-controllo-consultivi-e-di-garanzia/presidio-della-qualita",
+      "rilevato_il": "25/08/2026 20:40",
+      "punteggio": 45,
+      "regioni_interessate": [
+        "Abruzzo"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "56caac84213342c4711d799e",
+      "titolo": "Salta al contenuto principale",
+      "ente": "Università G. d'Annunzio",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Abruzzo",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Università G. d'Annunzio",
+      "url": "https://www.unich.it/#main-content",
+      "rilevato_il": "25/08/2026 20:40",
+      "punteggio": 45,
+      "regioni_interessate": [
+        "Abruzzo"
+      ],
+      "novita": "Nuova"
+    }
+  ]
 }
