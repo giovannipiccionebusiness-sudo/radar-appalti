@@ -1,5 +1,5 @@
 {
-  "version": "5.0",
+  "version": "5.1",
   "settings": {
     "max_workers": 8,
     "source_timeout_seconds": 15,
@@ -21,7 +21,45 @@
       "Sicilia"
     ],
     "history_retention_days": 365,
-    "detect_changes": true
+    "detect_changes": true,
+    "allowed_regions": [
+      "Puglia",
+      "Molise",
+      "Basilicata",
+      "Abruzzo"
+    ],
+    "strict_region_filter": true,
+    "region_aliases": {
+      "Puglia": [
+        "puglia",
+        "bari",
+        "barletta",
+        "andria",
+        "trani",
+        "brindisi",
+        "foggia",
+        "lecce",
+        "taranto"
+      ],
+      "Molise": [
+        "molise",
+        "campobasso",
+        "isernia"
+      ],
+      "Basilicata": [
+        "basilicata",
+        "potenza",
+        "matera"
+      ],
+      "Abruzzo": [
+        "abruzzo",
+        "l'aquila",
+        "laquila",
+        "chieti",
+        "pescara",
+        "teramo"
+      ]
+    }
   },
   "keywords": [
     "pulizia",
@@ -182,36 +220,6 @@
     },
     {
       "active": true,
-      "name": "SORESA SIAPS",
-      "adapter": "generic",
-      "urls": [
-        "https://siaps.soresa.it/portalegare/"
-      ],
-      "region": "Campania",
-      "priority": 1
-    },
-    {
-      "active": true,
-      "name": "Centrale Acquisti Lazio",
-      "adapter": "generic",
-      "urls": [
-        "https://centraleacquisti.regione.lazio.it/"
-      ],
-      "region": "Lazio",
-      "priority": 1
-    },
-    {
-      "active": true,
-      "name": "Regione Calabria - Bandi",
-      "adapter": "generic",
-      "urls": [
-        "https://www.regione.calabria.it/bandi-e-avvisi-di-gara/"
-      ],
-      "region": "Calabria",
-      "priority": 1
-    },
-    {
-      "active": true,
       "name": "SIAB Basilicata",
       "adapter": "portale_appalti",
       "urls": [
@@ -222,63 +230,23 @@
     },
     {
       "active": true,
-      "name": "Portale Appalti Sicilia",
-      "adapter": "portale_appalti",
+      "name": "Regione Molise - Bandi e Gare",
+      "adapter": "generic",
       "urls": [
-        "https://appalti.regione.sicilia.it/PortaleAppalti/"
+        "https://www.regione.molise.it/"
       ],
-      "region": "Sicilia",
+      "region": "Molise",
       "priority": 1
     },
     {
       "active": true,
-      "name": "Intercent-ER",
+      "name": "Regione Abruzzo - Bandi di gara",
       "adapter": "generic",
       "urls": [
-        "https://intercenter.regione.emilia-romagna.it/bandi-e-strumenti-di-acquisto/bandi-intercenter/bandi-e-procedure-di-gara/bandi-aperti"
+        "https://www.regione.abruzzo.it/"
       ],
-      "region": "Emilia-Romagna",
-      "priority": 2
-    },
-    {
-      "active": true,
-      "name": "START Toscana",
-      "adapter": "generic",
-      "urls": [
-        "https://start.toscana.it/initiatives/list/"
-      ],
-      "region": "Toscana",
-      "priority": 2
-    },
-    {
-      "active": true,
-      "name": "SINTEL Lombardia",
-      "adapter": "generic",
-      "urls": [
-        "https://www.sintel.regione.lombardia.it/eprocdata/sintelSearch.xhtml"
-      ],
-      "region": "Lombardia",
-      "priority": 2
-    },
-    {
-      "active": true,
-      "name": "SardegnaCAT",
-      "adapter": "generic",
-      "urls": [
-        "https://www.sardegnacat.it/esop/ita-ras-host/public/web/login.jst"
-      ],
-      "region": "Sardegna",
-      "priority": 2
-    },
-    {
-      "active": true,
-      "name": "eAppalti FVG",
-      "adapter": "generic",
-      "urls": [
-        "https://eappalti.regione.fvg.it/"
-      ],
-      "region": "Friuli-Venezia Giulia",
-      "priority": 2
+      "region": "Abruzzo",
+      "priority": 1
     }
   ]
 }
