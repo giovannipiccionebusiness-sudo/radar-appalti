@@ -1,6 +1,6 @@
 {
   "version": "5.0",
-  "updated_at": "25/08/2026 05:45",
+  "updated_at": "25/08/2026 13:11",
   "count": 15,
   "new_count": 0,
   "updated_count": 0,
@@ -11,28 +11,28 @@
       "fonte": "ANAC - Pubblicità legale",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.48s",
+      "tempo": "1.09s",
       "errore": ""
     },
     {
       "fonte": "CUC Terra di Leuca",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.22s",
+      "tempo": "1.6s",
       "errore": ""
     },
     {
       "fonte": "Centrale Acquisti Lazio",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.25s",
+      "tempo": "1.71s",
       "errore": ""
     },
     {
       "fonte": "Consip - Ricerca gare",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.06s",
+      "tempo": "1.59s",
       "errore": ""
     },
     {
@@ -46,7 +46,7 @@
       "fonte": "Consip Open Data - Bandi e Gare",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.21s",
+      "tempo": "1.96s",
       "errore": ""
     },
     {
@@ -61,13 +61,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7f54fc269100>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7fb3b0aabe90>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "Intercent-ER",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.18s",
+      "tempo": "3.52s",
       "errore": ""
     },
     {
@@ -81,7 +81,7 @@
       "fonte": "Regione Calabria - Bandi",
       "ok": true,
       "trovate": 0,
-      "tempo": "3.37s",
+      "tempo": "8.1s",
       "errore": ""
     },
     {
@@ -95,28 +95,28 @@
       "fonte": "SINTEL Lombardia",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.43s",
+      "tempo": "3.23s",
       "errore": ""
     },
     {
       "fonte": "SORESA SIAPS",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.32s",
+      "tempo": "3.52s",
       "errore": ""
     },
     {
       "fonte": "START Toscana",
       "ok": true,
       "trovate": 0,
-      "tempo": "19.42s",
+      "tempo": "35.34s",
       "errore": ""
     },
     {
       "fonte": "SardegnaCAT",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.78s",
+      "tempo": "4.62s",
       "errore": ""
     },
     {
@@ -130,7 +130,7 @@
       "fonte": "eAppalti FVG",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.57s",
+      "tempo": "0.87s",
       "errore": ""
     }
   ],
