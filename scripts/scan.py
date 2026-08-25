@@ -116,6 +116,20 @@ def is_expired(date_value: str) -> bool:
         return False
 
 
+def detect_target_regions(text: str) -> list[str]:
+    low = clean(text).lower()
+    return [region for region, terms in SETTINGS.get("region_aliases", {}).items() if any(term.lower() in low for term in terms)]
+
+def region_allowed(item: dict[str, Any], raw_text: str = "") -> bool:
+    if not SETTINGS.get("strict_region_filter", False): return True
+    allowed = set(SETTINGS.get("allowed_regions", []))
+    if item.get("regione") in allowed:
+        item["regioni_interessate"] = [item["regione"]]; return True
+    found = detect_target_regions(" ".join([raw_text,item.get("titolo",""),item.get("ente","")]))
+    if found:
+        item["regioni_interessate"]=found; item["regione"]=", ".join(found); return True
+    return False
+
 def priority_score(item: dict[str, Any]) -> int:
     regions = SETTINGS.get("priority_regions", [])
     region = item.get("regione", "")
@@ -159,6 +173,7 @@ def tender_from_text(
         "url": url,
         "rilevato_il": datetime.now().strftime("%d/%m/%Y %H:%M"),
     }
+    item["_region_evidence"] = clean(text)
     item["punteggio"] = priority_score(item)
     return item
 
@@ -603,6 +618,8 @@ def scan_source(source: dict[str, Any]) -> tuple[list[dict[str, Any]], str]:
     else:
         items = scan_generic(source)
 
+    items = [item for item in items if region_allowed(item, item.get("_region_evidence",""))]
+    for item in items: item.pop("_region_evidence", None); item["punteggio"]=priority_score(item)
     elapsed = round(time.monotonic() - started, 2)
     return items, f"{elapsed}s"
 
