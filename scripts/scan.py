@@ -610,7 +610,12 @@ def scan_source(source: dict[str, Any]) -> tuple[list[dict[str, Any]], str]:
     if adapter == "anac":
         items = scan_anac(source)
     elif adapter == "ted_api":
-        items = scan_ted_api(source)
+        try:
+            items = scan_ted_api(source)
+        except Exception:
+            fallback = dict(source)
+            fallback["urls"] = ["https://ted.europa.eu/it/search/result"]
+            items = scan_generic(fallback)
     elif adapter == "consip_ckan":
         items = scan_consip_ckan(source)
     elif adapter == "consip_gare":
