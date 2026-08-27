@@ -1,17 +1,17 @@
 {
   "version": "5.2",
-  "updated_at": "26/08/2026 13:16",
-  "count": 36,
-  "new_count": 5,
-  "updated_count": 5,
-  "sources_ok": 18,
-  "sources_error": 12,
+  "updated_at": "27/08/2026 16:28",
+  "count": 38,
+  "new_count": 2,
+  "updated_count": 6,
+  "sources_ok": 19,
+  "sources_error": 11,
   "sources_status": [
     {
       "fonte": "ANAC - Pubblicità legale",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.61s",
+      "tempo": "0.72s",
       "errore": ""
     },
     {
@@ -19,20 +19,20 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.sanita.puglia.it', port=443): Max retries exceeded with url: /web/asl-bari (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.sanita.puglia.it', port=443) at 0x7f974111ce30>, 'Connection to www.sanita.puglia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.sanita.puglia.it', port=443): Max retries exceeded with url: /web/asl-bari (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.sanita.puglia.it', port=443) at 0x7fd95fdc8200>, 'Connection to www.sanita.puglia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "ASL Lecce",
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.sanita.puglia.it', port=443): Max retries exceeded with url: /web/asl-lecce (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.sanita.puglia.it', port=443) at 0x7f973c544500>, 'Connection to www.sanita.puglia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.sanita.puglia.it', port=443): Max retries exceeded with url: /web/asl-lecce (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.sanita.puglia.it', port=443) at 0x7fd95fd87ef0>, 'Connection to www.sanita.puglia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "ASL Pescara",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.22s",
+      "tempo": "2.33s",
       "errore": ""
     },
     {
@@ -40,13 +40,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.sanita.puglia.it', port=443): Max retries exceeded with url: /web/asl-taranto (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.sanita.puglia.it', port=443) at 0x7f973c523140>, 'Connection to www.sanita.puglia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.sanita.puglia.it', port=443): Max retries exceeded with url: /web/asl-taranto (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.sanita.puglia.it', port=443) at 0x7fd95c76cb30>, 'Connection to www.sanita.puglia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "ASL Teramo",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.84s",
+      "tempo": "0.93s",
       "errore": ""
     },
     {
@@ -54,14 +54,14 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.asmbasilicata.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.asmbasilicata.it', port=443) at 0x7f973c76ce60>, 'Connection to www.asmbasilicata.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.asmbasilicata.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.asmbasilicata.it', port=443) at 0x7fd94c32d6d0>, 'Connection to www.asmbasilicata.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "ASP Potenza",
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.aspbasilicata.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.aspbasilicata.it', port=443) at 0x7f973c64be30>, 'Connection to www.aspbasilicata.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.aspbasilicata.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.aspbasilicata.it', port=443) at 0x7fd95c6d5130>, 'Connection to www.aspbasilicata.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "ASReM Molise",
@@ -82,34 +82,34 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.comune.bari.it', port=443): Max retries exceeded with url: /bandi-di-gara-e-contratti (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.comune.bari.it', port=443) at 0x7f9740f7d670>, 'Connection to www.comune.bari.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.comune.bari.it', port=443): Max retries exceeded with url: /bandi-di-gara-e-contratti (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.comune.bari.it', port=443) at 0x7fd95fe97830>, 'Connection to www.comune.bari.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "Comune di Lecce - Gare",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.96s",
+      "tempo": "1.11s",
       "errore": ""
     },
     {
       "fonte": "Comune di Taranto - Gare",
       "ok": true,
       "trovate": 5,
-      "tempo": "8.87s",
+      "tempo": "4.93s",
       "errore": ""
     },
     {
       "fonte": "Consip - Ricerca gare",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.26s",
+      "tempo": "1.16s",
       "errore": ""
     },
     {
       "fonte": "Consip Open Data - Bandi e Gare",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.39s",
+      "tempo": "1.56s",
       "errore": ""
     },
     {
@@ -117,7 +117,7 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7f972c50a7e0>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7fd95c3dd7f0>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "Regione Abruzzo",
@@ -137,28 +137,28 @@
       "fonte": "Regione Basilicata - Bandi",
       "ok": true,
       "trovate": 2,
-      "tempo": "12.84s",
+      "tempo": "7.47s",
       "errore": ""
     },
     {
       "fonte": "Regione Molise",
       "ok": true,
       "trovate": 6,
-      "tempo": "2.51s",
+      "tempo": "2.61s",
       "errore": ""
     },
     {
       "fonte": "Regione Molise - Bandi e Gare",
       "ok": true,
       "trovate": 6,
-      "tempo": "2.7s",
+      "tempo": "3.04s",
       "errore": ""
     },
     {
       "fonte": "Regione Puglia - Bandi",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.29s",
+      "tempo": "1.05s",
       "errore": ""
     },
     {
@@ -170,51 +170,51 @@
     },
     {
       "fonte": "TED Europa",
-      "ok": false,
+      "ok": true,
       "trovate": 0,
-      "tempo": "",
-      "errore": "risposta vuota"
+      "tempo": "2.07s",
+      "errore": ""
     },
     {
       "fonte": "Università G. d'Annunzio",
       "ok": true,
-      "trovate": 5,
-      "tempo": "2.29s",
+      "trovate": 4,
+      "tempo": "2.7s",
       "errore": ""
     },
     {
       "fonte": "Università del Molise",
       "ok": true,
       "trovate": 0,
-      "tempo": "3.21s",
+      "tempo": "3.92s",
       "errore": ""
     },
     {
       "fonte": "Università del Salento",
       "ok": true,
       "trovate": 9,
-      "tempo": "8.13s",
+      "tempo": "8.0s",
       "errore": ""
     },
     {
       "fonte": "Università dell'Aquila",
       "ok": true,
       "trovate": 0,
-      "tempo": "4.39s",
+      "tempo": "4.78s",
       "errore": ""
     },
     {
       "fonte": "Università della Basilicata",
       "ok": true,
       "trovate": 8,
-      "tempo": "11.26s",
+      "tempo": "8.72s",
       "errore": ""
     },
     {
       "fonte": "Università di Bari",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.02s",
+      "tempo": "1.01s",
       "errore": ""
     }
   ],
@@ -233,7 +233,7 @@
       "importo": "",
       "fonte": "Regione Basilicata - Bandi",
       "url": "https://www.regione.basilicata.it/?avvisi-sua=indagine-esplorativa-di-mercato-finalizzata-allindividuazione-di-n-5-operatori-economici-da-invitare-alla-successiva-procedura-negoziata-senza-bando-da-espletarsi-mediante-il-portale-appalti-della",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 71,
       "regioni_interessate": [
         "Basilicata"
@@ -254,10 +254,31 @@
       "importo": "",
       "fonte": "Regione Basilicata - Bandi",
       "url": "https://www.regione.basilicata.it/#content",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 71,
       "regioni_interessate": [
         "Basilicata"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "e0172e557588e4bb468619a0",
+      "titolo": "Approvata la graduatoria definitiva – Budget di sostegno al ruolo di cura e assistenza del caregiver familiare – Annualità 2024",
+      "ente": "Comune di Taranto - Gare",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Puglia",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "500,00",
+      "fonte": "Comune di Taranto - Gare",
+      "url": "https://www.comune.taranto.it/it/news/approvata-la-graduatoria-definitiva-budget-di-sostegno-al-ruolo-di-cura-e-assistenza-del-caregiver-familiare-annualita-2024",
+      "rilevato_il": "27/08/2026 16:28",
+      "punteggio": 70,
+      "regioni_interessate": [
+        "Puglia"
       ],
       "novita": "Nuova"
     },
@@ -275,7 +296,7 @@
       "importo": ",",
       "fonte": "Regione Molise",
       "url": "https://www.regione.molise.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/22385",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 69,
       "regioni_interessate": [
         "Molise"
@@ -296,7 +317,7 @@
       "importo": "",
       "fonte": "Comune di Taranto - Gare",
       "url": "https://www.comune.taranto.it/it/topics/1",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -338,7 +359,7 @@
       "importo": "",
       "fonte": "Università del Salento",
       "url": "https://www.unisalento.it/cug",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -359,7 +380,7 @@
       "importo": "",
       "fonte": "Comune di Taranto - Gare",
       "url": "https://www.comune.taranto.it/it/page/cug?force_preview=true",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -380,7 +401,7 @@
       "importo": "",
       "fonte": "Università del Salento",
       "url": "https://www.unisalento.it/documentale-comitato-unico-garanzia",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -401,7 +422,7 @@
       "importo": "",
       "fonte": "Università del Salento",
       "url": "https://www.unisalento.it/garante-ateneo",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -422,7 +443,7 @@
       "importo": "",
       "fonte": "Università del Salento",
       "url": "https://www.unisalento.it/presidio-della-qualita-di-ateneo",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -443,7 +464,7 @@
       "importo": "",
       "fonte": "Università del Salento",
       "url": "https://www.unisalento.it/-/presidio-della-qualita-di-ateneo-candidature-area-cun01?redirect=%2F",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -464,7 +485,7 @@
       "importo": "",
       "fonte": "Università del Salento",
       "url": "https://www.unisalento.it/strutture/presidio-medico",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -485,7 +506,7 @@
       "importo": "",
       "fonte": "Università del Salento",
       "url": "https://www.unisalento.it/ricerca/procedura-di-brevettazione",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -506,7 +527,7 @@
       "importo": "",
       "fonte": "Comune di Taranto - Gare",
       "url": "https://www.comune.taranto.it/it/news/ricerca-immobili-in-locazione-per-depositi-archivistici-avviso-di-indagine-di-mercato?type=3",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -527,7 +548,7 @@
       "importo": "",
       "fonte": "Comune di Taranto - Gare",
       "url": "https://www.comune.taranto.it/it#main-content",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -548,7 +569,7 @@
       "importo": "",
       "fonte": "Università del Salento",
       "url": "https://www.unisalento.it/-/sorteggio-segretario-bando-ammissione-isufi-verbale?redirect=%2F",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -569,7 +590,7 @@
       "importo": "",
       "fonte": "Università del Salento",
       "url": "https://www.unisalento.it/ufficio-servizi-generali-e-patrimonio",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -590,7 +611,7 @@
       "importo": "",
       "fonte": "Regione Molise",
       "url": "https://www.regione.molise.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/22394",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 64,
       "regioni_interessate": [
         "Molise"
@@ -611,7 +632,7 @@
       "importo": "",
       "fonte": "Regione Molise",
       "url": "https://www.regione.molise.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/2",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 64,
       "regioni_interessate": [
         "Molise"
@@ -632,7 +653,7 @@
       "importo": "",
       "fonte": "Regione Molise",
       "url": "https://www.regione.molise.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/1316",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 64,
       "regioni_interessate": [
         "Molise"
@@ -653,7 +674,7 @@
       "importo": "",
       "fonte": "Regione Molise",
       "url": "https://www.regione.molise.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/1318",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 64,
       "regioni_interessate": [
         "Molise"
@@ -674,7 +695,7 @@
       "importo": "",
       "fonte": "Università della Basilicata",
       "url": "https://portale.unibas.it/site/home/in-primo-piano/articolo14857.html",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 61,
       "regioni_interessate": [
         "Basilicata"
@@ -695,7 +716,7 @@
       "importo": "",
       "fonte": "Università della Basilicata",
       "url": "https://portale.unibas.it/site/home/in-primo-piano/articolo14765.html",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 61,
       "regioni_interessate": [
         "Basilicata"
@@ -716,7 +737,7 @@
       "importo": "",
       "fonte": "Università della Basilicata",
       "url": "https://portale.unibas.it/site/home/in-primo-piano/articolo14469.html",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 61,
       "regioni_interessate": [
         "Basilicata"
@@ -737,7 +758,7 @@
       "importo": "",
       "fonte": "Università della Basilicata",
       "url": "https://portale.unibas.it/site/home/in-primo-piano/articolo14804.html",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 61,
       "regioni_interessate": [
         "Basilicata"
@@ -758,7 +779,7 @@
       "importo": "",
       "fonte": "Università della Basilicata",
       "url": "https://cultura.gov.it/comunicato/29121",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 61,
       "regioni_interessate": [
         "Basilicata"
@@ -779,7 +800,7 @@
       "importo": "",
       "fonte": "Università della Basilicata",
       "url": "https://portale.unibas.it/site/home/studenti/garante-degli-studenti.html",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 61,
       "regioni_interessate": [
         "Basilicata"
@@ -800,7 +821,7 @@
       "importo": "",
       "fonte": "Università della Basilicata",
       "url": "http://pqa.unibas.it",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 61,
       "regioni_interessate": [
         "Basilicata"
@@ -821,7 +842,7 @@
       "importo": "",
       "fonte": "Università della Basilicata",
       "url": "https://portale.unibas.it/site/home/studenti/ufficio-servizi-generali-e-diritto-allo-studio.html",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 61,
       "regioni_interessate": [
         "Basilicata"
@@ -842,7 +863,7 @@
       "importo": "",
       "fonte": "Regione Molise",
       "url": "https://www.regione.molise.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/22388",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 49,
       "regioni_interessate": [
         "Molise"
@@ -884,7 +905,7 @@
       "importo": "",
       "fonte": "Università G. d'Annunzio",
       "url": "https://www.unich.it/avvisi/avviso-di-selezione-anni-successivi-al-primo-del-cdlm-odontoiatria-e-protesi-dentaria",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 45,
       "regioni_interessate": [
         "Abruzzo"
@@ -934,6 +955,27 @@
       "novita": "Nuova"
     },
     {
+      "id": "24409ed0628f4ecb479e1b10",
+      "titolo": "Avviso di selezione per l’ammissione ai CdL delle Professioni Sanitarie - posti disponibili",
+      "ente": "Università G. d'Annunzio",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Abruzzo",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Università G. d'Annunzio",
+      "url": "https://www.unich.it/avvisi/avviso-di-selezione-lammissione-ai-cdl-delle-professioni-sanitarie-posti-disponibili",
+      "rilevato_il": "27/08/2026 16:28",
+      "punteggio": 45,
+      "regioni_interessate": [
+        "Abruzzo"
+      ],
+      "novita": "Nuova"
+    },
+    {
       "id": "45573e0e7a2c9301a7702c00",
       "titolo": "Presidio della Qualità di Ateneo",
       "ente": "Università G. d'Annunzio",
@@ -947,7 +989,7 @@
       "importo": "",
       "fonte": "Università G. d'Annunzio",
       "url": "https://www.unich.it/ateneo/organizzazione/organi-di-controllo-consultivi-e-di-garanzia/presidio-della-qualita",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 45,
       "regioni_interessate": [
         "Abruzzo"
@@ -968,7 +1010,7 @@
       "importo": "",
       "fonte": "Università G. d'Annunzio",
       "url": "https://www.unich.it/#main-content",
-      "rilevato_il": "26/08/2026 13:16",
+      "rilevato_il": "27/08/2026 16:28",
       "punteggio": 45,
       "regioni_interessate": [
         "Abruzzo"
