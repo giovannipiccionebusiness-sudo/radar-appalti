@@ -1,9 +1,9 @@
 {
   "version": "5.2",
-  "updated_at": "31/08/2026 19:07",
-  "count": 38,
-  "new_count": 0,
-  "updated_count": 6,
+  "updated_at": "01/09/2026 10:02",
+  "count": 40,
+  "new_count": 4,
+  "updated_count": 7,
   "sources_ok": 18,
   "sources_error": 12,
   "sources_status": [
@@ -11,7 +11,7 @@
       "fonte": "ANAC - Pubblicità legale",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.59s",
+      "tempo": "0.86s",
       "errore": ""
     },
     {
@@ -19,20 +19,20 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.sanita.puglia.it', port=443): Max retries exceeded with url: /web/asl-bari (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.sanita.puglia.it', port=443) at 0x7f6565778fb0>, 'Connection to www.sanita.puglia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.sanita.puglia.it', port=443): Max retries exceeded with url: /web/asl-bari (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.sanita.puglia.it', port=443) at 0x7f6e16ce4bf0>, 'Connection to www.sanita.puglia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "ASL Lecce",
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.sanita.puglia.it', port=443): Max retries exceeded with url: /web/asl-lecce (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.sanita.puglia.it', port=443) at 0x7f6564383680>, 'Connection to www.sanita.puglia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.sanita.puglia.it', port=443): Max retries exceeded with url: /web/asl-lecce (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.sanita.puglia.it', port=443) at 0x7f6e16c29880>, 'Connection to www.sanita.puglia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "ASL Pescara",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.85s",
+      "tempo": "2.48s",
       "errore": ""
     },
     {
@@ -40,13 +40,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.sanita.puglia.it', port=443): Max retries exceeded with url: /web/asl-taranto (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.sanita.puglia.it', port=443) at 0x7f656412c230>, 'Connection to www.sanita.puglia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.sanita.puglia.it', port=443): Max retries exceeded with url: /web/asl-taranto (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.sanita.puglia.it', port=443) at 0x7f6e144555e0>, 'Connection to www.sanita.puglia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "ASL Teramo",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.78s",
+      "tempo": "1.22s",
       "errore": ""
     },
     {
@@ -54,14 +54,14 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.asmbasilicata.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.asmbasilicata.it', port=443) at 0x7f655c9715b0>, 'Connection to www.asmbasilicata.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.asmbasilicata.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.asmbasilicata.it', port=443) at 0x7f6e0c560260>, 'Connection to www.asmbasilicata.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "ASP Potenza",
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.aspbasilicata.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.aspbasilicata.it', port=443) at 0x7f65642db860>, 'Connection to www.aspbasilicata.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.aspbasilicata.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.aspbasilicata.it', port=443) at 0x7f6e0ceabcb0>, 'Connection to www.aspbasilicata.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "ASReM Molise",
@@ -74,7 +74,7 @@
       "fonte": "CUC Terra di Leuca",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.14s",
+      "tempo": "1.79s",
       "errore": ""
     },
     {
@@ -82,34 +82,34 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.comune.bari.it', port=443): Max retries exceeded with url: /bandi-di-gara-e-contratti (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.comune.bari.it', port=443) at 0x7f65656bed20>, 'Connection to www.comune.bari.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.comune.bari.it', port=443): Max retries exceeded with url: /bandi-di-gara-e-contratti (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.comune.bari.it', port=443) at 0x7f6e16c29b80>, 'Connection to www.comune.bari.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "Comune di Lecce - Gare",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.05s",
+      "tempo": "2.16s",
       "errore": ""
     },
     {
       "fonte": "Comune di Taranto - Gare",
-      "ok": true,
-      "trovate": 3,
-      "tempo": "2.46s",
-      "errore": ""
+      "ok": false,
+      "trovate": 0,
+      "tempo": "",
+      "errore": "HTTPSConnectionPool(host='www.comune.taranto.it', port=443): Read timed out. (read timeout=10)"
     },
     {
       "fonte": "Consip - Ricerca gare",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.12s",
+      "tempo": "1.45s",
       "errore": ""
     },
     {
       "fonte": "Consip Open Data - Bandi e Gare",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.42s",
+      "tempo": "1.88s",
       "errore": ""
     },
     {
@@ -117,7 +117,7 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7f655cc61ee0>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7f6e1467c680>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "Regione Abruzzo",
@@ -137,28 +137,28 @@
       "fonte": "Regione Basilicata - Bandi",
       "ok": true,
       "trovate": 0,
-      "tempo": "6.71s",
+      "tempo": "13.8s",
       "errore": ""
     },
     {
       "fonte": "Regione Molise",
       "ok": true,
-      "trovate": 6,
-      "tempo": "2.49s",
+      "trovate": 8,
+      "tempo": "3.9s",
       "errore": ""
     },
     {
       "fonte": "Regione Molise - Bandi e Gare",
       "ok": true,
-      "trovate": 6,
-      "tempo": "2.73s",
+      "trovate": 8,
+      "tempo": "4.2s",
       "errore": ""
     },
     {
       "fonte": "Regione Puglia - Bandi",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.82s",
+      "tempo": "1.31s",
       "errore": ""
     },
     {
@@ -172,49 +172,49 @@
       "fonte": "TED Europa",
       "ok": true,
       "trovate": 0,
-      "tempo": "4.14s",
+      "tempo": "4.5s",
       "errore": ""
     },
     {
       "fonte": "Università G. d'Annunzio",
       "ok": true,
-      "trovate": 3,
-      "tempo": "1.04s",
+      "trovate": 2,
+      "tempo": "0.68s",
       "errore": ""
     },
     {
       "fonte": "Università del Molise",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.81s",
+      "tempo": "2.49s",
       "errore": ""
     },
     {
       "fonte": "Università del Salento",
       "ok": true,
       "trovate": 9,
-      "tempo": "7.51s",
+      "tempo": "9.75s",
       "errore": ""
     },
     {
       "fonte": "Università dell'Aquila",
-      "ok": false,
+      "ok": true,
       "trovate": 0,
-      "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.univaq.it', port=443): Read timed out. (read timeout=10)"
+      "tempo": "6.9s",
+      "errore": ""
     },
     {
       "fonte": "Università della Basilicata",
       "ok": true,
-      "trovate": 7,
-      "tempo": "11.99s",
+      "trovate": 8,
+      "tempo": "9.6s",
       "errore": ""
     },
     {
       "fonte": "Università di Bari",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.28s",
+      "tempo": "1.21s",
       "errore": ""
     }
   ],
@@ -283,6 +283,27 @@
       "novita": "Nuova"
     },
     {
+      "id": "7e7eed2ec35778c06493d3c4",
+      "titolo": "01 Settembre 2026 Avviso \"IMPATTO\", qualificata partecipazione agli incontri di Termoli, Campobasso e Isernia Si è concluso a Isernia il ciclo di tre incontri territoriali organizzati da Regione Molise e da Finmolise per illustrare alle imprese, ai professionisti e alle rappresentanze del sistema economico regionale le opportunità e le modalità operative dell'Avviso \"IMPATTO\", la misura finalizzata a sostenere gli investimenti attraverso finanziamenti a tasso zero.",
+      "ente": "Regione Molise",
+      "categoria": "Servizi",
+      "cpv": "44254441",
+      "cig": "",
+      "regione": "Molise",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": ",",
+      "fonte": "Regione Molise",
+      "url": "https://www.regione.molise.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/22402",
+      "rilevato_il": "01/09/2026 10:02",
+      "punteggio": 69,
+      "regioni_interessate": [
+        "Molise"
+      ],
+      "novita": "Nuova"
+    },
+    {
       "id": "689fd0fcecb48ba40236d0ff",
       "titolo": "Notizie del Presidente 06 Agosto 2026 Avviso IMPATTO, nuovo strumento di finanza agevolata per micro, piccole e medie imprese La Regione Molise rafforza il proprio impegno a sostegno del tessuto imprenditoriale con l'Avviso \"IMPATTO\", il nuovo strumento di finanza agevolata destinato alle micro, piccole e medie imprese del territorio. L'iniziativa è stata presentata nel corso di una conferenza stampa dal Presidente della Regione Molise, Francesco Roberti, dall'Assessore Gianluca Cefaratti, e dall'Amministratore Delegato di FINMolise, Sandra Palombo.",
       "ente": "Regione Molise",
@@ -296,7 +317,7 @@
       "importo": ",",
       "fonte": "Regione Molise",
       "url": "https://www.regione.molise.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/22385",
-      "rilevato_il": "31/08/2026 19:07",
+      "rilevato_il": "01/09/2026 10:02",
       "punteggio": 69,
       "regioni_interessate": [
         "Molise"
@@ -359,7 +380,7 @@
       "importo": "",
       "fonte": "Università del Salento",
       "url": "https://www.unisalento.it/cug",
-      "rilevato_il": "31/08/2026 19:07",
+      "rilevato_il": "01/09/2026 10:02",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -401,7 +422,7 @@
       "importo": "",
       "fonte": "Università del Salento",
       "url": "https://www.unisalento.it/documentale-comitato-unico-garanzia",
-      "rilevato_il": "31/08/2026 19:07",
+      "rilevato_il": "01/09/2026 10:02",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -422,7 +443,7 @@
       "importo": "",
       "fonte": "Università del Salento",
       "url": "https://www.unisalento.it/garante-ateneo",
-      "rilevato_il": "31/08/2026 19:07",
+      "rilevato_il": "01/09/2026 10:02",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -443,7 +464,7 @@
       "importo": "",
       "fonte": "Università del Salento",
       "url": "https://www.unisalento.it/presidio-della-qualita-di-ateneo",
-      "rilevato_il": "31/08/2026 19:07",
+      "rilevato_il": "01/09/2026 10:02",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -464,7 +485,7 @@
       "importo": "",
       "fonte": "Università del Salento",
       "url": "https://www.unisalento.it/-/presidio-della-qualita-di-ateneo-candidature-area-cun01?redirect=%2F",
-      "rilevato_il": "31/08/2026 19:07",
+      "rilevato_il": "01/09/2026 10:02",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -485,7 +506,7 @@
       "importo": "",
       "fonte": "Università del Salento",
       "url": "https://www.unisalento.it/strutture/presidio-medico",
-      "rilevato_il": "31/08/2026 19:07",
+      "rilevato_il": "01/09/2026 10:02",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -506,7 +527,7 @@
       "importo": "",
       "fonte": "Università del Salento",
       "url": "https://www.unisalento.it/ricerca/procedura-di-brevettazione",
-      "rilevato_il": "31/08/2026 19:07",
+      "rilevato_il": "01/09/2026 10:02",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -569,7 +590,7 @@
       "importo": "",
       "fonte": "Università del Salento",
       "url": "https://www.unisalento.it/-/sorteggio-segretario-bando-ammissione-isufi-verbale?redirect=%2F",
-      "rilevato_il": "31/08/2026 19:07",
+      "rilevato_il": "01/09/2026 10:02",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -590,31 +611,10 @@
       "importo": "",
       "fonte": "Università del Salento",
       "url": "https://www.unisalento.it/ufficio-servizi-generali-e-patrimonio",
-      "rilevato_il": "31/08/2026 19:07",
+      "rilevato_il": "01/09/2026 10:02",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
-      ],
-      "novita": "Nuova"
-    },
-    {
-      "id": "20037471c2e0473aa9709c9e",
-      "titolo": "26 Agosto 2026 Avviso 'Impatto', tre incontri a Termoli, Campobasso e Isernia per presentare le modalità operative Regione Molise e Finmolise incontrano le imprese per presentare le modalità operative dell''Avviso \"IMPATTO\", la nuova misura finalizzata alla concessione di finanziamenti a tasso zero per sostenere gli investimenti delle imprese, facilitare l'accesso al credito e promuovere percorsi di crescita e innovazione del sistema produttivo regionale.",
-      "ente": "Regione Molise",
-      "categoria": "Servizi",
-      "cpv": "44254441",
-      "cig": "",
-      "regione": "Molise",
-      "provincia": "",
-      "pubblicazione": "",
-      "scadenza": "",
-      "importo": "",
-      "fonte": "Regione Molise",
-      "url": "https://www.regione.molise.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/22394",
-      "rilevato_il": "31/08/2026 19:07",
-      "punteggio": 64,
-      "regioni_interessate": [
-        "Molise"
       ],
       "novita": "Nuova"
     },
@@ -632,12 +632,54 @@
       "importo": "",
       "fonte": "Regione Molise",
       "url": "https://www.regione.molise.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/2",
-      "rilevato_il": "31/08/2026 19:07",
+      "rilevato_il": "01/09/2026 10:02",
       "punteggio": 64,
       "regioni_interessate": [
         "Molise"
       ],
       "novita": "Nuova"
+    },
+    {
+      "id": "3e9e0532cad62dfe4eb25c18",
+      "titolo": "Notizie del Presidente 01 Settembre 2026 Post-sisma 2018, proroga termini per fabbisogno finanziario completamento ricostruzione prime abitazioni Il Presidente della Giunta regionale del Molise, Francesco Roberti, in qualità di Commissario Straordinario per la ricostruzione nei territori dei Comuni della provincia di Campobasso colpiti da una serie di eventi sismici a far data dal 16 agosto 2018, ha disposto la proroga dei termini previsti dall'Avviso Pubblico ricognitivo 2026 del fabbisogno finanziario necessario per il completamento dell'iter della ricostruzione privata - prime abitazioni, a",
+      "ente": "Regione Molise",
+      "categoria": "Servizi",
+      "cpv": "44254441",
+      "cig": "",
+      "regione": "Molise",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Regione Molise",
+      "url": "https://www.regione.molise.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/22403",
+      "rilevato_il": "01/09/2026 10:02",
+      "punteggio": 64,
+      "regioni_interessate": [
+        "Molise"
+      ],
+      "novita": "Nuova"
+    },
+    {
+      "id": "20037471c2e0473aa9709c9e",
+      "titolo": "Notizie del Presidente 26 Agosto 2026 Avviso 'Impatto', tre incontri a Termoli, Campobasso e Isernia per presentare le modalità operative Regione Molise e Finmolise incontrano le imprese per presentare le modalità operative dell''Avviso \"IMPATTO\", la nuova misura finalizzata alla concessione di finanziamenti a tasso zero per sostenere gli investimenti delle imprese, facilitare l'accesso al credito e promuovere percorsi di crescita e innovazione del sistema produttivo regionale.",
+      "ente": "Regione Molise",
+      "categoria": "Servizi",
+      "cpv": "44254441",
+      "cig": "",
+      "regione": "Molise",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Regione Molise",
+      "url": "https://www.regione.molise.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/22394",
+      "rilevato_il": "01/09/2026 10:02",
+      "punteggio": 64,
+      "regioni_interessate": [
+        "Molise"
+      ],
+      "novita": "Aggiornata"
     },
     {
       "id": "cb1b24d7eb44fd5ccc03b7e9",
@@ -653,7 +695,7 @@
       "importo": "",
       "fonte": "Regione Molise",
       "url": "https://www.regione.molise.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/1316",
-      "rilevato_il": "31/08/2026 19:07",
+      "rilevato_il": "01/09/2026 10:02",
       "punteggio": 64,
       "regioni_interessate": [
         "Molise"
@@ -674,7 +716,7 @@
       "importo": "",
       "fonte": "Regione Molise",
       "url": "https://www.regione.molise.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/1318",
-      "rilevato_il": "31/08/2026 19:07",
+      "rilevato_il": "01/09/2026 10:02",
       "punteggio": 64,
       "regioni_interessate": [
         "Molise"
@@ -695,7 +737,7 @@
       "importo": "",
       "fonte": "Università della Basilicata",
       "url": "https://portale.unibas.it/site/home/in-primo-piano/articolo14857.html",
-      "rilevato_il": "31/08/2026 19:07",
+      "rilevato_il": "01/09/2026 10:02",
       "punteggio": 61,
       "regioni_interessate": [
         "Basilicata"
@@ -716,7 +758,7 @@
       "importo": "",
       "fonte": "Università della Basilicata",
       "url": "https://portale.unibas.it/site/home/in-primo-piano/articolo14765.html",
-      "rilevato_il": "31/08/2026 19:07",
+      "rilevato_il": "01/09/2026 10:02",
       "punteggio": 61,
       "regioni_interessate": [
         "Basilicata"
@@ -737,7 +779,7 @@
       "importo": "",
       "fonte": "Università della Basilicata",
       "url": "https://portale.unibas.it/site/home/in-primo-piano/articolo14469.html",
-      "rilevato_il": "31/08/2026 19:07",
+      "rilevato_il": "01/09/2026 10:02",
       "punteggio": 61,
       "regioni_interessate": [
         "Basilicata"
@@ -758,7 +800,7 @@
       "importo": "",
       "fonte": "Università della Basilicata",
       "url": "https://portale.unibas.it/site/home/in-primo-piano/articolo14804.html",
-      "rilevato_il": "31/08/2026 19:07",
+      "rilevato_il": "01/09/2026 10:02",
       "punteggio": 61,
       "regioni_interessate": [
         "Basilicata"
@@ -779,7 +821,7 @@
       "importo": "",
       "fonte": "Università della Basilicata",
       "url": "https://cultura.gov.it/comunicato/29121",
-      "rilevato_il": "30/08/2026 10:27",
+      "rilevato_il": "01/09/2026 10:02",
       "punteggio": 61,
       "regioni_interessate": [
         "Basilicata"
@@ -800,7 +842,7 @@
       "importo": "",
       "fonte": "Università della Basilicata",
       "url": "https://portale.unibas.it/site/home/studenti/garante-degli-studenti.html",
-      "rilevato_il": "31/08/2026 19:07",
+      "rilevato_il": "01/09/2026 10:02",
       "punteggio": 61,
       "regioni_interessate": [
         "Basilicata"
@@ -821,7 +863,7 @@
       "importo": "",
       "fonte": "Università della Basilicata",
       "url": "http://pqa.unibas.it",
-      "rilevato_il": "31/08/2026 19:07",
+      "rilevato_il": "01/09/2026 10:02",
       "punteggio": 61,
       "regioni_interessate": [
         "Basilicata"
@@ -842,7 +884,7 @@
       "importo": "",
       "fonte": "Università della Basilicata",
       "url": "https://portale.unibas.it/site/home/studenti/ufficio-servizi-generali-e-diritto-allo-studio.html",
-      "rilevato_il": "31/08/2026 19:07",
+      "rilevato_il": "01/09/2026 10:02",
       "punteggio": 61,
       "regioni_interessate": [
         "Basilicata"
@@ -863,7 +905,7 @@
       "importo": "",
       "fonte": "Regione Molise",
       "url": "https://www.regione.molise.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/22388",
-      "rilevato_il": "31/08/2026 19:07",
+      "rilevato_il": "01/09/2026 10:02",
       "punteggio": 49,
       "regioni_interessate": [
         "Molise"
@@ -989,7 +1031,7 @@
       "importo": "",
       "fonte": "Università G. d'Annunzio",
       "url": "https://www.unich.it/ateneo/organizzazione/organi-di-controllo-consultivi-e-di-garanzia/presidio-della-qualita",
-      "rilevato_il": "31/08/2026 19:07",
+      "rilevato_il": "01/09/2026 10:02",
       "punteggio": 45,
       "regioni_interessate": [
         "Abruzzo"
@@ -1010,7 +1052,7 @@
       "importo": "",
       "fonte": "Università G. d'Annunzio",
       "url": "https://www.unich.it/#main-content",
-      "rilevato_il": "31/08/2026 19:07",
+      "rilevato_il": "01/09/2026 10:02",
       "punteggio": 45,
       "regioni_interessate": [
         "Abruzzo"
