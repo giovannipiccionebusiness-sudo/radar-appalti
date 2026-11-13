@@ -1,7 +1,7 @@
 {
   "version": "5.2",
-  "updated_at": "13/11/2026 13:02",
-  "count": 71,
+  "updated_at": "13/11/2026 19:39",
+  "count": 72,
   "new_count": 1,
   "updated_count": 0,
   "sources_ok": 13,
@@ -11,7 +11,7 @@
       "fonte": "ANAC - Pubblicità legale",
       "ok": true,
       "trovate": 0,
-      "tempo": "0.6s",
+      "tempo": "0.62s",
       "errore": ""
     },
     {
@@ -19,20 +19,20 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.sanita.puglia.it', port=443): Max retries exceeded with url: /web/asl-bari (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.sanita.puglia.it', port=443) at 0x7b6e53b74740>, 'Connection to www.sanita.puglia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.sanita.puglia.it', port=443): Max retries exceeded with url: /web/asl-bari (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.sanita.puglia.it', port=443) at 0x77b598f5c8c0>, 'Connection to www.sanita.puglia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "ASL Lecce",
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.sanita.puglia.it', port=443): Max retries exceeded with url: /web/asl-lecce (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.sanita.puglia.it', port=443) at 0x7b6e53b750a0>, 'Connection to www.sanita.puglia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.sanita.puglia.it', port=443): Max retries exceeded with url: /web/asl-lecce (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.sanita.puglia.it', port=443) at 0x77b5ab4bd1f0>, 'Connection to www.sanita.puglia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "ASL Pescara",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.05s",
+      "tempo": "1.08s",
       "errore": ""
     },
     {
@@ -40,13 +40,13 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.sanita.puglia.it', port=443): Max retries exceeded with url: /web/asl-taranto (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.sanita.puglia.it', port=443) at 0x7b6e53b239b0>, 'Connection to www.sanita.puglia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.sanita.puglia.it', port=443): Max retries exceeded with url: /web/asl-taranto (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.sanita.puglia.it', port=443) at 0x77b598ecbfe0>, 'Connection to www.sanita.puglia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "ASL Teramo",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.0s",
+      "tempo": "1.94s",
       "errore": ""
     },
     {
@@ -54,14 +54,14 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.asmbasilicata.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.asmbasilicata.it', port=443) at 0x7b6e40e96180>, 'Connection to www.asmbasilicata.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.asmbasilicata.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.asmbasilicata.it', port=443) at 0x77b598e60e90>, 'Connection to www.asmbasilicata.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "ASP Potenza",
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.aspbasilicata.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.aspbasilicata.it', port=443) at 0x7b6e507545f0>, 'Connection to www.aspbasilicata.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.aspbasilicata.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.aspbasilicata.it', port=443) at 0x77b598e61850>, 'Connection to www.aspbasilicata.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "ASReM Molise",
@@ -74,7 +74,7 @@
       "fonte": "CUC Terra di Leuca",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.38s",
+      "tempo": "1.33s",
       "errore": ""
     },
     {
@@ -82,7 +82,7 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.comune.bari.it', port=443): Max retries exceeded with url: /bandi-di-gara-e-contratti (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.comune.bari.it', port=443) at 0x7b6e53b5ade0>, 'Connection to www.comune.bari.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.comune.bari.it', port=443): Max retries exceeded with url: /bandi-di-gara-e-contratti (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.comune.bari.it', port=443) at 0x77b5ab4eeae0>, 'Connection to www.comune.bari.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "Comune di Lecce - Gare",
@@ -94,15 +94,15 @@
     {
       "fonte": "Comune di Taranto - Gare",
       "ok": true,
-      "trovate": 3,
-      "tempo": "2.4s",
+      "trovate": 4,
+      "tempo": "2.83s",
       "errore": ""
     },
     {
       "fonte": "Consip - Ricerca gare",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.09s",
+      "tempo": "1.13s",
       "errore": ""
     },
     {
@@ -117,7 +117,7 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x7b6e502e7b30>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.empulia.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.empulia.it', port=443) at 0x77b598e62b10>, 'Connection to www.empulia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "Regione Abruzzo",
@@ -138,7 +138,7 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.regione.basilicata.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.regione.basilicata.it', port=443) at 0x7b6e4099a120>, 'Connection to www.regione.basilicata.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.regione.basilicata.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.regione.basilicata.it', port=443) at 0x77b598e60440>, 'Connection to www.regione.basilicata.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "Regione Molise",
@@ -159,14 +159,14 @@
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='www.regione.puglia.it', port=443): Max retries exceeded with url: /bandi-e-avvisi (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.regione.puglia.it', port=443) at 0x7b6e53b36d50>, 'Connection to www.regione.puglia.it timed out. (connect timeout=5)'))"
+      "errore": "HTTPSConnectionPool(host='www.regione.puglia.it', port=443): Max retries exceeded with url: /bandi-e-avvisi (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.regione.puglia.it', port=443) at 0x77b5ab4cf020>, 'Connection to www.regione.puglia.it timed out. (connect timeout=5)'))"
     },
     {
       "fonte": "SIAB Basilicata",
       "ok": false,
       "trovate": 0,
       "tempo": "",
-      "errore": "HTTPSConnectionPool(host='siab.regione.basilicata.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='siab.regione.basilicata.it', port=443) at 0x7b6e53b349b0>, 'Connection to siab.regione.basilicata.it timed out. (connect timeout=5)'"
+      "errore": "HTTPSConnectionPool(host='siab.regione.basilicata.it', port=443): Max retries exceeded with url: /PortaleAppalti/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='siab.regione.basilicata.it', port=443) at 0x77b5ab4cc800>, 'Connection to siab.regione.basilicata.it timed out. (connect timeout=5)'"
     },
     {
       "fonte": "TED Europa",
@@ -179,42 +179,42 @@
       "fonte": "Università G. d'Annunzio",
       "ok": true,
       "trovate": 3,
-      "tempo": "2.89s",
+      "tempo": "2.95s",
       "errore": ""
     },
     {
       "fonte": "Università del Molise",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.7s",
+      "tempo": "4.23s",
       "errore": ""
     },
     {
       "fonte": "Università del Salento",
       "ok": true,
       "trovate": 7,
-      "tempo": "4.83s",
+      "tempo": "4.48s",
       "errore": ""
     },
     {
       "fonte": "Università dell'Aquila",
       "ok": true,
       "trovate": 0,
-      "tempo": "2.89s",
+      "tempo": "4.54s",
       "errore": ""
     },
     {
       "fonte": "Università della Basilicata",
       "ok": true,
       "trovate": 5,
-      "tempo": "7.57s",
+      "tempo": "8.95s",
       "errore": ""
     },
     {
       "fonte": "Università di Bari",
       "ok": true,
       "trovate": 0,
-      "tempo": "1.7s",
+      "tempo": "1.94s",
       "errore": ""
     }
   ],
@@ -254,7 +254,7 @@
       "importo": "",
       "fonte": "Comune di Taranto - Gare",
       "url": "https://www.comune.taranto.it/it/page/169433",
-      "rilevato_il": "13/11/2026 13:02",
+      "rilevato_il": "13/11/2026 19:39",
       "punteggio": 75,
       "regioni_interessate": [
         "Puglia"
@@ -296,7 +296,7 @@
       "importo": "",
       "fonte": "Comune di Taranto - Gare",
       "url": "https://www.comune.taranto.it/it#main-content",
-      "rilevato_il": "13/11/2026 13:02",
+      "rilevato_il": "13/11/2026 19:39",
       "punteggio": 75,
       "regioni_interessate": [
         "Puglia"
@@ -514,6 +514,27 @@
       "novita": "Nuova"
     },
     {
+      "id": "ab25ba1e6f5b31d9b2a9e256",
+      "titolo": "Avviso pubblico per la selezione di una proposta progettuale finalizzata alla realizzazione del “Villaggio di Natale 2026” presso il Parco della Musica, mediante partecipazione del Comune di Taranto.",
+      "ente": "Comune di Taranto - Gare",
+      "categoria": "Servizi",
+      "cpv": "",
+      "cig": "",
+      "regione": "Puglia",
+      "provincia": "",
+      "pubblicazione": "",
+      "scadenza": "",
+      "importo": "",
+      "fonte": "Comune di Taranto - Gare",
+      "url": "https://www.comune.taranto.it/it/news/avviso-pubblico-per-la-selezione-di-una-proposta-progettuale-finalizzata-alla-realizzazione-del-villaggio-di-natale-2026-presso-il-parco-della-musica-mediante-partecipazione-del-comune-di-taranto",
+      "rilevato_il": "13/11/2026 19:39",
+      "punteggio": 65,
+      "regioni_interessate": [
+        "Puglia"
+      ],
+      "novita": "Nuova"
+    },
+    {
       "id": "c99c9e9957251e5b4b32d13d",
       "titolo": "Avviso pubblico per la sollecitazione di proposte di Partenariato Pubblico-Privato (PPP) - “Programma attuativo di SOCIAL HOUSING nell’ambito della Città Vecchia di Taranto”",
       "ente": "Comune di Taranto - Gare",
@@ -548,7 +569,7 @@
       "importo": "",
       "fonte": "Università del Salento",
       "url": "https://www.unisalento.it/cug",
-      "rilevato_il": "13/11/2026 13:02",
+      "rilevato_il": "13/11/2026 19:39",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -569,7 +590,7 @@
       "importo": "",
       "fonte": "Comune di Taranto - Gare",
       "url": "https://www.comune.taranto.it/it/page/cug?force_preview=true",
-      "rilevato_il": "13/11/2026 13:02",
+      "rilevato_il": "13/11/2026 19:39",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -590,7 +611,7 @@
       "importo": "",
       "fonte": "Università del Salento",
       "url": "https://www.unisalento.it/documentale-comitato-unico-garanzia",
-      "rilevato_il": "13/11/2026 13:02",
+      "rilevato_il": "13/11/2026 19:39",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -611,7 +632,7 @@
       "importo": "",
       "fonte": "Università del Salento",
       "url": "https://www.unisalento.it/garante-ateneo",
-      "rilevato_il": "13/11/2026 13:02",
+      "rilevato_il": "13/11/2026 19:39",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -632,7 +653,7 @@
       "importo": "",
       "fonte": "Università del Salento",
       "url": "https://www.unisalento.it/presidio-della-qualita-di-ateneo",
-      "rilevato_il": "13/11/2026 13:02",
+      "rilevato_il": "13/11/2026 19:39",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -674,7 +695,7 @@
       "importo": "",
       "fonte": "Università del Salento",
       "url": "https://www.unisalento.it/strutture/presidio-medico",
-      "rilevato_il": "13/11/2026 13:02",
+      "rilevato_il": "13/11/2026 19:39",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -695,7 +716,7 @@
       "importo": "",
       "fonte": "Università del Salento",
       "url": "https://www.unisalento.it/ricerca/procedura-di-brevettazione",
-      "rilevato_il": "13/11/2026 13:02",
+      "rilevato_il": "13/11/2026 19:39",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -758,7 +779,7 @@
       "importo": "",
       "fonte": "Università del Salento",
       "url": "https://www.unisalento.it/ufficio-servizi-generali-e-patrimonio",
-      "rilevato_il": "13/11/2026 13:02",
+      "rilevato_il": "13/11/2026 19:39",
       "punteggio": 65,
       "regioni_interessate": [
         "Puglia"
@@ -968,7 +989,7 @@
       "importo": "",
       "fonte": "Università della Basilicata",
       "url": "https://portale.unibas.it/site/home/in-primo-piano/articolo14417.html",
-      "rilevato_il": "13/11/2026 13:02",
+      "rilevato_il": "13/11/2026 19:39",
       "punteggio": 61,
       "regioni_interessate": [
         "Basilicata"
@@ -1031,7 +1052,7 @@
       "importo": "",
       "fonte": "Università della Basilicata",
       "url": "https://portale.unibas.it/site/home/in-primo-piano/articolo15081.html",
-      "rilevato_il": "13/11/2026 13:02",
+      "rilevato_il": "13/11/2026 19:39",
       "punteggio": 61,
       "regioni_interessate": [
         "Basilicata"
@@ -1115,7 +1136,7 @@
       "importo": "",
       "fonte": "Università della Basilicata",
       "url": "https://portale.unibas.it/site/home/studenti/garante-degli-studenti.html",
-      "rilevato_il": "13/11/2026 13:02",
+      "rilevato_il": "13/11/2026 19:39",
       "punteggio": 61,
       "regioni_interessate": [
         "Basilicata"
@@ -1136,7 +1157,7 @@
       "importo": "",
       "fonte": "Università della Basilicata",
       "url": "http://pqa.unibas.it",
-      "rilevato_il": "13/11/2026 13:02",
+      "rilevato_il": "13/11/2026 19:39",
       "punteggio": 61,
       "regioni_interessate": [
         "Basilicata"
@@ -1178,7 +1199,7 @@
       "importo": "",
       "fonte": "Università della Basilicata",
       "url": "https://portale.unibas.it/site/home/studenti/ufficio-servizi-generali-e-diritto-allo-studio.html",
-      "rilevato_il": "13/11/2026 13:02",
+      "rilevato_il": "13/11/2026 19:39",
       "punteggio": 61,
       "regioni_interessate": [
         "Basilicata"
@@ -1535,7 +1556,7 @@
       "importo": "",
       "fonte": "Università G. d'Annunzio",
       "url": "https://www.unich.it/avvisi/avviso-interno-presso-il-settore-piao-e-performance",
-      "rilevato_il": "13/11/2026 13:02",
+      "rilevato_il": "13/11/2026 19:39",
       "punteggio": 45,
       "regioni_interessate": [
         "Abruzzo"
@@ -1598,7 +1619,7 @@
       "importo": "",
       "fonte": "Università G. d'Annunzio",
       "url": "https://www.unich.it/ateneo/organizzazione/organi-di-controllo-consultivi-e-di-garanzia/presidio-della-qualita",
-      "rilevato_il": "13/11/2026 13:02",
+      "rilevato_il": "13/11/2026 19:39",
       "punteggio": 45,
       "regioni_interessate": [
         "Abruzzo"
@@ -1661,7 +1682,7 @@
       "importo": "",
       "fonte": "Università G. d'Annunzio",
       "url": "https://www.unich.it/#main-content",
-      "rilevato_il": "13/11/2026 13:02",
+      "rilevato_il": "13/11/2026 19:39",
       "punteggio": 45,
       "regioni_interessate": [
         "Abruzzo"
